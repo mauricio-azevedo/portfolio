@@ -5,57 +5,61 @@ const skills = [
   "Ruby",
   "React",
   "Angular",
-  "Next.js",
   "Tailwind CSS",
   "Node.js",
   "NestJS",
   "Express",
   "Spring Boot",
+  "Ruby on Rails",
   "PostgreSQL",
+  "Oracle",
   "Redis",
   "AWS",
   "Docker",
   "GitHub Actions",
   "Prisma",
   "TypeORM",
+  "Active Record",
   "Jest",
+  "JUnit",
+  "RSpec",
 ];
 
 const experiences = [
   {
     company: "Estudologia",
     role: "Senior Full Stack Software Engineer",
-    period: "2023 – Present",
+    period: "Aug 2024 – Jan 2026",
     description:
-      "Building and evolving education platforms used across Brazil, focused on scalability and performance.",
+      "Built Ruby and React systems for academic management, quiz features, real-time updates, Redis-based pipelines, and API test coverage improvements.",
   },
   {
     company: "Inkluziva",
     role: "Lead Full Stack Software Engineer",
-    period: "2022 – 2023",
+    period: "Feb 2024 – Aug 2024",
     description:
-      "Led the development of accessible digital solutions that connect people and improve outcomes.",
+      "Led technical delivery across React, Angular and Node.js products, including trading automation, tax reporting, digital wallet features, security improvements, and NFT tooling.",
   },
   {
     company: "Incript",
     role: "Mid-Level Full Stack Software Engineer",
-    period: "2021 – 2022",
+    period: "Apr 2023 – Jan 2024",
     description:
-      "Worked on enterprise systems and APIs with strong focus on clean architecture and code quality.",
+      "Built educational and security management interfaces with Angular and React, improving critical page load times from seconds to under one second.",
   },
   {
     company: "OpahIT",
     role: "Mid-Level Front-End Software Engineer",
-    period: "2019 – 2021",
+    period: "Feb 2021 – May 2021",
     description:
-      "Delivered web applications and internal tools for multiple clients with performance and UX in mind.",
+      "Modernized the Angular frontend of Banco Fibra’s web banking app, improving UI quality and mobile responsiveness.",
   },
   {
     company: "Basis S.A.",
     role: "Junior Full Stack Software Engineer",
-    period: "2017 – 2019",
+    period: "Dec 2018 – Sep 2020",
     description:
-      "Contributed to large-scale projects, focusing on backend services and data integrity.",
+      "Contributed to Java and Angular features for IBAMA’s nationwide system for managing tree-felling and logging permits.",
   },
 ];
 
