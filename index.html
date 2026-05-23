@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Maurício Azevedo — Senior Full Stack Software Engineer portfolio."
+    />
+    <title>Maurício Azevedo | Senior Full Stack Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Maurício Azevedo home">
+        <span class="brand-mark">MA</span>
+        <span class="brand-name">Maurício Azevedo</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#about" class="active">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top" class="page-shell">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="eyebrow">Senior Full Stack Software Engineer</p>
+          <h1 id="hero-title">Maurício Azevedo</h1>
+          <p class="hero-subtitle">
+            I build reliable full-stack products with clean architecture,
+            good user experience, and simplicity at the core.
+          </p>
+          <p class="hero-subtitle muted">
+            I enjoy turning ideas into systems that help people and businesses.
+          </p>
+
+          <div class="hero-meta" aria-label="Location and contact">
+            <span>Brasília, Brazil — Remote (UTC−3)</span>
+            <span class="divider" aria-hidden="true"></span>
+            <a href="mailto:mauricio.mendonca.azevedo@gmail.com">
+              mauricio.mendonca.azevedo@gmail.com
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-portrait" aria-hidden="true">
+          <div class="portrait-circle">MA</div>
+        </div>
+      </section>
+
+      <section id="about" class="section split-section" aria-labelledby="about-title">
+        <div>
+          <p class="section-label">About</p>
+          <h2 id="about-title" class="sr-only">About Maurício</h2>
+          <p>
+            I’m a full stack engineer with 7+ years of experience building web
+            and mobile applications. I care about clean code, maintainability,
+            and performance. From user experience to architecture — I’m always
+            learning and improving.
+          </p>
+        </div>
+
+        <div>
+          <p class="section-label">Tech Stack</p>
+          <h2 class="sr-only">Tech stack</h2>
+          <div id="skills-list" class="tag-list" aria-label="Skills"></div>
+        </div>
+      </section>
+
+      <section class="section work-section" aria-label="Experience and featured project">
+        <div id="experience" class="experience-column">
+          <p class="section-label">Experience</p>
+          <div id="experience-list" class="timeline"></div>
+        </div>
+
+        <article id="projects" class="project-card" aria-labelledby="project-title">
+          <p class="section-label">Featured Project</p>
+          <div class="project-content">
+            <div class="project-main">
+              <div class="project-heading">
+                <div class="project-icon" aria-hidden="true">◌</div>
+                <div>
+                  <h2 id="project-title">BeachRank</h2>
+                  <p>Mobile-first web app for casual beach tennis groups.</p>
+                </div>
+              </div>
+
+              <ul id="project-features" class="feature-list"></ul>
+
+              <a
+                class="text-link"
+                href="https://github.com/mauricio-azevedo/beachrank"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View project
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+
+            <div class="phone-preview" aria-label="BeachRank mobile interface preview">
+              <div class="phone-frame">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                  <div class="phone-topbar">
+                    <span>BeachRank</span>
+                    <span>⌕</span>
+                  </div>
+                  <div class="ranking-card">
+                    <span class="mini-label">Group Ranking</span>
+                    <ol>
+                      <li><span>Rafael & Lucas</span><strong>1852</strong></li>
+                      <li><span>Bruno & Gui</span><strong>1721</strong></li>
+                      <li><span>Thiago & João</span><strong>1640</strong></li>
+                      <li><span>Você & Parceiro</span><strong>1583</strong></li>
+                    </ol>
+                  </div>
+                  <div class="match-card">
+                    <span class="mini-label">Next Match</span>
+                    <strong>Sáb, 24 Mai · 08:30</strong>
+                    <p>Rafael & Lucas vs Você & Parceiro</p>
+                    <button type="button">Confirmed</button>
+                  </div>
+                  <div class="match-card compact">
+                    <span>Você & Bruno</span>
+                    <strong>6 × 3</strong>
+                    <em>Vitória</em>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="contact" class="contact-card" aria-label="Contact">
+        <div class="contact-intro">
+          <div class="contact-icon" aria-hidden="true">✈</div>
+          <div>
+            <h2>Let’s build something useful together.</h2>
+            <p>I’m open to new opportunities and interesting projects.</p>
+          </div>
+        </div>
+
+        <div class="contact-links">
+          <a href="mailto:mauricio.mendonca.azevedo@gmail.com">Email</a>
+          <a href="https://github.com/mauricio-azevedo" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="#" aria-label="LinkedIn profile placeholder">LinkedIn</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span id="current-year"></span> Maurício Azevedo. All rights reserved.</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
