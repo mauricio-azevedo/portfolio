@@ -64,12 +64,12 @@ const experiences = [
 ];
 
 const projectFeatures = [
-  "Group rankings",
+  "Casual beach tennis groups",
+  "Invite links and memberships",
   "Doubles match registration",
-  "Elo-inspired rating system",
-  "Match history",
-  "Personal stats",
-  "Social feed",
+  "Group rankings and ratings",
+  "Match history and profiles",
+  "Activity feed moments",
 ];
 
 const skillsList = document.querySelector("#skills-list");
