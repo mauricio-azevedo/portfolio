@@ -15,11 +15,11 @@ export const navigationItems: NavigationItem[] = [
 ];
 
 export const contactLinks: ContactLink[] = [
-  {
-    label: 'Email',
-    href: 'mailto:mauricio.mendonca.azevedo@gmail.com',
-    icon: 'email',
-  },
+  // {
+  //   label: 'Email',
+  //   href: 'mailto:mauricio.mendonca.azevedo@gmail.com',
+  //   icon: 'email',
+  // },
   {
     label: 'GitHub',
     href: 'https://github.com/mauricio-azevedo',
