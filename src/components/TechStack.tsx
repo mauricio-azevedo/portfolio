@@ -41,14 +41,17 @@ export function TechStack() {
         {techStack.map((group) => (
           <article
             key={group.id}
-            className="grid grid-cols-[116px_minmax(0,1fr)] items-center gap-4 border-t border-slate-100 py-[15px] first:border-t-0 first:pt-0 last:pb-0 max-[720px]:grid-cols-1 max-[720px]:items-start max-[720px]:gap-2.5 max-[720px]:py-4"
+            className="grid grid-cols-1 gap-2.5 border-t border-slate-100 py-[15px] first:border-t-0 first:pt-0 last:pb-0"
             aria-labelledby={`${group.id}-tech-title`}
           >
-            <h3 id={`${group.id}-tech-title`} className="m-0 text-sm font-bold tracking-[-0.02em] text-[#101735]">
+            <h3
+              id={`${group.id}-tech-title`}
+              className="m-0 text-sm font-bold tracking-[-0.02em] text-[#101735]"
+            >
               {group.category}
             </h3>
             <ul
-              className="flex gap-2.5 overflow-x-auto py-2 pr-1 [-webkit-overflow-scrolling:touch] [scrollbar-width:thin] max-[720px]:w-full max-[720px]:pb-2.5"
+              className="flex flex-wrap gap-2.5 py-2 pr-1"
               aria-label={`${group.category} technologies`}
             >
               {group.items.map((technology) => (
