@@ -15,14 +15,14 @@ export default function App() {
 
       <main
         id="top"
-        className="mx-auto w-[min(1180px,calc(100%_-_48px))] pb-4 max-[980px]:w-[min(100%_-_32px,1180px)]"
+        className="mx-auto w-[min(1180px,calc(100%_-_48px))] pb-6 pt-2 max-[980px]:w-[min(100%_-_32px,1180px)]"
       >
         <Hero />
         <About />
         <TechStack />
 
         <section
-          className="border-t border-slate-200 px-16 py-[30px] max-[980px]:px-0 max-[980px]:py-7"
+          className="mt-5 rounded-[28px] border border-white/70 bg-white/55 px-10 py-9 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl max-[980px]:px-6 max-[980px]:py-7"
           aria-label="Experience"
         >
           <Experience />
