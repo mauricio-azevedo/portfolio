@@ -47,7 +47,7 @@ export const techStack: TechnologyGroup[] = [
       { name: 'NestJS', icon: 'nestjs' },
       { name: 'Express', icon: 'express' },
       { name: 'Docker', icon: 'docker' },
-      { name: 'AWS', icon: 'amazonwebservices/FF9900' },
+      { name: 'AWS', icon: 'aws' },
     ],
   },
 ];
