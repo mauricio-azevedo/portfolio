@@ -1,4 +1,5 @@
 import { contactLinks } from '../data/portfolio';
+import { ContactLinks } from './ContactLinks';
 
 export function Contact() {
   return (
@@ -14,19 +15,7 @@ export function Contact() {
         <p className="m-0 mt-2 text-sm text-slate-500">I’m open to new opportunities and interesting projects.</p>
       </div>
 
-      <div className="flex flex-wrap justify-end gap-4 text-sm font-semibold text-slate-700 max-[980px]:justify-start">
-        {contactLinks.map((link) => (
-          <a
-            key={link.href}
-            className="border-b border-slate-300 pb-1 transition-colors hover:border-slate-950 hover:text-slate-950"
-            href={link.href}
-            target={link.isExternal ? '_blank' : undefined}
-            rel={link.isExternal ? 'noreferrer' : undefined}
-          >
-            {link.label}
-          </a>
-        ))}
-      </div>
+      <ContactLinks links={contactLinks} />
     </section>
   );
 }
