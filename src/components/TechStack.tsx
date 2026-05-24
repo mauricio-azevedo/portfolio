@@ -37,21 +37,22 @@ export function TechStack() {
       <h2 id="tech-stack-title" className="sr-only">
         Tech stack
       </h2>
-      <div className="mt-4 grid">
+
+      <div className="mt-5 overflow-hidden rounded-[18px] border border-slate-200 bg-white/60 shadow-[0_16px_40px_rgba(16,23,42,0.035)]">
         {techStack.map((group) => (
           <article
             key={group.id}
-            className="grid grid-cols-1 gap-2.5 border-t border-slate-100 py-[15px] first:border-t-0 first:pt-0 last:pb-0"
+            className="grid grid-cols-[148px_minmax(0,1fr)] items-start gap-6 border-t border-slate-100 px-5 py-4 first:border-t-0 max-[720px]:grid-cols-1 max-[720px]:gap-2.5 max-[720px]:px-4"
             aria-labelledby={`${group.id}-tech-title`}
           >
             <h3
               id={`${group.id}-tech-title`}
-              className="m-0 text-sm font-bold tracking-[-0.02em] text-[#101735]"
+              className="m-0 pt-2 text-sm font-bold tracking-[-0.02em] text-[#101735] max-[720px]:pt-0"
             >
               {group.category}
             </h3>
             <ul
-              className="flex flex-wrap gap-2.5 py-2 pr-1"
+              className="flex min-w-0 flex-wrap gap-2.5"
               aria-label={`${group.category} technologies`}
             >
               {group.items.map((technology) => (
