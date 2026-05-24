@@ -27,29 +27,20 @@ function TechBadge({ technology }: TechBadgeProps) {
 }
 
 export function TechStack() {
+  const [stack] = techStack;
+
   return (
     <section id="tech-stack" className="border-b border-slate-200 py-12" aria-labelledby="tech-stack-title">
-      <SectionLabel>Tech Stack</SectionLabel>
+      <SectionLabel>Stacks</SectionLabel>
       <h2 id="tech-stack-title" className="sr-only">
-        Tech stack
+        Stacks
       </h2>
 
-      <div className="mt-6 overflow-x-auto [-webkit-overflow-scrolling:touch] [scrollbar-width:thin]">
-        <div className="flex min-w-max gap-8">
-          {techStack.map((group) => (
-            <article key={group.id} className="flex flex-none items-center gap-4" aria-labelledby={`${group.id}-tech-title`}>
-              <h3 id={`${group.id}-tech-title`} className="m-0 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-                {group.category}
-              </h3>
-              <ul className="flex flex-nowrap gap-2" aria-label={`${group.category} technologies`}>
-                {group.items.map((technology) => (
-                  <TechBadge key={technology.name} technology={technology} />
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </div>
+      <ul className="mt-6 flex flex-wrap gap-2.5" aria-label="Technology stacks">
+        {stack.items.map((technology) => (
+          <TechBadge key={technology.name} technology={technology} />
+        ))}
+      </ul>
     </section>
   );
 }
