@@ -4,7 +4,7 @@ type SectionLabelProps = {
 
 export function SectionLabel({ children }: SectionLabelProps) {
   return (
-    <p className="font-serif text-sm font-bold uppercase tracking-[0.13em] text-[#174f9f]">
+    <p className="text-xs font-bold uppercase tracking-[0.22em] text-blue-700/80">
       {children}
     </p>
   );
