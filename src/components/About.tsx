@@ -1,4 +1,5 @@
 import { profile } from '../data/portfolio';
+import { SectionContent } from './SectionContent';
 import { SectionLabel } from './SectionLabel';
 
 const aboutFacts = [
@@ -22,16 +23,15 @@ const aboutFacts = [
 export function About() {
   return (
     <section id="about" className="border-b border-slate-200 py-12" aria-labelledby="about-title">
-      <div className="grid grid-cols-[minmax(0,1fr)_minmax(420px,0.74fr)] items-start gap-12 max-[980px]:grid-cols-1">
-        <div>
-          <SectionLabel>About</SectionLabel>
-          <h2 id="about-title" className="sr-only">
-            About Maurício
-          </h2>
-          <p className="mt-4 max-w-[720px] text-lg leading-8 tracking-[-0.02em] text-slate-700 max-[720px]:text-base">
-            {profile.about}
-          </p>
-        </div>
+      <SectionLabel>About</SectionLabel>
+      <h2 id="about-title" className="sr-only">
+        About Maurício
+      </h2>
+
+      <SectionContent className="mt-4 grid grid-cols-[minmax(0,1fr)_minmax(420px,0.74fr)] items-start gap-12 max-[980px]:grid-cols-1">
+        <p className="max-w-[720px] text-lg leading-8 tracking-[-0.02em] text-slate-700 max-[720px]:text-base">
+          {profile.about}
+        </p>
 
         <dl className="grid grid-cols-3 max-[720px]:grid-cols-1">
           {aboutFacts.map((fact) => (
@@ -40,10 +40,7 @@ export function About() {
               className="flex flex-col items-center px-5 py-6 text-center max-[720px]:items-start max-[720px]:text-left [&:not(:first-child)]:border-l [&:not(:first-child)]:border-slate-200 max-[720px]:[&:not(:first-child)]:border-l-0 max-[720px]:[&:not(:first-child)]:border-t"
             >
               <dt className="flex flex-col items-center gap-1 text-sm text-slate-500 max-[720px]:flex-row">
-                <span
-                  className="grid size-9 place-items-center rounded-xl text-slate-700"
-                  aria-hidden="true"
-                >
+                <span className="grid size-9 place-items-center rounded-xl text-slate-700" aria-hidden="true">
                   <svg
                     className="size-5.5"
                     viewBox="0 0 24 24"
@@ -62,7 +59,7 @@ export function About() {
             </div>
           ))}
         </dl>
-      </div>
+      </SectionContent>
     </section>
   );
 }
