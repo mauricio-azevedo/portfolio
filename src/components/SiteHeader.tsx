@@ -7,29 +7,65 @@ type SiteHeaderProps = {
 
 export function SiteHeader({ brandName, navigationItems }: SiteHeaderProps) {
   return (
-    <header className="mx-auto flex w-[min(1120px,calc(100%_-_48px))] items-center justify-between border-b border-slate-200 py-6 max-[720px]:w-[min(100%_-_32px,1120px)] max-[720px]:flex-col max-[720px]:items-start max-[720px]:gap-4">
-      <a className="inline-flex items-center gap-3 font-semibold text-slate-950" href="#top" aria-label={`${brandName} home`}>
-        <span className="grid size-9 place-items-center rounded-lg border border-slate-300 text-sm font-bold tracking-[-0.06em]">
-          MA
-        </span>
-        <span className="text-[0.98rem] tracking-[-0.02em] max-[720px]:hidden">{brandName}</span>
-      </a>
+    <header className="mx-auto w-[min(1120px,calc(100%_-_48px))] border-b border-slate-200 py-6 max-[720px]:w-[min(100%_-_32px,1120px)]">
+      <div className="flex items-center justify-between gap-6">
+        <a className="inline-flex items-center gap-3 font-semibold text-slate-950" href="#top" aria-label={`${brandName} home`}>
+          <span className="grid size-9 place-items-center rounded-lg border border-slate-300 text-sm font-bold tracking-[-0.06em]">
+            MA
+          </span>
+          <span className="text-[0.98rem] tracking-[-0.02em] max-[720px]:hidden">{brandName}</span>
+        </a>
 
-      <nav
-        aria-label="Primary navigation"
-        className="flex items-center gap-7 whitespace-nowrap text-[0.9rem] font-medium text-slate-500 max-[720px]:w-full max-[720px]:flex-wrap max-[720px]:items-start max-[720px]:gap-x-5 max-[720px]:gap-y-3 max-[720px]:text-[0.88rem]"
-      >
-        {navigationItems.map((item, index) => (
-          <a
-            key={item.href}
-            className="transition-colors hover:text-slate-950 first:text-slate-950"
-            href={item.href}
-            aria-current={index === 0 ? 'page' : undefined}
+        <nav
+          aria-label="Primary navigation"
+          className="flex items-center gap-7 whitespace-nowrap text-[0.9rem] font-medium text-slate-500 max-[720px]:hidden"
+        >
+          {navigationItems.map((item, index) => (
+            <a
+              key={item.href}
+              className="transition-colors hover:text-slate-950 first:text-slate-950"
+              href={item.href}
+              aria-current={index === 0 ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
+        <details className="group relative hidden max-[720px]:block">
+          <summary className="flex cursor-pointer list-none items-center gap-2 rounded-lg border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 transition-colors marker:hidden hover:border-slate-300 hover:text-slate-950 [&::-webkit-details-marker]:hidden">
+            Menu
+            <svg
+              className="size-4 transition-transform group-open:rotate-180"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </summary>
+
+          <nav
+            aria-label="Mobile navigation"
+            className="absolute right-0 top-12 z-20 w-48 rounded-xl border border-slate-200 bg-white p-2 shadow-[0_18px_45px_rgba(15,23,42,0.12)]"
           >
-            {item.label}
-          </a>
-        ))}
-      </nav>
+            {navigationItems.map((item, index) => (
+              <a
+                key={item.href}
+                className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-50 hover:text-slate-950 first:text-slate-950"
+                href={item.href}
+                aria-current={index === 0 ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </details>
+      </div>
     </header>
   );
 }
