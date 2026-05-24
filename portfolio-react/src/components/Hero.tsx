@@ -1,4 +1,5 @@
 import { profile } from '../data/portfolio';
+import { getPublicAssetUrl } from '../lib/assets';
 
 export function Hero() {
   return (
@@ -32,7 +33,11 @@ export function Hero() {
       </div>
 
       <div className="flex justify-center max-[980px]:order-first max-[980px]:justify-start">
-        <img className="h-auto w-[250px]" src={profile.profileImage.src} alt={profile.profileImage.alt} />
+        <img
+          className="h-auto w-[250px]"
+          src={getPublicAssetUrl(profile.profileImage.src)}
+          alt={profile.profileImage.alt}
+        />
       </div>
     </section>
   );
