@@ -5,19 +5,20 @@ import { SectionLabel } from './SectionLabel';
 export function FeaturedProject() {
   return (
     <section id="projects" className="border-b border-slate-200 py-12" aria-labelledby="project-title">
-      <div className="flex items-center justify-between gap-4 max-[720px]:items-start max-[720px]:flex-col">
-        <SectionLabel>Featured Project</SectionLabel>
-        <span className="inline-flex items-center gap-2 text-xs font-medium text-slate-500">
-          <span className="size-2 rounded-full bg-emerald-500" aria-hidden="true" />
-          Online
-        </span>
-      </div>
+      <SectionLabel>Featured Project</SectionLabel>
 
       <article className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(320px,0.7fr)] lg:items-start">
         <div>
-          <h2 id="project-title" className="m-0 text-3xl font-semibold tracking-[-0.05em] text-slate-950">
-            {featuredProject.name}
-          </h2>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+            <h2 id="project-title" className="m-0 text-3xl font-semibold tracking-[-0.05em] text-slate-950">
+              {featuredProject.name}
+            </h2>
+            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700">
+              <span className="size-2 rounded-full bg-emerald-500" aria-hidden="true" />
+              Online
+            </span>
+          </div>
+
           <p className="mt-2 max-w-[540px] text-base leading-7 text-slate-600">{featuredProject.summary}</p>
 
           <ul
