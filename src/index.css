@@ -2,7 +2,7 @@
 
 :root {
   color-scheme: light;
-  background: #f8f8f6;
+  background: #ffffff;
   color: #111827;
   font-family:
     Inter,
@@ -31,7 +31,7 @@ body {
   min-width: 320px;
   min-height: 100svh;
   margin: 0;
-  background: #f8f8f6;
+  background: #ffffff;
 }
 
 a {
