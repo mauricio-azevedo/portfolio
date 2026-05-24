@@ -15,16 +15,13 @@ export default function App() {
 
       <main
         id="top"
-        className="mx-auto w-[min(1180px,calc(100%_-_48px))] pb-6 pt-2 max-[980px]:w-[min(100%_-_32px,1180px)]"
+        className="mx-auto w-[min(1120px,calc(100%_-_48px))] pb-8 max-[980px]:w-[min(100%_-_32px,1120px)]"
       >
         <Hero />
         <About />
         <TechStack />
 
-        <section
-          className="mt-5 rounded-[28px] border border-white/70 bg-white/55 px-10 py-9 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl max-[980px]:px-6 max-[980px]:py-7"
-          aria-label="Experience"
-        >
+        <section className="border-b border-slate-200 py-12" aria-label="Experience">
           <Experience />
         </section>
 
