@@ -30,7 +30,7 @@ export function TechStack() {
   return (
     <section
       id="tech-stack"
-      className="min-w-0 border-l border-slate-200 pl-7 max-[980px]:border-l-0 max-[980px]:border-t max-[980px]:pl-0 max-[980px]:pt-7"
+      className="border-t border-slate-200 px-16 py-[30px] max-[980px]:px-0 max-[980px]:py-7"
       aria-labelledby="tech-stack-title"
     >
       <SectionLabel>Tech Stack</SectionLabel>
