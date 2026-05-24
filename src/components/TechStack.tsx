@@ -9,7 +9,7 @@ type TechBadgeProps = {
 
 function TechBadge({ technology }: TechBadgeProps) {
   return (
-    <li className="inline-flex min-h-10 flex-none items-center gap-2.5 whitespace-nowrap rounded-full border border-slate-200 bg-white/80 px-3.5 py-2 text-sm font-semibold leading-none text-slate-700 shadow-[0_10px_24px_rgba(16,23,42,0.035)]">
+    <li className="inline-flex min-h-10 flex-none items-center gap-2.5 whitespace-nowrap rounded-full border border-slate-300 bg-white/80 px-1.5 py-2 text-sm font-semibold leading-none text-slate-700 shadow-[0_10px_24px_rgba(16,23,42,0.035)]">
       <img
         className="size-[18px] flex-none object-contain"
         src={getTechnologyLogoUrl(technology.icon)}
@@ -21,7 +21,7 @@ function TechBadge({ technology }: TechBadgeProps) {
         referrerPolicy="no-referrer"
         aria-hidden="true"
       />
-      <span>{technology.name}</span>
+      <span className="text-xs">{technology.name}</span>
     </li>
   );
 }
@@ -38,12 +38,12 @@ export function TechStack() {
         Tech stack
       </h2>
 
-      <div className="mt-5 overflow-x-auto rounded-[18px] border border-slate-200 bg-white/60 p-4 shadow-[0_16px_40px_rgba(16,23,42,0.035)] [-webkit-overflow-scrolling:touch] [scrollbar-width:thin]">
-        <div className="flex min-w-max gap-4">
+      <div className="flex mt-5 rounded-[18px] border border-slate-200 bg-white/60 p-4 shadow-[0_16px_40px_rgba(16,23,42,0.035)] [-webkit-overflow-scrolling:touch] [scrollbar-width:thin]">
+        <div className="flex flex-col">
           {techStack.map((group) => (
             <article
               key={group.id}
-              className="w-[260px] flex-none rounded-[14px] border border-slate-100 bg-white/70 p-4"
+              className="flex-none rounded-[14px] border border-slate-100 bg-white/70 p-4"
               aria-labelledby={`${group.id}-tech-title`}
             >
               <h3
