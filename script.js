@@ -1,28 +1,59 @@
-const skills = [
-  'TypeScript',
-  'JavaScript',
-  'Java',
-  'Ruby',
-  'React',
-  'Angular',
-  'Tailwind CSS',
-  'Node.js',
-  'NestJS',
-  'Express',
-  'Spring Boot',
-  'Ruby on Rails',
-  'PostgreSQL',
-  'Oracle',
-  'Redis',
-  'AWS',
-  'Docker',
-  'GitHub Actions',
-  'Prisma',
-  'TypeORM',
-  'Active Record',
-  'Jest',
-  'JUnit',
-  'RSpec',
+const simpleIconsBaseUrl = 'https://cdn.simpleicons.org';
+
+const techStack = [
+  {
+    category: 'Frontend',
+    id: 'frontend',
+    items: [
+      { name: 'TypeScript', icon: 'typescript' },
+      { name: 'JavaScript', icon: 'javascript' },
+      { name: 'React', icon: 'react' },
+      { name: 'Angular', icon: 'angular' },
+      { name: 'Tailwind CSS', icon: 'tailwindcss' },
+    ],
+  },
+  {
+    category: 'Backend',
+    id: 'backend',
+    items: [
+      { name: 'Node.js', icon: 'nodedotjs' },
+      { name: 'NestJS', icon: 'nestjs' },
+      { name: 'Express', icon: 'express' },
+      { name: 'Java', icon: 'openjdk' },
+      { name: 'Spring Boot', icon: 'springboot' },
+      { name: 'Ruby', icon: 'ruby' },
+      { name: 'Ruby on Rails', icon: 'rubyonrails' },
+    ],
+  },
+  {
+    category: 'Data',
+    id: 'data',
+    items: [
+      { name: 'PostgreSQL', icon: 'postgresql' },
+      { name: 'Oracle', icon: 'oracle' },
+      { name: 'Redis', icon: 'redis' },
+      { name: 'Prisma', icon: 'prisma' },
+      { name: 'TypeORM', icon: 'typeorm' },
+    ],
+  },
+  {
+    category: 'Cloud & DevOps',
+    id: 'cloud-devops',
+    items: [
+      { name: 'AWS', icon: 'amazonwebservices' },
+      { name: 'Docker', icon: 'docker' },
+      { name: 'GitHub Actions', icon: 'githubactions' },
+    ],
+  },
+  {
+    category: 'Testing',
+    id: 'testing',
+    items: [
+      { name: 'Jest', icon: 'jest' },
+      { name: 'JUnit 5', icon: 'junit5' },
+      { name: 'RSpec', icon: 'rspec' },
+    ],
+  },
 ];
 
 const experiences = [
@@ -77,25 +108,88 @@ const experienceList = document.querySelector('#experience-list');
 const projectFeaturesList = document.querySelector('#project-features');
 const currentYear = document.querySelector('#current-year');
 
-skillsList.innerHTML = skills.map((skill) => `<span class="tag">${skill}</span>`).join('');
+const buildIconUrl = (icon) => `${simpleIconsBaseUrl}/${icon}`;
 
-experienceList.innerHTML = experiences
-  .map(
-    (experience) => `
-      <article class="timeline-item">
-        <div>
-          <h3>${experience.company}</h3>
-          <span class="timeline-role">${experience.role}</span>
-        </div>
-        <div>
-          <p class="timeline-period">${experience.period}</p>
-          <p class="timeline-description">${experience.description}</p>
-        </div>
-      </article>
-    `,
-  )
-  .join('');
+const createTechnologyItem = ({ name, icon }) => {
+  const item = document.createElement('li');
+  item.className = 'tech-item';
 
-projectFeaturesList.innerHTML = projectFeatures.map((feature) => `<li>${feature}</li>`).join('');
+  const image = document.createElement('img');
+  image.className = 'tech-logo';
+  image.src = buildIconUrl(icon);
+  image.alt = '';
+  image.width = 18;
+  image.height = 18;
+  image.loading = 'lazy';
+  image.decoding = 'async';
+  image.referrerPolicy = 'no-referrer';
+  image.setAttribute('aria-hidden', 'true');
 
-currentYear.textContent = new Date().getFullYear();
+  const label = document.createElement('span');
+  label.textContent = name;
+
+  item.append(image, label);
+
+  return item;
+};
+
+const renderTechStack = () => {
+  if (!skillsList) return;
+
+  const groups = document.createDocumentFragment();
+
+  skillsList.className = 'tech-stack-groups';
+
+  techStack.forEach(({ category, id, items }) => {
+    const group = document.createElement('article');
+    group.className = 'tech-category';
+    group.setAttribute('aria-labelledby', `${id}-tech-title`);
+
+    const title = document.createElement('h3');
+    title.id = `${id}-tech-title`;
+    title.className = 'tech-category-title';
+    title.textContent = category;
+
+    const list = document.createElement('ul');
+    list.className = 'tech-row';
+    list.setAttribute('aria-label', `${category} technologies`);
+
+    items.forEach((technology) => {
+      list.appendChild(createTechnologyItem(technology));
+    });
+
+    group.append(title, list);
+    groups.appendChild(group);
+  });
+
+  skillsList.replaceChildren(groups);
+};
+
+renderTechStack();
+
+if (experienceList) {
+  experienceList.innerHTML = experiences
+    .map(
+      (experience) => `
+        <article class="timeline-item">
+          <div>
+            <h3>${experience.company}</h3>
+            <span class="timeline-role">${experience.role}</span>
+          </div>
+          <div>
+            <p class="timeline-period">${experience.period}</p>
+            <p class="timeline-description">${experience.description}</p>
+          </div>
+        </article>
+      `,
+    )
+    .join('');
+}
+
+if (projectFeaturesList) {
+  projectFeaturesList.innerHTML = projectFeatures.map((feature) => `<li>${feature}</li>`).join('');
+}
+
+if (currentYear) {
+  currentYear.textContent = new Date().getFullYear();
+}
