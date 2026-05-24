@@ -21,13 +21,13 @@ export default function App() {
         <About />
 
         <section
-          className="grid grid-cols-[1.15fr_0.85fr] gap-11 border-t border-slate-200 px-16 py-[30px] max-[980px]:grid-cols-1 max-[980px]:px-0 max-[980px]:py-7"
-          aria-label="Experience and technology stack"
+          className="border-t border-slate-200 px-16 py-[30px] max-[980px]:px-0 max-[980px]:py-7"
+          aria-label="Experience"
         >
           <Experience />
-          <TechStack />
         </section>
 
+        <TechStack />
         <FeaturedProject />
         <Contact />
       </main>
