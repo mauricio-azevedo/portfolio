@@ -3,6 +3,31 @@ import { getPublicAssetUrl } from '../lib/assets';
 import { SectionContent } from './SectionContent';
 import { SectionLabel } from './SectionLabel';
 
+function ProjectLinks() {
+  return (
+    <div className="flex flex-wrap gap-4">
+      <a
+        className="inline-flex items-center gap-2 border-b border-slate-400 pb-1 text-sm font-semibold text-slate-950 transition-colors hover:border-slate-950"
+        href={featuredProject.liveUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
+        View live
+        <span aria-hidden="true">→</span>
+      </a>
+      <a
+        className="inline-flex items-center gap-2 border-b border-slate-300 pb-1 text-sm font-semibold text-slate-600 transition-colors hover:border-slate-950 hover:text-slate-950"
+        href={featuredProject.repositoryUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
+        View repository
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  );
+}
+
 export function FeaturedProject() {
   return (
     <section id="projects" className="border-b border-slate-200 py-12" aria-labelledby="project-title">
@@ -35,25 +60,8 @@ export function FeaturedProject() {
               ))}
             </ul>
 
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                className="inline-flex items-center gap-2 border-b border-slate-400 pb-1 text-sm font-semibold text-slate-950 transition-colors hover:border-slate-950"
-                href={featuredProject.liveUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                View live
-                <span aria-hidden="true">→</span>
-              </a>
-              <a
-                className="inline-flex items-center gap-2 border-b border-slate-300 pb-1 text-sm font-semibold text-slate-600 transition-colors hover:border-slate-950 hover:text-slate-950"
-                href={featuredProject.repositoryUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                View repository
-                <span aria-hidden="true">→</span>
-              </a>
+            <div className="mt-8 max-[720px]:hidden">
+              <ProjectLinks />
             </div>
           </div>
 
@@ -65,6 +73,10 @@ export function FeaturedProject() {
               loading="lazy"
               decoding="async"
             />
+          </div>
+
+          <div className="hidden max-[720px]:block">
+            <ProjectLinks />
           </div>
         </article>
       </SectionContent>
