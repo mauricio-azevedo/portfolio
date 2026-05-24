@@ -30,7 +30,7 @@ export function TechStack() {
   return (
     <section
       id="tech-stack"
-      className="border-t border-slate-200 px-16 py-[30px] max-[980px]:px-0 max-[980px]:py-7"
+      className="min-w-0 border-l border-slate-200 pl-7 max-[980px]:border-l-0 max-[980px]:border-t max-[980px]:pl-0 max-[980px]:pt-7"
       aria-labelledby="tech-stack-title"
     >
       <SectionLabel>Tech Stack</SectionLabel>
@@ -41,7 +41,7 @@ export function TechStack() {
         {techStack.map((group) => (
           <article
             key={group.id}
-            className="grid grid-cols-[132px_minmax(0,1fr)] items-center gap-6 border-t border-slate-100 py-[15px] first:border-t-0 first:pt-0 last:pb-0 max-[980px]:grid-cols-[112px_minmax(0,1fr)] max-[980px]:gap-4 max-[720px]:grid-cols-1 max-[720px]:items-start max-[720px]:gap-2.5 max-[720px]:py-4"
+            className="grid grid-cols-[116px_minmax(0,1fr)] items-center gap-4 border-t border-slate-100 py-[15px] first:border-t-0 first:pt-0 last:pb-0 max-[720px]:grid-cols-1 max-[720px]:items-start max-[720px]:gap-2.5 max-[720px]:py-4"
             aria-labelledby={`${group.id}-tech-title`}
           >
             <h3 id={`${group.id}-tech-title`} className="m-0 text-sm font-bold tracking-[-0.02em] text-[#101735]">
