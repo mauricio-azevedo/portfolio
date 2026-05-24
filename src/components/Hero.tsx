@@ -15,7 +15,7 @@ export function Hero() {
           {profile.role}
         </p>
 
-        <div className="flex items-end justify-between gap-5 max-[720px]:items-center">
+        <div className="flex items-end justify-between gap-5 max-[720px]:h-[164px] max-[720px]:items-center">
           <h1
             id="hero-title"
             className="m-0 max-w-[740px] text-[clamp(3.25rem,7vw,5.8rem)] font-semibold leading-[0.96] tracking-[-0.08em] text-slate-950 max-[720px]:text-[3.05rem]"
@@ -24,7 +24,7 @@ export function Hero() {
           </h1>
 
           <img
-            className="hidden h-24 w-24 flex-none rounded-2xl object-cover max-[720px]:block"
+            className="hidden h-full w-auto flex-none rounded-2xl object-cover max-[720px]:block"
             src={profileImageUrl}
             alt={profile.profileImage.alt}
           />
