@@ -5,7 +5,7 @@ import { SectionLabel } from './SectionLabel';
 const aboutFacts = [
   {
     label: 'Experience',
-    value: '6+ years',
+    value: '7+ years',
     icon: 'M8.5 7.25V5.5a1.5 1.5 0 0 1 1.5-1.5h4a1.5 1.5 0 0 1 1.5 1.5v1.75M4.75 8h14.5v10.25H4.75V8Zm0 4.5h14.5',
   },
   {
@@ -15,7 +15,7 @@ const aboutFacts = [
   },
   {
     label: 'Remote',
-    value: 'UTC−3',
+    value: 'Worldwide',
     icon: 'M12 6.75v5.5l3.25 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z',
   },
 ];
@@ -37,10 +37,13 @@ export function About() {
           {aboutFacts.map((fact) => (
             <div
               key={fact.label}
-              className="flex flex-col items-center px-5 py-6 text-center max-[720px]:items-start max-[720px]:text-left [&:not(:first-child)]:border-l [&:not(:first-child)]:border-slate-200 max-[720px]:[&:not(:first-child)]:border-l-0 max-[720px]:[&:not(:first-child)]:border-t"
+              className="flex flex-col items-center px-5 py-0 text-center max-[720px]:items-start max-[720px]:text-left [&:not(:first-child)]:border-l [&:not(:first-child)]:border-slate-200 max-[720px]:[&:not(:first-child)]:border-l-0 max-[720px]:[&:not(:first-child)]:border-t"
             >
               <dt className="flex flex-col items-center gap-1 text-sm text-slate-500 max-[720px]:flex-row">
-                <span className="grid size-9 place-items-center rounded-xl text-slate-700" aria-hidden="true">
+                <span
+                  className="grid size-9 place-items-center rounded-xl text-slate-700"
+                  aria-hidden="true"
+                >
                   <svg
                     className="size-5.5"
                     viewBox="0 0 24 24"
@@ -55,7 +58,9 @@ export function About() {
                 </span>
                 <span>{fact.label}</span>
               </dt>
-              <dd className="mt-1 text-base tracking-[-0.02em] text-slate-950">{fact.value}</dd>
+              <dd className="mt-1 text-base semi tracking-[-0.02em] text-slate-950">
+                {fact.value}
+              </dd>
             </div>
           ))}
         </dl>
