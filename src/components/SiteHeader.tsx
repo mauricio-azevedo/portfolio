@@ -17,7 +17,7 @@ export function SiteHeader({ brandName, navigationItems }: SiteHeaderProps) {
 
       <nav
         aria-label="Primary navigation"
-        className="flex items-center gap-7 overflow-x-auto whitespace-nowrap text-[0.9rem] font-medium text-slate-500 max-[720px]:w-full max-[720px]:gap-5 max-[720px]:pb-1"
+        className="flex items-center gap-7 whitespace-nowrap text-[0.9rem] font-medium text-slate-500 max-[720px]:w-full max-[720px]:flex-wrap max-[720px]:items-start max-[720px]:gap-x-5 max-[720px]:gap-y-3 max-[720px]:text-[0.88rem]"
       >
         {navigationItems.map((item, index) => (
           <a
