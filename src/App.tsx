@@ -6,7 +6,7 @@ import { Hero } from './components/Hero';
 import { SiteFooter } from './components/SiteFooter';
 import { SiteHeader } from './components/SiteHeader';
 import { TechStack } from './components/TechStack';
-import { contactLinks, navigationItems, profile } from './data/portfolio';
+import { navigationItems, profile } from './data/portfolio';
 
 export default function App() {
   return (
@@ -29,7 +29,7 @@ export default function App() {
         <Contact />
       </main>
 
-      <SiteFooter name={profile.name} contactLinks={contactLinks} />
+      <SiteFooter name={profile.name} />
     </>
   );
 }
