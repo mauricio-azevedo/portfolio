@@ -110,6 +110,15 @@ const currentYear = document.querySelector('#current-year');
 
 const buildIconUrl = (icon) => `${simpleIconsBaseUrl}/${icon}`;
 
+const loadTechStackStyles = () => {
+  if (document.querySelector('link[href="tech-stack.css"]')) return;
+
+  const stylesheet = document.createElement('link');
+  stylesheet.rel = 'stylesheet';
+  stylesheet.href = 'tech-stack.css';
+  document.head.appendChild(stylesheet);
+};
+
 const createTechnologyItem = ({ name, icon }) => {
   const item = document.createElement('li');
   item.className = 'tech-item';
@@ -165,6 +174,7 @@ const renderTechStack = () => {
   skillsList.replaceChildren(groups);
 };
 
+loadTechStackStyles();
 renderTechStack();
 
 if (experienceList) {
