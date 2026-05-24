@@ -27,12 +27,14 @@ export type Experience = {
   company: string;
   role: string;
   period: string;
-  description: string;
+  highlights: string[];
+  technologies: Technology[];
 };
 
 export type FeaturedProject = {
   name: string;
   summary: string;
+  liveUrl: string;
   repositoryUrl: string;
   image: {
     src: string;
