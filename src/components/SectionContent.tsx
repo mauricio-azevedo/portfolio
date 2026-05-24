@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-const sectionContentPadding = 'pl-9 max-[720px]:pl-0';
+const sectionContentPadding = 'pl-18 max-[720px]:pl-0';
 
 type SectionContentProps = {
   children: ReactNode;
