@@ -8,41 +8,44 @@ import type {
 
 export const navigationItems: NavigationItem[] = [
   { label: 'About', href: '#about' },
-  { label: 'Tech Stack', href: '#tech-stack' },
+  { label: 'Stacks', href: '#tech-stack' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
   { label: 'Contact', href: '#contact' },
 ];
 
 export const contactLinks: ContactLink[] = [
-  { label: 'Email', href: 'mailto:mauricio.mendonca.azevedo@gmail.com' },
-  { label: 'GitHub', href: 'https://github.com/mauricio-azevedo', isExternal: true },
+  {
+    label: 'Email',
+    href: 'mailto:mauricio.mendonca.azevedo@gmail.com',
+    icon: 'email',
+  },
+  {
+    label: 'GitHub',
+    href: 'https://github.com/mauricio-azevedo',
+    icon: 'github',
+    isExternal: true,
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/mauricio-azevedo',
+    icon: 'linkedin',
+    isExternal: true,
+  },
 ];
 
 export const techStack: TechnologyGroup[] = [
   {
-    category: 'Frontend',
-    id: 'frontend',
+    category: 'Stacks',
+    id: 'stacks',
     items: [
       { name: 'React', icon: 'react' },
       { name: 'Next.js', icon: 'nextdotjs' },
       { name: 'Angular', icon: 'angular' },
       { name: 'TypeScript', icon: 'typescript' },
-    ],
-  },
-  {
-    category: 'Backend',
-    id: 'backend',
-    items: [
       { name: 'Node.js', icon: 'nodedotjs' },
       { name: 'NestJS', icon: 'nestjs' },
       { name: 'Express', icon: 'express' },
-    ],
-  },
-  {
-    category: 'Cloud & DevOps',
-    id: 'cloud-devops',
-    items: [
       { name: 'Docker', icon: 'docker' },
       { name: 'AWS', icon: 'amazonwebservices/FF9900' },
     ],
