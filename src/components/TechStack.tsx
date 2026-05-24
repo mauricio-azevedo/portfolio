@@ -4,6 +4,8 @@ import type { Technology } from '../types/portfolio';
 import { SectionContent } from './SectionContent';
 import { SectionLabel } from './SectionLabel';
 
+const useGlobalSectionPadding = true;
+
 type TechBadgeProps = {
   technology: Technology;
 };
@@ -37,7 +39,7 @@ export function TechStack() {
         Stacks
       </h2>
 
-      <SectionContent>
+      <SectionContent withPadding={useGlobalSectionPadding}>
         <ul
           className="mt-6 flex flex-wrap justify-between gap-2.5 max-[720px]:grid max-[720px]:grid-cols-3 max-[720px]:justify-items-center max-[720px]:gap-x-4 max-[720px]:gap-y-6"
           aria-label="Technology stacks"
