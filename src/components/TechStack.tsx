@@ -1,6 +1,7 @@
 import { techStack } from '../data/portfolio';
 import { getTechnologyLogoUrl } from '../lib/assets';
 import type { Technology } from '../types/portfolio';
+import { SectionContent } from './SectionContent';
 import { SectionLabel } from './SectionLabel';
 
 type TechBadgeProps = {
@@ -30,21 +31,19 @@ export function TechStack() {
   const [stack] = techStack;
 
   return (
-    <section
-      id="tech-stack"
-      className="border-b border-slate-200 py-12"
-      aria-labelledby="tech-stack-title"
-    >
+    <section id="tech-stack" className="border-b border-slate-200 py-12" aria-labelledby="tech-stack-title">
       <SectionLabel>Stacks</SectionLabel>
       <h2 id="tech-stack-title" className="sr-only">
         Stacks
       </h2>
 
-      <ul className="mt-6 flex flex-wrap gap-2.5 justify-around" aria-label="Technology stacks">
-        {stack.items.map((technology) => (
-          <TechBadge key={technology.name} technology={technology} />
-        ))}
-      </ul>
+      <SectionContent>
+        <ul className="mt-6 flex flex-wrap justify-around gap-2.5" aria-label="Technology stacks">
+          {stack.items.map((technology) => (
+            <TechBadge key={technology.name} technology={technology} />
+          ))}
+        </ul>
+      </SectionContent>
     </section>
   );
 }
