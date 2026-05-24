@@ -26,7 +26,13 @@ body {
   margin: 0;
   background: radial-gradient(circle at top right, #f5f8ff 0, var(--bg) 32rem);
   color: var(--text);
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
   font-size: 16px;
   line-height: 1.6;
 }
@@ -105,7 +111,7 @@ a {
   left: 0;
   height: 2px;
   background: var(--blue);
-  content: "";
+  content: '';
 }
 
 .page-shell {
@@ -214,7 +220,7 @@ a {
 .section-label {
   margin: 0 0 16px;
   color: #174f9f;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.13em;
@@ -271,7 +277,7 @@ a {
   left: 5px;
   width: 1px;
   background: var(--line);
-  content: "";
+  content: '';
 }
 
 .timeline-item {
@@ -290,7 +296,7 @@ a {
   border-radius: 999px;
   background: var(--blue);
   box-shadow: 0 0 0 5px var(--bg);
-  content: "";
+  content: '';
 }
 
 .timeline-item h3,
@@ -400,7 +406,7 @@ a {
   border-radius: 999px;
   color: var(--blue);
   font-size: 0.65rem;
-  content: "✓";
+  content: '✓';
 }
 
 .text-link {
