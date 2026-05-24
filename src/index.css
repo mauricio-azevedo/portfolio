@@ -2,7 +2,7 @@
 
 :root {
   color-scheme: light;
-  background: #f7f4ef;
+  background: #f8f8f6;
   color: #111827;
   font-family:
     Inter,
@@ -31,23 +31,7 @@ body {
   min-width: 320px;
   min-height: 100svh;
   margin: 0;
-  background:
-    radial-gradient(circle at 18% 0%, rgba(37, 99, 235, 0.12), transparent 28rem),
-    radial-gradient(circle at 88% 12%, rgba(15, 23, 42, 0.08), transparent 26rem),
-    linear-gradient(135deg, #fbfaf7 0%, #f3f6fb 48%, #f8fafc 100%);
-}
-
-body::before {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  content: '';
-  background-image:
-    linear-gradient(rgba(15, 23, 42, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
-  background-size: 44px 44px;
-  mask-image: linear-gradient(to bottom, black, transparent 72%);
+  background: #f8f8f6;
 }
 
 a {
