@@ -3,21 +3,33 @@ import { getPublicAssetUrl } from '../lib/assets';
 import { ContactLinks } from './ContactLinks';
 
 export function Hero() {
+  const profileImageUrl = getPublicAssetUrl(profile.profileImage.src);
+
   return (
     <section
-      className="grid grid-cols-[minmax(0,1fr)_300px] items-center gap-16 border-b border-slate-200 py-20 max-[980px]:grid-cols-1 max-[980px]:gap-10 max-[980px]:py-12"
+      className="grid grid-cols-[minmax(0,1fr)_300px] items-center gap-16 border-b border-slate-200 py-20 max-[980px]:grid-cols-1 max-[980px]:gap-10 max-[980px]:py-12 max-[720px]:gap-8"
       aria-labelledby="hero-title"
     >
       <div>
-        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-slate-500 max-[720px]:mb-4">
           {profile.role}
         </p>
-        <h1
-          id="hero-title"
-          className="m-0 max-w-[740px] text-[clamp(3.25rem,7vw,5.8rem)] font-semibold leading-[0.96] tracking-[-0.08em] text-slate-950 max-[720px]:text-[3.1rem]"
-        >
-          {profile.name}
-        </h1>
+
+        <div className="flex items-end justify-between gap-5 max-[720px]:items-center">
+          <h1
+            id="hero-title"
+            className="m-0 max-w-[740px] text-[clamp(3.25rem,7vw,5.8rem)] font-semibold leading-[0.96] tracking-[-0.08em] text-slate-950 max-[720px]:text-[3.05rem]"
+          >
+            {profile.name}
+          </h1>
+
+          <img
+            className="hidden h-24 w-24 flex-none rounded-2xl object-cover max-[720px]:block"
+            src={profileImageUrl}
+            alt={profile.profileImage.alt}
+          />
+        </div>
+
         <p className="mt-7 max-w-[620px] text-xl leading-8 tracking-[-0.02em] text-slate-700 max-[720px]:text-lg">
           {profile.heroSummary}
         </p>
@@ -28,12 +40,8 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="flex justify-end max-[980px]:order-first max-[980px]:justify-start">
-        <img
-          className="h-auto w-[260px] rounded-3xl"
-          src={getPublicAssetUrl(profile.profileImage.src)}
-          alt={profile.profileImage.alt}
-        />
+      <div className="flex justify-end max-[980px]:order-first max-[980px]:justify-start max-[720px]:hidden">
+        <img className="h-auto w-[260px] rounded-3xl" src={profileImageUrl} alt={profile.profileImage.alt} />
       </div>
     </section>
   );
