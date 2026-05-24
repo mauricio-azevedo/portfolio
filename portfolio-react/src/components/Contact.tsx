@@ -7,7 +7,7 @@ export function Contact() {
       className="my-4 mt-2 flex items-center justify-between gap-7 rounded-[18px] border border-slate-200 bg-white/65 px-11 py-5 max-[980px]:flex-col max-[980px]:items-start max-[980px]:p-5"
       aria-label="Contact"
     >
-      <div className="flex items-center gap-4.5">
+      <div className="flex items-center gap-[18px]">
         <div className="grid size-[52px] flex-none place-items-center rounded-full bg-blue-50 text-[1.35rem] text-blue-700" aria-hidden="true">
           ✈
         </div>
