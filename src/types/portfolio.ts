@@ -3,9 +3,12 @@ export type NavigationItem = {
   href: `#${string}`;
 };
 
+export type ContactIconName = 'email' | 'github' | 'linkedin';
+
 export type ContactLink = {
   label: string;
   href: string;
+  icon: ContactIconName;
   isExternal?: boolean;
 };
 
