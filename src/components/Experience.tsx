@@ -13,10 +13,12 @@ export function Experience() {
         {experiences.map((experience) => (
           <article
             key={`${experience.company}-${experience.period}`}
-            className="relative grid grid-cols-[190px_1fr] gap-7 before:absolute before:left-[-24px] before:top-2 before:size-2.5 before:rounded-full before:bg-blue-700 before:shadow-[0_0_0_5px_#fbfcff] before:content-[''] max-[720px]:grid-cols-1 max-[720px]:gap-1"
+            className="relative grid grid-cols-[260px_1fr] gap-7 before:absolute before:left-[-24px] before:top-2 before:size-2.5 before:rounded-full before:bg-blue-700 before:shadow-[0_0_0_5px_#fbfcff] before:content-[''] max-[720px]:grid-cols-1 max-[720px]:gap-1"
           >
             <div>
-              <h3 className="m-0 text-base font-bold leading-tight text-slate-950">{experience.company}</h3>
+              <h3 className="m-0 text-base font-bold leading-tight text-slate-950">
+                {experience.company}
+              </h3>
               <span className="mt-0.5 block text-[0.86rem] text-slate-600">{experience.role}</span>
             </div>
 
