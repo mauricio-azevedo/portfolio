@@ -33,19 +33,16 @@ export function About() {
           {profile.about}
         </p>
 
-        <dl className="grid grid-cols-3 max-[720px]:grid-cols-1">
+        <dl className="grid grid-cols-3">
           {aboutFacts.map((fact) => (
             <div
               key={fact.label}
-              className="flex flex-col items-center px-5 py-0 text-center max-[720px]:items-start max-[720px]:text-left [&:not(:first-child)]:border-l [&:not(:first-child)]:border-slate-200 max-[720px]:[&:not(:first-child)]:border-l-0 max-[720px]:[&:not(:first-child)]:border-t"
+              className="flex flex-col items-center px-5 py-0 text-center max-[720px]:px-2 [&:not(:first-child)]:border-l [&:not(:first-child)]:border-slate-200"
             >
-              <dt className="flex flex-col items-center gap-1 text-sm text-slate-500 max-[720px]:flex-row">
-                <span
-                  className="grid size-9 place-items-center rounded-xl text-slate-700"
-                  aria-hidden="true"
-                >
+              <dt className="flex flex-col items-center gap-1 text-sm text-slate-500 max-[720px]:text-xs">
+                <span className="grid size-9 place-items-center rounded-xl text-slate-700 max-[720px]:size-8" aria-hidden="true">
                   <svg
-                    className="size-5.5"
+                    className="size-5.5 max-[720px]:size-5"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -58,7 +55,7 @@ export function About() {
                 </span>
                 <span>{fact.label}</span>
               </dt>
-              <dd className="mt-1 text-base semi tracking-[-0.02em] text-slate-950">
+              <dd className="mt-1 text-base tracking-[-0.02em] text-slate-950 max-[720px]:text-sm">
                 {fact.value}
               </dd>
             </div>
