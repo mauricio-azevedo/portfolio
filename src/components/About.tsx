@@ -28,7 +28,7 @@ export function About() {
         About Maurício
       </h2>
 
-      <SectionContent className="mt-4 grid grid-cols-[minmax(0,1fr)_minmax(420px,0.74fr)] items-start gap-12 max-[980px]:grid-cols-1">
+      <SectionContent className="mt-4 grid grid-cols-[minmax(0,1fr)_minmax(420px,0.74fr)] items-center gap-12 max-[980px]:grid-cols-1 max-[980px]:items-start">
         <p className="max-w-[720px] text-lg leading-8 tracking-[-0.02em] text-slate-700 max-[720px]:text-base">
           {profile.about}
         </p>
