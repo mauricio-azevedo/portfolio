@@ -18,29 +18,39 @@ export function ContactLinks({ links, variant = 'default' }: ContactLinksProps) 
   const isCompact = variant === 'compact';
 
   return (
-    <div className={`flex flex-wrap ${isCompact ? 'gap-3' : 'gap-4'}`}>
+    <div className={`flex flex-wrap ${isCompact ? 'gap-x-4 gap-y-2' : 'gap-2.5'}`}>
       {links.map((link) => (
         <a
           key={link.href}
-          className={`inline-flex items-center gap-2 text-slate-700 transition-colors hover:text-slate-950 ${
-            isCompact ? 'text-sm' : 'text-sm font-semibold'
-          }`}
+          className={
+            isCompact
+              ? 'inline-flex items-center gap-2 text-sm text-slate-500 transition-colors hover:text-slate-950'
+              : 'inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3.5 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-300 hover:text-slate-950'
+          }
           href={link.href}
           target={link.isExternal ? '_blank' : undefined}
           rel={link.isExternal ? 'noreferrer' : undefined}
         >
-          <svg
-            className="size-4 flex-none"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+          <span
+            className={
+              isCompact
+                ? 'grid size-4 place-items-center text-slate-400'
+                : 'grid size-5 place-items-center text-slate-500'
+            }
             aria-hidden="true"
           >
-            <path d={iconPaths[link.icon]} />
-          </svg>
+            <svg
+              className="size-full"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d={iconPaths[link.icon]} />
+            </svg>
+          </span>
           <span>{link.label}</span>
         </a>
       ))}
