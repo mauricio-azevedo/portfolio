@@ -9,7 +9,7 @@ type TechBadgeProps = {
 
 function TechBadge({ technology }: TechBadgeProps) {
   return (
-    <li className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-700">
+    <li className="inline-flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-700">
       <img
         className="size-[18px] flex-none object-contain"
         src={getTechnologyLogoUrl(technology.icon)}
@@ -30,13 +30,17 @@ export function TechStack() {
   const [stack] = techStack;
 
   return (
-    <section id="tech-stack" className="border-b border-slate-200 py-12" aria-labelledby="tech-stack-title">
+    <section
+      id="tech-stack"
+      className="border-b border-slate-200 py-12"
+      aria-labelledby="tech-stack-title"
+    >
       <SectionLabel>Stacks</SectionLabel>
       <h2 id="tech-stack-title" className="sr-only">
         Stacks
       </h2>
 
-      <ul className="mt-6 flex flex-wrap gap-2.5" aria-label="Technology stacks">
+      <ul className="mt-6 flex flex-wrap gap-2.5 justify-around" aria-label="Technology stacks">
         {stack.items.map((technology) => (
           <TechBadge key={technology.name} technology={technology} />
         ))}
