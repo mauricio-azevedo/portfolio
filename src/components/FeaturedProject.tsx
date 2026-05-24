@@ -4,13 +4,20 @@ import { SectionLabel } from './SectionLabel';
 
 export function FeaturedProject() {
   return (
-    <article id="projects" className="border-l border-slate-200 pl-7 max-[980px]:border-l-0 max-[980px]:pl-0" aria-labelledby="project-title">
+    <section
+      id="projects"
+      className="border-t border-slate-200 px-16 py-[30px] max-[980px]:px-0 max-[980px]:py-7"
+      aria-labelledby="project-title"
+    >
       <SectionLabel>Featured Project</SectionLabel>
 
-      <div className="mt-4 flex flex-col gap-4 overflow-hidden rounded-[18px] border border-slate-200 bg-white/70 px-5 py-6 shadow-[0_16px_40px_rgba(16,23,42,0.04)]">
+      <article className="mt-4 grid gap-6 overflow-hidden rounded-[18px] border border-slate-200 bg-white/70 p-6 shadow-[0_16px_40px_rgba(16,23,42,0.04)] lg:grid-cols-[minmax(0,0.9fr)_minmax(320px,0.7fr)] lg:items-center">
         <div>
           <div className="mb-[22px] flex items-center gap-3.5">
-            <div className="grid size-12 flex-none place-items-center rounded-[14px] bg-gradient-to-br from-blue-400 to-blue-700 text-xl font-extrabold text-white" aria-hidden="true">
+            <div
+              className="grid size-12 flex-none place-items-center rounded-[14px] bg-gradient-to-br from-blue-400 to-blue-700 text-xl font-extrabold text-white"
+              aria-hidden="true"
+            >
               ◌
             </div>
             <div>
@@ -21,10 +28,16 @@ export function FeaturedProject() {
             </div>
           </div>
 
-          <ul className="mb-6 grid grid-cols-2 gap-x-4 gap-y-2.5 p-0 max-[720px]:grid-cols-1" aria-label={`${featuredProject.name} features`}>
+          <ul
+            className="mb-6 grid grid-cols-2 gap-x-4 gap-y-2.5 p-0 max-[720px]:grid-cols-1"
+            aria-label={`${featuredProject.name} features`}
+          >
             {featuredProject.features.map((feature) => (
               <li key={feature} className="flex items-center gap-2 text-sm text-[#30384d]">
-                <span className="grid size-4 flex-none place-items-center rounded-full border border-blue-700/[0.45] text-[0.65rem] text-blue-700" aria-hidden="true">
+                <span
+                  className="grid size-4 flex-none place-items-center rounded-full border border-blue-700/[0.45] text-[0.65rem] text-blue-700"
+                  aria-hidden="true"
+                >
                   ✓
                 </span>
                 {feature}
@@ -43,7 +56,10 @@ export function FeaturedProject() {
           </a>
         </div>
 
-        <div className="overflow-hidden rounded-[16px] border border-slate-100 bg-slate-50" aria-label={`${featuredProject.name} project preview`}>
+        <div
+          className="overflow-hidden rounded-[16px] border border-slate-100 bg-slate-50"
+          aria-label={`${featuredProject.name} project preview`}
+        >
           <img
             className="block w-full"
             src={getPublicAssetUrl(featuredProject.image.src)}
@@ -52,7 +68,7 @@ export function FeaturedProject() {
             decoding="async"
           />
         </div>
-      </div>
-    </article>
+      </article>
+    </section>
   );
 }
