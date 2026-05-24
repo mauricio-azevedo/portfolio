@@ -24,11 +24,10 @@ export const techStack: TechnologyGroup[] = [
     category: 'Frontend',
     id: 'frontend',
     items: [
-      { name: 'TypeScript', icon: 'typescript' },
-      { name: 'JavaScript', icon: 'javascript' },
       { name: 'React', icon: 'react' },
+      { name: 'Next.js', icon: 'nextdotjs' },
       { name: 'Angular', icon: 'angular' },
-      { name: 'Tailwind CSS', icon: 'tailwindcss' },
+      { name: 'TypeScript', icon: 'typescript' },
     ],
   },
   {
@@ -38,39 +37,14 @@ export const techStack: TechnologyGroup[] = [
       { name: 'Node.js', icon: 'nodedotjs' },
       { name: 'NestJS', icon: 'nestjs' },
       { name: 'Express', icon: 'express' },
-      { name: 'Java', icon: 'openjdk' },
-      { name: 'Spring Boot', icon: 'springboot' },
-      { name: 'Ruby', icon: 'ruby' },
-      { name: 'Ruby on Rails', icon: 'rubyonrails' },
-    ],
-  },
-  {
-    category: 'Data',
-    id: 'data',
-    items: [
-      { name: 'PostgreSQL', icon: 'postgresql' },
-      { name: 'Oracle', icon: 'oracle' },
-      { name: 'Redis', icon: 'redis' },
-      { name: 'Prisma', icon: 'prisma' },
-      { name: 'TypeORM', icon: 'typeorm' },
     ],
   },
   {
     category: 'Cloud & DevOps',
     id: 'cloud-devops',
     items: [
-      { name: 'AWS', icon: 'amazonwebservices' },
       { name: 'Docker', icon: 'docker' },
-      { name: 'GitHub Actions', icon: 'githubactions' },
-    ],
-  },
-  {
-    category: 'Testing',
-    id: 'testing',
-    items: [
-      { name: 'Jest', icon: 'jest' },
-      { name: 'JUnit 5', icon: 'junit5' },
-      { name: 'RSpec', icon: 'rspec' },
+      { name: 'AWS', icon: 'amazonwebservices/FF9900' },
     ],
   },
 ];
