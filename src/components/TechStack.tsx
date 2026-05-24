@@ -38,31 +38,26 @@ export function TechStack() {
         Tech stack
       </h2>
 
-      <div className="mt-4 overflow-x-auto rounded-[18px] border border-slate-200 bg-white/60 p-4 shadow-[0_16px_40px_rgba(16,23,42,0.035)] [-webkit-overflow-scrolling:touch] [scrollbar-width:thin]">
-        <div className="flex min-w-max items-stretch gap-4">
-          {techStack.map((group) => (
-            <article
-              key={group.id}
-              className="flex min-w-[300px] flex-none items-center gap-4 rounded-[14px] border border-slate-100 bg-white/70 p-4"
-              aria-labelledby={`${group.id}-tech-title`}
+      <div className="mt-4 flex justify-between gap-4">
+        {techStack.map((group) => (
+          <article
+            key={group.id}
+            className="flex flex-col gap-4 border-slate-100 bg-white/70"
+            aria-labelledby={`${group.id}-tech-title`}
+          >
+            <h3
+              id={`${group.id}-tech-title`}
+              className="m-0 min-w-[98px] text-sm font-bold tracking-[-0.02em] text-[#101735]"
             >
-              <h3
-                id={`${group.id}-tech-title`}
-                className="m-0 min-w-[98px] text-sm font-bold tracking-[-0.02em] text-[#101735]"
-              >
-                {group.category}
-              </h3>
-              <ul
-                className="flex flex-nowrap gap-2.5"
-                aria-label={`${group.category} technologies`}
-              >
-                {group.items.map((technology) => (
-                  <TechBadge key={technology.name} technology={technology} />
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
+              {group.category}
+            </h3>
+            <ul className="flex flex-nowrap gap-2.5" aria-label={`${group.category} technologies`}>
+              {group.items.map((technology) => (
+                <TechBadge key={technology.name} technology={technology} />
+              ))}
+            </ul>
+          </article>
+        ))}
       </div>
     </section>
   );
