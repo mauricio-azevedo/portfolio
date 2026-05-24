@@ -58,9 +58,10 @@ export const experiences: Experience[] = [
     role: 'Senior Full Stack Software Engineer',
     period: 'Aug 2024 – Jan 2026',
     highlights: [
-      'Built academic management features using Ruby, React and real-time application patterns.',
-      'Improved quiz workflows, Redis-backed pipelines and API test coverage across critical flows.',
-      'Maintained production systems with attention to clarity, reliability and long-term support.',
+      'Built Ruby and React systems for academic management products serving more than 10,000 low-income students.',
+      'Delivered an end-to-end quiz game with backend APIs, database design, background jobs, OpenAI-powered question generation, and real-time updates.',
+      'Improved a critical API used across the product from 20 seconds to 300 milliseconds and expanded test coverage across core features.',
+      'Implemented Redis-based orchestration for an automated student essay grading pipeline powered by the OpenAI API.',
     ],
     technologies: [
       { name: 'React', icon: 'react' },
@@ -74,9 +75,10 @@ export const experiences: Experience[] = [
     role: 'Lead Full Stack Software Engineer',
     period: 'Feb 2024 – Aug 2024',
     highlights: [
-      'Led delivery across React, Angular and Node.js products for trading, tax and wallet systems.',
-      'Shaped architecture decisions, security improvements and NFT tooling across multiple products.',
-      'Coordinated technical execution while staying close to product decisions and implementation details.',
+      'Led technical delivery as the primary engineer, working directly with stakeholders to shape requirements and define practical solutions.',
+      'Built React and Node.js products for automated crypto trading, digital wallets, payment integrations, and tax reporting workflows.',
+      'Automated crypto tax reporting, removing manual errors and saving roughly 20 hours of work per week.',
+      'Strengthened platform security by remediating critical vulnerabilities and improving authentication flows.',
     ],
     technologies: [
       { name: 'React', icon: 'react' },
@@ -90,9 +92,9 @@ export const experiences: Experience[] = [
     role: 'Mid-Level Full Stack Software Engineer',
     period: 'Apr 2023 – Jan 2024',
     highlights: [
-      'Built educational and security management interfaces with Angular and React.',
-      'Improved critical page load times from seconds to under one second.',
-      'Worked across frontend and backend concerns to keep delivery practical and maintainable.',
+      'Led the Angular frontend of an educational platform for public-school students preparing for Brazil’s college entrance exams.',
+      'Built a React interface for managing residential and building security devices.',
+      'Optimized critical pages, reducing load times from up to 6 seconds to less than 1 second.',
     ],
     technologies: [
       { name: 'Angular', icon: 'angular' },
@@ -105,8 +107,8 @@ export const experiences: Experience[] = [
     role: 'Mid-Level Front-End Software Engineer',
     period: 'Feb 2021 – May 2021',
     highlights: [
-      'Modernized Banco Fibra’s Angular web banking interface.',
-      'Improved UI quality and mobile responsiveness across important customer-facing flows.',
+      'Modernized Banco Fibra’s Angular web banking interface with a stronger focus on usability and responsive behavior.',
+      'Improved customer-facing screens for a financial product where clarity, reliability, and mobile experience mattered.',
     ],
     technologies: [
       { name: 'Angular', icon: 'angular' },
@@ -118,8 +120,8 @@ export const experiences: Experience[] = [
     role: 'Junior Full Stack Software Engineer',
     period: 'Dec 2018 – Sep 2020',
     highlights: [
-      'Contributed to Java and Angular features for IBAMA’s nationwide permit management system.',
-      'Worked on public-sector software used to manage tree-felling and logging authorization flows.',
+      'Contributed to Java and Angular features for IBAMA’s nationwide system for managing tree-felling and logging permits.',
+      'Worked on public-sector software supporting permit workflows across more than 10 million hectares of forest.',
     ],
     technologies: [
       { name: 'Java', icon: 'openjdk' },
@@ -162,5 +164,5 @@ export const profile = {
   heroNote:
     'I care about clean architecture, useful experiences, and systems that are simple to maintain.',
   about:
-    'I’m a full stack engineer experienced in building academic systems, trading tools, digital wallets, banking interfaces, and public-sector platforms. I enjoy working close to the product, shaping solutions, and delivering code that is clear, tested, and useful.',
+    'I’m a senior full stack engineer focused on building reliable product software across education, fintech, banking, and public-sector systems. I work across React and Angular frontends, Node.js and Ruby backends, APIs, databases, cloud infrastructure, and automation workflows — always with a bias toward clear architecture, measurable impact, and maintainable delivery.',
 };
