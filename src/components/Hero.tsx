@@ -23,8 +23,7 @@ export function Hero() {
         </p>
         <p className="mt-3 max-w-[620px] text-base leading-7 text-slate-500">{profile.heroNote}</p>
 
-        <div className="mt-9 grid gap-4" aria-label="Location and contact">
-          <span className="text-sm text-slate-500">{profile.location}</span>
+        <div className="mt-9" aria-label="Contact links">
           <ContactLinks links={contactLinks} />
         </div>
       </div>
