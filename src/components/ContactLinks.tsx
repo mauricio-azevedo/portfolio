@@ -25,7 +25,12 @@ function ContactIcon({ icon, isCompact }: { icon: ContactIconName; isCompact: bo
 
   if (brandIconPath) {
     return (
-      <svg className={isCompact ? 'size-5' : 'size-6'} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <svg
+        className={isCompact ? 'size-5' : 'size-6'}
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        aria-hidden="true"
+      >
         <path d={brandIconPath} />
       </svg>
     );
@@ -51,7 +56,7 @@ export function ContactLinks({ links, variant = 'default' }: ContactLinksProps) 
   const isCompact = variant === 'compact';
 
   return (
-    <div className={`flex flex-wrap ${isCompact ? 'gap-3' : 'gap-3.5 max-[720px]:justify-center'}`}>
+    <div className="flex flex-wrap gap-1">
       {links.map((link) => (
         <a
           key={link.href}
