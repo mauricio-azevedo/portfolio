@@ -1,4 +1,5 @@
 import { featuredProject } from '../data/portfolio';
+import { getPublicAssetUrl } from '../lib/assets';
 import { SectionLabel } from './SectionLabel';
 
 export function FeaturedProject() {
@@ -23,7 +24,7 @@ export function FeaturedProject() {
           <ul className="mb-6 grid grid-cols-2 gap-x-4 gap-y-2.5 p-0 max-[720px]:grid-cols-1" aria-label={`${featuredProject.name} features`}>
             {featuredProject.features.map((feature) => (
               <li key={feature} className="flex items-center gap-2 text-sm text-[#30384d]">
-                <span className="grid size-4 flex-none place-items-center rounded-full border border-blue-700/45 text-[0.65rem] text-blue-700" aria-hidden="true">
+                <span className="grid size-4 flex-none place-items-center rounded-full border border-blue-700/[0.45] text-[0.65rem] text-blue-700" aria-hidden="true">
                   ✓
                 </span>
                 {feature}
@@ -43,7 +44,13 @@ export function FeaturedProject() {
         </div>
 
         <div className="overflow-hidden rounded-[16px] border border-slate-100 bg-slate-50" aria-label={`${featuredProject.name} project preview`}>
-          <img className="block w-full" src={featuredProject.image.src} alt={featuredProject.image.alt} loading="lazy" decoding="async" />
+          <img
+            className="block w-full"
+            src={getPublicAssetUrl(featuredProject.image.src)}
+            alt={featuredProject.image.alt}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
     </article>
