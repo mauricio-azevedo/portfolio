@@ -5,21 +5,24 @@ const aboutFacts = [
   {
     label: 'Experience',
     value: '6+ years',
+    icon: 'M8.5 7.25V5.5a1.5 1.5 0 0 1 1.5-1.5h4a1.5 1.5 0 0 1 1.5 1.5v1.75M4.75 8h14.5v10.25H4.75V8Zm0 4.5h14.5',
   },
   {
     label: 'Location',
     value: 'Brasília, Brazil',
+    icon: 'M12 21s6-5.28 6-10a6 6 0 1 0-12 0c0 4.72 6 10 6 10Zm0-7.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z',
   },
   {
     label: 'Remote',
     value: 'UTC−3',
+    icon: 'M12 6.75v5.5l3.25 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z',
   },
 ];
 
 export function About() {
   return (
     <section id="about" className="border-b border-slate-200 py-12" aria-labelledby="about-title">
-      <div className="grid grid-cols-[minmax(0,1fr)_minmax(300px,0.62fr)] items-start gap-12 max-[980px]:grid-cols-1">
+      <div className="grid grid-cols-[minmax(0,1fr)_minmax(420px,0.74fr)] items-start gap-12 max-[980px]:grid-cols-1">
         <div>
           <SectionLabel>About</SectionLabel>
           <h2 id="about-title" className="sr-only">
@@ -30,13 +33,32 @@ export function About() {
           </p>
         </div>
 
-        <dl className="grid gap-5 border-l border-slate-200 pl-8 max-[980px]:grid-cols-3 max-[980px]:border-l-0 max-[980px]:border-t max-[980px]:pl-0 max-[980px]:pt-6 max-[720px]:grid-cols-1">
-          {aboutFacts.map((fact) => (
-            <div key={fact.label}>
-              <dt className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-                {fact.label}
+        <dl className="grid grid-cols-3 gap-0 rounded-2xl border border-slate-200 bg-white max-[720px]:grid-cols-1">
+          {aboutFacts.map((fact, index) => (
+            <div
+              key={fact.label}
+              className="flex flex-col items-center px-5 py-6 text-center max-[720px]:items-start max-[720px]:text-left [&:not(:first-child)]:border-l [&:not(:first-child)]:border-slate-200 max-[720px]:[&:not(:first-child)]:border-l-0 max-[720px]:[&:not(:first-child)]:border-t"
+            >
+              <dt className="flex flex-col items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500 max-[720px]:flex-row">
+                <span
+                  className="grid size-9 place-items-center rounded-xl border border-slate-200 bg-slate-50 text-slate-700"
+                  aria-hidden="true"
+                >
+                  <svg
+                    className="size-4.5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d={fact.icon} />
+                  </svg>
+                </span>
+                <span>{fact.label}</span>
               </dt>
-              <dd className="mt-1 text-base font-semibold tracking-[-0.02em] text-slate-950">
+              <dd className="mt-4 text-base font-semibold tracking-[-0.02em] text-slate-950 max-[720px]:mt-3">
                 {fact.value}
               </dd>
             </div>
