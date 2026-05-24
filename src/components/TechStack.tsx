@@ -30,7 +30,7 @@ export function TechStack() {
   return (
     <section
       id="tech-stack"
-      className="min-w-0 border-l border-slate-200 pl-7 max-[980px]:border-l-0 max-[980px]:border-t max-[980px]:pl-0 max-[980px]:pt-7"
+      className="border-t border-slate-200 px-16 py-[30px] max-[980px]:px-0 max-[980px]:py-7"
       aria-labelledby="tech-stack-title"
     >
       <SectionLabel>Tech Stack</SectionLabel>
@@ -38,29 +38,31 @@ export function TechStack() {
         Tech stack
       </h2>
 
-      <div className="mt-4 grid gap-3">
-        {techStack.map((group) => (
-          <article
-            key={group.id}
-            className="rounded-[14px] border border-slate-100 bg-white/70 p-4 shadow-[0_10px_24px_rgba(16,23,42,0.025)]"
-            aria-labelledby={`${group.id}-tech-title`}
-          >
-            <h3
-              id={`${group.id}-tech-title`}
-              className="m-0 text-sm font-bold tracking-[-0.02em] text-[#101735]"
+      <div className="mt-4 overflow-x-auto rounded-[18px] border border-slate-200 bg-white/60 p-4 shadow-[0_16px_40px_rgba(16,23,42,0.035)] [-webkit-overflow-scrolling:touch] [scrollbar-width:thin]">
+        <div className="flex min-w-max items-stretch gap-4">
+          {techStack.map((group) => (
+            <article
+              key={group.id}
+              className="flex min-w-[300px] flex-none items-center gap-4 rounded-[14px] border border-slate-100 bg-white/70 p-4"
+              aria-labelledby={`${group.id}-tech-title`}
             >
-              {group.category}
-            </h3>
-            <ul
-              className="mt-3 flex flex-wrap gap-2.5"
-              aria-label={`${group.category} technologies`}
-            >
-              {group.items.map((technology) => (
-                <TechBadge key={technology.name} technology={technology} />
-              ))}
-            </ul>
-          </article>
-        ))}
+              <h3
+                id={`${group.id}-tech-title`}
+                className="m-0 min-w-[98px] text-sm font-bold tracking-[-0.02em] text-[#101735]"
+              >
+                {group.category}
+              </h3>
+              <ul
+                className="flex flex-nowrap gap-2.5"
+                aria-label={`${group.category} technologies`}
+              >
+                {group.items.map((technology) => (
+                  <TechBadge key={technology.name} technology={technology} />
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
