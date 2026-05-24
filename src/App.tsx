@@ -15,7 +15,7 @@ export default function App() {
 
       <main
         id="top"
-        className="mx-auto w-[min(1120px,calc(100%_-_48px))] pb-8 max-[980px]:w-[min(100%_-_32px,1120px)]"
+        className="mx-auto w-[min(1120px,calc(100%_-_48px))] max-[980px]:w-[min(100%_-_32px,1120px)]"
       >
         <Hero />
         <About />
