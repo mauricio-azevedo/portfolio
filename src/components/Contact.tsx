@@ -1,13 +1,14 @@
-import type { ContactLink, PortfolioLabels } from '../types/portfolio';
+import type { ContactLink, Language, PortfolioLabels } from '../types/portfolio';
 import { ContactLinks } from './ContactLinks';
 import { ResumeDownloadLink } from './ResumeDownloadLink';
 
 type ContactProps = {
   contactLinks: ContactLink[];
   labels: PortfolioLabels;
+  language: Language;
 };
 
-export function Contact({ contactLinks, labels }: ContactProps) {
+export function Contact({ contactLinks, labels, language }: ContactProps) {
   return (
     <section
       id="contact"
@@ -28,7 +29,7 @@ export function Contact({ contactLinks, labels }: ContactProps) {
 
         <span className="h-6 w-px bg-slate-200" aria-hidden="true" />
 
-        <ResumeDownloadLink label={labels.resume} ariaLabel={labels.resumeAria} />
+        <ResumeDownloadLink label={labels.resume} ariaLabel={labels.resumeAria} language={language} />
       </div>
     </section>
   );
