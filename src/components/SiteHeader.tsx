@@ -8,7 +8,7 @@ type SiteHeaderProps = {
 
 export function SiteHeader({ brandName, navigationItems }: SiteHeaderProps) {
   return (
-    <header className="mx-auto w-[min(1120px,calc(100%_-_48px))] border-b border-slate-200 py-6 max-[720px]:w-[min(100%_-_32px,1120px)]">
+    <header className="sticky top-0 z-30 mx-auto w-[min(1120px,calc(100%_-_48px))] border-b border-slate-200 bg-white/90 py-6 backdrop-blur max-[720px]:w-[min(100%_-_32px,1120px)]">
       <div className="flex items-center justify-between gap-6">
         <a className="inline-flex items-center" href="#top" aria-label={`${brandName} home`}>
           <img className="h-12" src={signatureLogo} alt="" />
@@ -64,7 +64,7 @@ export function SiteHeader({ brandName, navigationItems }: SiteHeaderProps) {
 
           <nav
             aria-label="Mobile navigation"
-            className="absolute right-0 top-12 z-20 w-56 rounded-xl border border-slate-200 bg-white p-1.5 shadow-[0_18px_45px_rgba(15,23,42,0.12)]"
+            className="absolute right-0 top-12 z-40 w-56 rounded-xl border border-slate-200 bg-white p-1.5 shadow-[0_18px_45px_rgba(15,23,42,0.12)]"
           >
             {navigationItems.map((item, index) => (
               <a
