@@ -11,7 +11,7 @@ type AboutProps = {
 export function About({ aboutFacts, labels, profile }: AboutProps) {
   return (
     <section id="about" className="border-b border-slate-200 py-12" aria-labelledby="about-title">
-      <SectionLabel>{labels.aboutSection}</SectionLabel>
+      <SectionLabel icon="about">{labels.aboutSection}</SectionLabel>
       <h2 id="about-title" className="sr-only">
         {labels.aboutTitle}
       </h2>
