@@ -1,31 +1,19 @@
-import { profile } from '../data/portfolio';
+import type { AboutFact, PortfolioLabels, Profile } from '../types/portfolio';
 import { SectionContent } from './SectionContent';
 import { SectionLabel } from './SectionLabel';
 
-const aboutFacts = [
-  {
-    label: 'Experience',
-    value: '7+ years',
-    icon: 'M8.5 7.25V5.5a1.5 1.5 0 0 1 1.5-1.5h4a1.5 1.5 0 0 1 1.5 1.5v1.75M4.75 8h14.5v10.25H4.75V8Zm0 4.5h14.5',
-  },
-  {
-    label: 'Location',
-    value: 'Brasília, Brazil',
-    icon: 'M12 21s6-5.28 6-10a6 6 0 1 0-12 0c0 4.72 6 10 6 10Zm0-7.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z',
-  },
-  {
-    label: 'Remote',
-    value: 'Worldwide',
-    icon: 'M12 6.75v5.5l3.25 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z',
-  },
-];
+type AboutProps = {
+  aboutFacts: AboutFact[];
+  labels: PortfolioLabels;
+  profile: Profile;
+};
 
-export function About() {
+export function About({ aboutFacts, labels, profile }: AboutProps) {
   return (
     <section id="about" className="border-b border-slate-200 py-12" aria-labelledby="about-title">
-      <SectionLabel>About</SectionLabel>
+      <SectionLabel>{labels.aboutSection}</SectionLabel>
       <h2 id="about-title" className="sr-only">
-        About Maurício
+        {labels.aboutTitle}
       </h2>
 
       <SectionContent className="mt-4 grid grid-cols-[minmax(0,1fr)_minmax(420px,0.74fr)] items-center gap-12 max-[980px]:grid-cols-1 max-[980px]:items-start">
