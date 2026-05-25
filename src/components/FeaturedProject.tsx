@@ -52,7 +52,7 @@ type FeaturedProjectProps = {
 export function FeaturedProject({ featuredProject, labels }: FeaturedProjectProps) {
   return (
     <section id="projects" className="border-b border-slate-200 py-12" aria-labelledby="project-title">
-      <SectionLabel>{labels.featuredProjectSection}</SectionLabel>
+      <SectionLabel icon="featuredProject">{labels.featuredProjectSection}</SectionLabel>
 
       <SectionContent>
         <article className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(320px,0.7fr)] lg:items-start">
