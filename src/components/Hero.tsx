@@ -1,6 +1,7 @@
 import { contactLinks, profile } from '../data/portfolio';
 import { getPublicAssetUrl } from '../lib/assets';
 import { ContactLinks } from './ContactLinks';
+import { ResumeDownloadLink } from './ResumeDownloadLink';
 
 export function Hero() {
   const profileImageUrl = getPublicAssetUrl(profile.profileImage.src);
@@ -35,8 +36,9 @@ export function Hero() {
         </p>
         <p className="mt-3 max-w-[620px] text-base leading-7 text-slate-500">{profile.heroNote}</p>
 
-        <div className="mt-9" aria-label="Contact links">
+        <div className="mt-9 flex flex-wrap items-center gap-3 max-[720px]:justify-center" aria-label="Contact links">
           <ContactLinks links={contactLinks} />
+          <ResumeDownloadLink />
         </div>
       </div>
 
