@@ -69,11 +69,11 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
       email: 'mauricio.mendonca.azevedo@gmail.com',
       profileImage,
       heroSummary:
-        'I build reliable full-stack products across frontend, backend, databases, cloud and DevOps.',
+        'I’m a full stack engineer who turns product ambiguity into reliable, user-facing software.',
       heroNote:
-        'I focus on delivering production-ready software with clear architecture, measurable impact, and maintainable code.',
+        'I care about the path from rough requirements and real workflows to clear architecture, thoughtful UI/UX, and maintainable systems.',
       about:
-        'I’m a senior full stack engineer focused on building reliable product software across education, fintech, banking, and public-sector systems. I work across React and Angular frontends, Node.js and Ruby backends, APIs, databases, cloud infrastructure, and automation workflows — always with a bias toward clear architecture, measurable impact, and maintainable delivery.',
+        'I stay close to the product, not only the code. I turn rough requirements into user-facing production software by working with product owners, stakeholders, and designers to check business rules against real workflows, turn complex workflows into simple UI/UX for end users, design data models that can evolve with the product, design APIs that reflect the product’s real workflows, and build features until they are ready to ship.',
     },
     aboutFacts: [
       { label: 'Experience', value: '7+ years', icon: factIcons.experience },
@@ -214,11 +214,11 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
       email: 'mauricio.mendonca.azevedo@gmail.com',
       profileImage,
       heroSummary:
-        'Construo produtos full stack confiáveis entre frontend, backend, bancos de dados, cloud e DevOps.',
+        'Sou engenheiro full stack e transformo ambiguidade de produto em software confiável para usuários reais.',
       heroNote:
-        'Meu foco é entregar software pronto para produção, com arquitetura clara, impacto mensurável e código fácil de manter.',
+        'Tenho cuidado com o caminho entre requisitos ainda abertos, fluxos reais de uso, arquitetura clara, UI/UX bem pensada e sistemas fáceis de manter.',
       about:
-        'Sou engenheiro de software full stack sênior focado em construir produtos confiáveis para educação, fintech, banking e sistemas públicos. Trabalho com frontends em React e Angular, backends em Node.js e Ruby, APIs, bancos de dados, infraestrutura cloud e automações — sempre buscando arquitetura clara, impacto mensurável e entregas fáceis de manter.',
+        'Trabalho perto do produto, não só do código. Transformo requisitos ainda abertos em software de produção voltado para usuários, trabalhando com product owners, stakeholders e designers para validar regras de negócio contra fluxos reais, transformar fluxos complexos em UI/UX simples para usuários finais, desenhar modelos de dados que evoluem com o produto, desenhar APIs que refletem os fluxos reais do produto e construir funcionalidades até estarem prontas para entrega.',
     },
     aboutFacts: [
       { label: 'Experiência', value: '7+ anos', icon: factIcons.experience },
