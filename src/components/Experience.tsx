@@ -11,7 +11,7 @@ type ExperienceProps = {
 export function Experience({ experiences, labels }: ExperienceProps) {
   return (
     <section id="experience" className="min-w-0" aria-labelledby="experience-title">
-      <SectionLabel>{labels.experienceSection}</SectionLabel>
+      <SectionLabel icon="experience">{labels.experienceSection}</SectionLabel>
       <h2 id="experience-title" className="sr-only">
         {labels.experienceTitle}
       </h2>
