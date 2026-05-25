@@ -8,8 +8,8 @@ type SiteHeaderProps = {
 
 export function SiteHeader({ brandName, navigationItems }: SiteHeaderProps) {
   return (
-    <header className="sticky top-0 z-30 mx-auto w-[min(1120px,calc(100%_-_48px))] border-b border-slate-200 bg-white/100 py-6 backdrop-blur max-[720px]:w-[min(100%_-_32px,1120px)]">
-      <div className="flex items-center justify-between gap-6">
+    <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/100 backdrop-blur">
+      <div className="mx-auto flex w-[min(1120px,calc(100%_-_48px))] items-center justify-between gap-6 py-6 max-[720px]:w-[min(100%_-_32px,1120px)]">
         <a className="inline-flex items-center" href="#top" aria-label={`${brandName} home`}>
           <img className="h-12" src={signatureLogo} alt="" />
         </a>
