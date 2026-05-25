@@ -1,20 +1,25 @@
-import { contactLinks } from '../data/portfolio';
+import type { ContactLink, PortfolioLabels } from '../types/portfolio';
 import { ContactLinks } from './ContactLinks';
 import { ResumeDownloadLink } from './ResumeDownloadLink';
 
-export function Contact() {
+type ContactProps = {
+  contactLinks: ContactLink[];
+  labels: PortfolioLabels;
+};
+
+export function Contact({ contactLinks, labels }: ContactProps) {
   return (
     <section
       id="contact"
       className="flex items-center justify-between gap-8 py-12 max-[980px]:flex-col max-[980px]:items-start"
-      aria-label="Contact"
+      aria-label={labels.contactAria}
     >
       <div>
         <h2 className="m-0 text-2xl font-semibold tracking-[-0.04em] text-slate-950">
-          Let’s build something useful together.
+          {labels.contactTitle}
         </h2>
         <p className="m-0 mt-2 text-sm text-slate-500">
-          I’m open to new opportunities and interesting projects.
+          {labels.contactSubtitle}
         </p>
       </div>
 
@@ -23,7 +28,7 @@ export function Contact() {
 
         <span className="h-6 w-px bg-slate-200" aria-hidden="true" />
 
-        <ResumeDownloadLink />
+        <ResumeDownloadLink label={labels.resume} ariaLabel={labels.resumeAria} />
       </div>
     </section>
   );
