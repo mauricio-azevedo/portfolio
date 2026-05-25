@@ -1,20 +1,11 @@
-import { featuredProject } from '../data/portfolio';
 import { getPublicAssetUrl } from '../lib/assets';
+import type { FeaturedProject as FeaturedProjectData, PortfolioLabels } from '../types/portfolio';
 import { SectionContent } from './SectionContent';
 import { SectionLabel } from './SectionLabel';
 
 function WebIcon() {
   return (
-    <svg
-      className="size-4"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
+    <svg className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" />
       <path d="M3.6 9h16.8M3.6 15h16.8" />
       <path d="M12 3c2.1 2.4 3.15 5.4 3.15 9S14.1 18.6 12 21" />
@@ -31,55 +22,48 @@ function GitHubIcon() {
   );
 }
 
-function ProjectLinks() {
+type ProjectLinksProps = {
+  featuredProject: FeaturedProjectData;
+  labels: PortfolioLabels;
+};
+
+function ProjectLinks({ featuredProject, labels }: ProjectLinksProps) {
   return (
     <div className="flex flex-wrap gap-4">
-      <a
-        className="inline-flex items-center gap-2 border-b border-slate-300 pb-1 text-sm font-semibold text-slate-600 transition-colors hover:border-slate-950 hover:text-slate-950"
-        href={featuredProject.liveUrl}
-        target="_blank"
-        rel="noreferrer"
-      >
+      <a className="inline-flex items-center gap-2 border-b border-slate-300 pb-1 text-sm font-semibold text-slate-600 transition-colors hover:border-slate-950 hover:text-slate-950" href={featuredProject.liveUrl} target="_blank" rel="noreferrer">
         <WebIcon />
-        View live
+        {labels.liveLink}
         <span aria-hidden="true">→</span>
       </a>
-      <a
-        className="inline-flex items-center gap-2 border-b border-slate-300 pb-1 text-sm font-semibold text-slate-600 transition-colors hover:border-slate-950 hover:text-slate-950"
-        href={featuredProject.repositoryUrl}
-        target="_blank"
-        rel="noreferrer"
-      >
+      <a className="inline-flex items-center gap-2 border-b border-slate-300 pb-1 text-sm font-semibold text-slate-600 transition-colors hover:border-slate-950 hover:text-slate-950" href={featuredProject.repositoryUrl} target="_blank" rel="noreferrer">
         <GitHubIcon />
-        View repository
+        {labels.repositoryLink}
         <span aria-hidden="true">→</span>
       </a>
     </div>
   );
 }
 
-export function FeaturedProject() {
+type FeaturedProjectProps = {
+  featuredProject: FeaturedProjectData;
+  labels: PortfolioLabels;
+};
+
+export function FeaturedProject({ featuredProject, labels }: FeaturedProjectProps) {
   return (
-    <section
-      id="projects"
-      className="border-b border-slate-200 py-12"
-      aria-labelledby="project-title"
-    >
-      <SectionLabel>Featured Project</SectionLabel>
+    <section id="projects" className="border-b border-slate-200 py-12" aria-labelledby="project-title">
+      <SectionLabel icon="featuredProject">{labels.featuredProjectSection}</SectionLabel>
 
       <SectionContent>
         <article className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(320px,0.7fr)] lg:items-start">
           <div>
             <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-              <h2
-                id="project-title"
-                className="m-0 text-3xl font-semibold tracking-[-0.05em] text-slate-950"
-              >
+              <h2 id="project-title" className="m-0 text-3xl font-semibold tracking-[-0.05em] text-slate-950">
                 {featuredProject.name}
               </h2>
               <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700">
                 <span className="size-2 rounded-full bg-emerald-500" aria-hidden="true" />
-                Online
+                {labels.online}
               </span>
             </div>
 
@@ -87,10 +71,7 @@ export function FeaturedProject() {
               {featuredProject.summary}
             </p>
 
-            <ul
-              className="mt-7 grid grid-cols-2 gap-x-5 gap-y-3 p-0 max-[720px]:grid-cols-1"
-              aria-label={`${featuredProject.name} features`}
-            >
+            <ul className="mt-7 grid grid-cols-2 gap-x-5 gap-y-3 p-0 max-[720px]:grid-cols-1" aria-label={`${featuredProject.name} features`}>
               {featuredProject.features.map((feature) => (
                 <li key={feature} className="flex items-center gap-2 text-sm text-slate-600">
                   <span className="size-1.5 rounded-full bg-slate-400" aria-hidden="true" />
@@ -100,25 +81,16 @@ export function FeaturedProject() {
             </ul>
 
             <div className="mt-8 max-[720px]:hidden">
-              <ProjectLinks />
+              <ProjectLinks featuredProject={featuredProject} labels={labels} />
             </div>
           </div>
 
-          <div
-            className="overflow-hidden rounded-2xl"
-            aria-label={`${featuredProject.name} project preview`}
-          >
-            <img
-              className="block w-full rounded-2xl"
-              src={getPublicAssetUrl(featuredProject.image.src)}
-              alt={featuredProject.image.alt}
-              loading="lazy"
-              decoding="async"
-            />
+          <div className="overflow-hidden rounded-2xl" aria-label={`${featuredProject.name} project preview`}>
+            <img className="block w-full rounded-2xl" src={getPublicAssetUrl(featuredProject.image.src)} alt={featuredProject.image.alt} loading="lazy" decoding="async" />
           </div>
 
           <div className="hidden max-[720px]:block">
-            <ProjectLinks />
+            <ProjectLinks featuredProject={featuredProject} labels={labels} />
           </div>
         </article>
       </SectionContent>

@@ -1,19 +1,22 @@
+type SectionIconName = 'about' | 'stacks' | 'experience' | 'featuredProject';
+
 type SectionLabelProps = {
   children: string;
+  icon: SectionIconName;
 };
 
-const sectionIcons: Record<string, string> = {
-  About:
+const sectionIcons: Record<SectionIconName, string> = {
+  about:
     'M12 12a3.25 3.25 0 1 0 0-6.5 3.25 3.25 0 0 0 0 6.5Zm6.25 7.5a6.25 6.25 0 0 0-12.5 0',
-  Stacks:
+  stacks:
     'M7 8.5 3.5 12 7 15.5M17 8.5l3.5 3.5-3.5 3.5M14 6.5l-4 11',
-  Experience:
+  experience:
     'M8.5 7.25V5.5a1.5 1.5 0 0 1 1.5-1.5h4a1.5 1.5 0 0 1 1.5 1.5v1.75M4.75 8h14.5v10.25H4.75V8Zm0 4.5h14.5',
-  'Featured Project':
+  featuredProject:
     'M12 4.75 14.25 9l4.75.7-3.44 3.35.81 4.72L12 15.55 7.63 17.77l.81-4.72L5 9.7 9.75 9 12 4.75Z',
 };
 
-export function SectionLabel({ children }: SectionLabelProps) {
+export function SectionLabel({ children, icon }: SectionLabelProps) {
   return (
     <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
       <span
@@ -29,7 +32,7 @@ export function SectionLabel({ children }: SectionLabelProps) {
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <path d={sectionIcons[children] ?? 'M12 5v14M5 12h14'} />
+          <path d={sectionIcons[icon]} />
         </svg>
       </span>
       <span>{children}</span>
