@@ -38,7 +38,7 @@ export function TechStack({ labels, techStack }: TechStackProps) {
 
   return (
     <section id="tech-stack" className="border-b border-slate-200 py-12" aria-labelledby="tech-stack-title">
-      <SectionLabel>{labels.techStackSection}</SectionLabel>
+      <SectionLabel icon="stacks">{labels.techStackSection}</SectionLabel>
       <h2 id="tech-stack-title" className="sr-only">
         {labels.techStackTitle}
       </h2>
