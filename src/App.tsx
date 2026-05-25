@@ -28,7 +28,7 @@ export default function App() {
         id="top"
         className="mx-auto w-[min(1120px,calc(100%_-_48px))] max-[980px]:w-[min(100%_-_32px,1120px)]"
       >
-        <Hero contactLinks={content.contactLinks} labels={content.labels} profile={content.profile} />
+        <Hero contactLinks={content.contactLinks} labels={content.labels} language={language} profile={content.profile} />
         <About aboutFacts={content.aboutFacts} labels={content.labels} profile={content.profile} />
         <TechStack labels={content.labels} techStack={content.techStack} />
 
@@ -37,7 +37,7 @@ export default function App() {
         </section>
 
         <FeaturedProject featuredProject={content.featuredProject} labels={content.labels} />
-        <Contact contactLinks={content.contactLinks} labels={content.labels} />
+        <Contact contactLinks={content.contactLinks} labels={content.labels} language={language} />
       </main>
 
       <SiteFooter labels={content.labels} name={content.profile.name} />
