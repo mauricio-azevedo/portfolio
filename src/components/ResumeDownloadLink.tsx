@@ -1,16 +1,22 @@
-const resumeUrl = new URL('../../assets/MauricioAzevedo_Resume.pdf', import.meta.url).href;
+import type { Language } from '../types/portfolio';
+
+const resumeUrls: Record<Language, string> = {
+  en: new URL('../../assets/MauricioAzevedo_Resume.pdf', import.meta.url).href,
+  pt: new URL('../../assets/MauricioAzevedo_Curriculo.pdf', import.meta.url).href,
+};
 
 type ResumeDownloadLinkProps = {
   ariaLabel: string;
   className?: string;
   label: string;
+  language: Language;
 };
 
-export function ResumeDownloadLink({ ariaLabel, className = '', label }: ResumeDownloadLinkProps) {
+export function ResumeDownloadLink({ ariaLabel, className = '', label, language }: ResumeDownloadLinkProps) {
   return (
     <a
       className={`inline-flex items-center gap-2 rounded-xl px-2 py-2 text-sm font-semibold text-white transition-colors hover:bg-slate-100 ${className}`.trim()}
-      href={resumeUrl}
+      href={resumeUrls[language]}
       target="_blank"
       rel="noreferrer"
       aria-label={ariaLabel}
