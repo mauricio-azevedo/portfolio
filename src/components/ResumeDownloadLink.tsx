@@ -9,11 +9,13 @@ export function ResumeDownloadLink({ className = '' }: ResumeDownloadLinkProps) 
     <a
       className={`inline-flex items-center gap-2 rounded-xl px-2 py-2 text-sm font-semibold text-white transition-colors hover:bg-slate-100 ${className}`.trim()}
       href={resumeUrl}
-      download="MauricioAzevedo_Resume.pdf"
-      aria-label="Download resume"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Open resume in a new tab"
     >
+      <span>Resume</span>
       <svg
-        className="size-4.5"
+        className="size-4"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -22,11 +24,9 @@ export function ResumeDownloadLink({ className = '' }: ResumeDownloadLinkProps) 
         strokeLinejoin="round"
         aria-hidden="true"
       >
-        <path d="M12 3.75v10.5" />
-        <path d="m7.75 10 4.25 4.25L16.25 10" />
-        <path d="M5 19.25h14" />
+        <path d="M7 17 17 7" />
+        <path d="M9 7h8v8" />
       </svg>
-      <span>Download resume</span>
     </a>
   );
 }
