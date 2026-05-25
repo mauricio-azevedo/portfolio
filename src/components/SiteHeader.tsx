@@ -1,3 +1,4 @@
+import signatureLogo from '../../assets/signature.png';
 import type { NavigationItem } from '../types/portfolio';
 
 type SiteHeaderProps = {
@@ -9,11 +10,8 @@ export function SiteHeader({ brandName, navigationItems }: SiteHeaderProps) {
   return (
     <header className="mx-auto w-[min(1120px,calc(100%_-_48px))] border-b border-slate-200 py-6 max-[720px]:w-[min(100%_-_32px,1120px)]">
       <div className="flex items-center justify-between gap-6">
-        <a className="inline-flex items-center gap-3 font-semibold text-slate-950" href="#top" aria-label={`${brandName} home`}>
-          <span className="grid size-9 place-items-center rounded-lg border border-slate-300 text-sm font-bold tracking-[-0.06em]">
-            MA
-          </span>
-          <span className="text-[0.98rem] tracking-[-0.02em] max-[720px]:hidden">{brandName}</span>
+        <a className="inline-flex items-center" href="#top" aria-label={`${brandName} home`}>
+          <img className="h-10 w-auto max-w-[170px] object-contain max-[720px]:h-9 max-[720px]:max-w-[140px]" src={signatureLogo} alt="" />
         </a>
 
         <nav
