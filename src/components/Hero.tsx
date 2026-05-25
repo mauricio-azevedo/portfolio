@@ -36,14 +36,21 @@ export function Hero() {
         </p>
         <p className="mt-3 max-w-[620px] text-base leading-7 text-slate-500">{profile.heroNote}</p>
 
-        <div className="mt-9 flex flex-wrap items-center gap-3 max-[720px]:justify-center" aria-label="Contact links">
+        <div className="mt-9 flex flex-wrap items-center gap-2 max-[720px]:w-full">
           <ContactLinks links={contactLinks} />
+
+          <span className="h-6 w-px bg-slate-200" aria-hidden="true" />
+
           <ResumeDownloadLink />
         </div>
       </div>
 
       <div className="flex justify-end max-[980px]:order-first max-[980px]:justify-start max-[720px]:hidden">
-        <img className="h-auto w-[260px] rounded-3xl" src={profileImageUrl} alt={profile.profileImage.alt} />
+        <img
+          className="h-auto w-[260px] rounded-3xl"
+          src={profileImageUrl}
+          alt={profile.profileImage.alt}
+        />
       </div>
     </section>
   );

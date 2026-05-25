@@ -13,11 +13,16 @@ export function Contact() {
         <h2 className="m-0 text-2xl font-semibold tracking-[-0.04em] text-slate-950">
           Let’s build something useful together.
         </h2>
-        <p className="m-0 mt-2 text-sm text-slate-500">I’m open to new opportunities and interesting projects.</p>
+        <p className="m-0 mt-2 text-sm text-slate-500">
+          I’m open to new opportunities and interesting projects.
+        </p>
       </div>
 
-      <div className="flex flex-wrap items-center gap-3 max-[720px]:w-full max-[720px]:justify-center">
+      <div className="flex flex-wrap items-center gap-2 max-[720px]:w-full">
         <ContactLinks links={contactLinks} />
+
+        <span className="h-6 w-px bg-slate-200" aria-hidden="true" />
+
         <ResumeDownloadLink />
       </div>
     </section>

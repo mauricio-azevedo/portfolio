@@ -7,7 +7,7 @@ type ResumeDownloadLinkProps = {
 export function ResumeDownloadLink({ className = '' }: ResumeDownloadLinkProps) {
   return (
     <a
-      className={`inline-flex items-center gap-2 rounded-xl bg-slate-950 px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-slate-800 ${className}`.trim()}
+      className={`inline-flex items-center gap-2 rounded-xl px-2 py-2 text-sm font-semibold text-white transition-colors hover:bg-slate-100 ${className}`.trim()}
       href={resumeUrl}
       download="MauricioAzevedo_Resume.pdf"
       aria-label="Download resume"
