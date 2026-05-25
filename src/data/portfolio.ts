@@ -162,7 +162,7 @@ export const profile = {
   heroSummary:
     'I build reliable full-stack products across frontend, backend, databases, cloud and DevOps.',
   heroNote:
-    'I care about clean architecture, useful experiences, and systems that are simple to maintain.',
+    'I focus on delivering production-ready software with clear architecture, measurable impact, and maintainable code.',
   about:
     'I’m a senior full stack engineer focused on building reliable product software across education, fintech, banking, and public-sector systems. I work across React and Angular frontends, Node.js and Ruby backends, APIs, databases, cloud infrastructure, and automation workflows — always with a bias toward clear architecture, measurable impact, and maintainable delivery.',
 };
