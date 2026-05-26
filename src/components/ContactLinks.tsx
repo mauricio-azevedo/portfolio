@@ -1,5 +1,10 @@
-import { Github, Linkedin, Mail, Whatsapp } from 'iconoir-react';
-import type { ComponentType, SVGProps } from 'react';
+import {
+  EnvelopeSimpleIcon,
+  GithubLogoIcon,
+  LinkedinLogoIcon,
+  WhatsappLogoIcon,
+  type Icon,
+} from '@phosphor-icons/react';
 import type { ContactIconName, ContactLink } from '../types/portfolio';
 
 type ContactLinksProps = {
@@ -7,13 +12,11 @@ type ContactLinksProps = {
   variant?: 'default' | 'compact';
 };
 
-type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;
-
-const contactIcons: Record<ContactIconName, IconComponent> = {
-  email: Mail,
-  github: Github,
-  linkedin: Linkedin,
-  whatsapp: Whatsapp,
+const contactIcons: Record<ContactIconName, Icon> = {
+  email: EnvelopeSimpleIcon,
+  github: GithubLogoIcon,
+  linkedin: LinkedinLogoIcon,
+  whatsapp: WhatsappLogoIcon,
 };
 
 const iconColors: Record<ContactIconName, string> = {
@@ -29,7 +32,7 @@ function ContactIcon({ icon, isCompact }: { icon: ContactIconName; isCompact: bo
   return (
     <Icon
       className={isCompact ? 'size-5' : 'size-6'}
-      strokeWidth={1.8}
+      weight="regular"
       aria-hidden="true"
     />
   );
