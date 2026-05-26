@@ -5,7 +5,7 @@ export type NavigationItem = {
   href: `#${string}`;
 };
 
-export type ContactIconName = 'email' | 'github' | 'linkedin';
+export type ContactIconName = 'email' | 'github' | 'linkedin' | 'whatsapp';
 
 export type ContactLink = {
   label: string;
