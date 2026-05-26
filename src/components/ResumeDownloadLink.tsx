@@ -15,7 +15,7 @@ type ResumeDownloadLinkProps = {
 export function ResumeDownloadLink({ ariaLabel, className = '', label, language }: ResumeDownloadLinkProps) {
   return (
     <a
-      className={`inline-flex items-center gap-2 rounded-xl px-2 py-2 text-sm font-semibold text-white transition-colors hover:bg-slate-100 ${className}`.trim()}
+      className={`inline-flex items-center gap-2 rounded-xl bg-slate-700 px-2.5 py-2 text-sm font-semibold text-white! transition-colors hover:bg-slate-600 ${className}`.trim()}
       href={resumeUrls[language]}
       target="_blank"
       rel="noreferrer"

@@ -16,7 +16,7 @@ export function Contact({ contactLinks, labels, language }: ContactProps) {
       aria-label={labels.contactAria}
     >
       <div>
-        <h2 className="m-0 text-2xl font-semibold tracking-[-0.04em] text-slate-950">
+        <h2 className="m-0 text-2xl font-semibold tracking-[-0.04em] text-slate-700">
           {labels.contactTitle}
         </h2>
         <p className="m-0 mt-2 text-sm text-slate-500">

@@ -30,12 +30,12 @@ type ProjectLinksProps = {
 function ProjectLinks({ featuredProject, labels }: ProjectLinksProps) {
   return (
     <div className="flex flex-wrap gap-4">
-      <a className="inline-flex items-center gap-2 border-b border-slate-300 pb-1 text-sm font-semibold text-slate-600 transition-colors hover:border-slate-950 hover:text-slate-950" href={featuredProject.liveUrl} target="_blank" rel="noreferrer">
+      <a className="inline-flex items-center gap-2 border-b border-slate-300 pb-1 text-sm font-semibold text-slate-600 transition-colors hover:border-slate-700 hover:text-slate-700" href={featuredProject.liveUrl} target="_blank" rel="noreferrer">
         <WebIcon />
         {labels.liveLink}
         <span aria-hidden="true">→</span>
       </a>
-      <a className="inline-flex items-center gap-2 border-b border-slate-300 pb-1 text-sm font-semibold text-slate-600 transition-colors hover:border-slate-950 hover:text-slate-950" href={featuredProject.repositoryUrl} target="_blank" rel="noreferrer">
+      <a className="inline-flex items-center gap-2 border-b border-slate-300 pb-1 text-sm font-semibold text-slate-600 transition-colors hover:border-slate-700 hover:text-slate-700" href={featuredProject.repositoryUrl} target="_blank" rel="noreferrer">
         <GitHubIcon />
         {labels.repositoryLink}
         <span aria-hidden="true">→</span>
@@ -58,7 +58,7 @@ export function FeaturedProject({ featuredProject, labels }: FeaturedProjectProp
         <article className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(320px,0.7fr)] lg:items-start">
           <div>
             <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-              <h2 id="project-title" className="m-0 text-3xl font-semibold tracking-[-0.05em] text-slate-950">
+              <h2 id="project-title" className="m-0 text-3xl font-semibold tracking-[-0.05em] text-slate-700">
                 {featuredProject.name}
               </h2>
               <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700">

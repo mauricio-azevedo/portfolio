@@ -14,14 +14,14 @@ function LanguageToggle({ language, onLanguageChange }: Pick<SiteHeaderProps, 'l
     <div className="flex rounded-full border border-slate-200 bg-white p-1 text-xs font-semibold text-slate-500 shadow-sm">
       <button
         type="button"
-        className={`rounded-full px-3 py-1.5 transition-colors ${language === 'en' ? 'bg-slate-950 text-white' : 'hover:text-slate-950'}`}
+        className={`rounded-full px-3 py-1.5 transition-colors ${language === 'en' ? 'bg-slate-700 text-white' : 'hover:text-slate-700'}`}
         onClick={() => onLanguageChange('en')}
       >
         EN
       </button>
       <button
         type="button"
-        className={`rounded-full px-3 py-1.5 transition-colors ${language === 'pt' ? 'bg-slate-950 text-white' : 'hover:text-slate-950'}`}
+        className={`rounded-full px-3 py-1.5 transition-colors ${language === 'pt' ? 'bg-slate-700 text-white' : 'hover:text-slate-700'}`}
         onClick={() => onLanguageChange('pt')}
       >
         PT
@@ -46,7 +46,7 @@ export function SiteHeader({ brandName, language, navigationItems, labels, onLan
             {navigationItems.map((item, index) => (
               <a
                 key={item.href}
-                className="transition-colors hover:text-slate-950 first:text-slate-950"
+                className="transition-colors hover:text-slate-700 first:text-slate-700"
                 href={item.href}
                 aria-current={index === 0 ? 'page' : undefined}
               >
@@ -59,7 +59,7 @@ export function SiteHeader({ brandName, language, navigationItems, labels, onLan
 
           <details className="group relative hidden max-[720px]:block">
             <summary
-              className="grid size-10 cursor-pointer list-none place-items-center rounded-lg border border-slate-200 text-slate-700 transition-colors marker:hidden hover:border-slate-300 hover:text-slate-950 [&::-webkit-details-marker]:hidden"
+              className="grid size-10 cursor-pointer list-none place-items-center rounded-lg border border-slate-200 text-slate-700 transition-colors marker:hidden hover:border-slate-300 hover:text-slate-700 [&::-webkit-details-marker]:hidden"
               aria-label={labels.openNavigation}
             >
               <span className="sr-only">{labels.openNavigation}</span>
@@ -96,7 +96,7 @@ export function SiteHeader({ brandName, language, navigationItems, labels, onLan
               {navigationItems.map((item, index) => (
                 <a
                   key={item.href}
-                  className="block rounded-lg px-3.5 py-2.5 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-50 hover:text-slate-950 first:text-slate-950"
+                  className="block rounded-lg px-3.5 py-2.5 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-50 hover:text-slate-700 first:text-slate-700"
                   href={item.href}
                   aria-current={index === 0 ? 'page' : undefined}
                 >

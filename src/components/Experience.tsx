@@ -32,7 +32,7 @@ export function Experience({ experiences, labels }: ExperienceProps) {
 
                 <div>
                   <div>
-                    <h3 className="m-0 text-[1.02rem] font-semibold leading-tight tracking-[-0.02em] text-slate-950">
+                    <h3 className="m-0 text-[1.02rem] font-semibold leading-tight tracking-[-0.02em] text-slate-700">
                       {experience.role}
                     </h3>
                     <p className="m-0 mt-1 text-sm font-medium text-slate-500">
