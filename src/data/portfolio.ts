@@ -13,6 +13,17 @@ const contactLinks = [
     icon: 'linkedin' as const,
     isExternal: true,
   },
+  {
+    label: 'Email',
+    href: 'mailto:mauricio.mendonca.azevedo@gmail.com',
+    icon: 'email' as const,
+  },
+  {
+    label: 'WhatsApp',
+    href: 'https://wa.me/5561999997353',
+    icon: 'whatsapp' as const,
+    isExternal: true,
+  },
 ];
 
 const techStack = [

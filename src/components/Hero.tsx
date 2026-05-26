@@ -26,7 +26,7 @@ export function Hero({ contactLinks, labels, language, profile }: HeroProps) {
         <div className="flex items-end justify-between gap-5 max-[720px]:h-[164px] max-[720px]:items-center">
           <h1
             id="hero-title"
-            className="m-0 max-w-[740px] text-[clamp(3.25rem,7vw,5.8rem)] font-semibold leading-[0.96] tracking-[-0.08em] text-slate-950 max-[720px]:text-[3.05rem]"
+            className="m-0 max-w-[740px] text-[clamp(3.25rem,7vw,5.8rem)] font-semibold leading-[0.96] tracking-[-0.08em] text-slate-700 max-[720px]:text-[3.05rem]"
           >
             {profile.name}
           </h1>

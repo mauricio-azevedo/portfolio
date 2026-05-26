@@ -43,7 +43,7 @@ export function About({ aboutFacts, labels, profile }: AboutProps) {
                 </span>
                 <span>{fact.label}</span>
               </dt>
-              <dd className="mt-1 text-base tracking-[-0.02em] text-slate-950 max-[720px]:text-sm">
+              <dd className="mt-1 text-base tracking-[-0.02em] text-slate-700 max-[720px]:text-sm">
                 {fact.value}
               </dd>
             </div>
