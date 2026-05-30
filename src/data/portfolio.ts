@@ -179,7 +179,10 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
       repositoryUrl: 'https://github.com/mauricio-azevedo/beachrank',
       image: beachRankImage,
       features: [
-        'Built around a score-aware Elo-inspired doubles rating system, historical recalculation for edits and retroactive matches, transactionally synced feed events, and clear product/domain boundaries.',
+        'Score-aware Elo-inspired doubles rating system',
+        'Historical recalculation for edits and retroactive matches',
+        'Transactionally synced feed events',
+        'Clear product/domain boundaries',
       ],
     },
     labels: {
@@ -322,7 +325,10 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
       repositoryUrl: 'https://github.com/mauricio-azevedo/beachrank',
       image: beachRankImage,
       features: [
-        'Construído em torno de um sistema de rating de duplas inspirado em Elo e sensível ao placar, recálculo histórico para edições e partidas retroativas, eventos de feed sincronizados transacionalmente e fronteiras claras de produto/domínio.',
+        'Sistema de rating de duplas inspirado em Elo e sensível ao placar',
+        'Recálculo histórico para edições e partidas retroativas',
+        'Eventos de feed sincronizados transacionalmente',
+        'Fronteiras claras de produto/domínio',
       ],
     },
     labels: {
