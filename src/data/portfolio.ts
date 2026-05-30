@@ -154,9 +154,7 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
         highlights: [
           'Modernized UI components and improved mobile responsiveness in Banco Fibra’s web banking app, contributing to a more reliable and usable banking experience.',
         ],
-        technologies: [
-          { name: 'Angular', icon: 'angular' },
-        ],
+        technologies: [{ name: 'Angular', icon: 'angular' }],
       },
       {
         company: 'Basis S.A.',
@@ -174,15 +172,16 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
     ],
     featuredProject: {
       name: 'BeachRank',
-      summary: 'BeachRank turns casual beach tennis groups into rankings, match history, player profiles, stats, invites, and an activity feed.',
+      summary:
+        'BeachRank turns casual beach tennis groups into rankings, match history, player profiles, stats, invites, and an activity feed.',
       liveUrl: 'https://beachrank-eight.vercel.app/',
       repositoryUrl: 'https://github.com/mauricio-azevedo/beachrank',
       image: beachRankImage,
       features: [
-        'Score-aware Elo-inspired doubles rating system',
-        'Historical recalculation for edits and retroactive matches',
-        'Transactionally synced feed events',
-        'Clear product/domain boundaries',
+        'Fast match registration for casual doubles games',
+        'Group-specific rankings and ratings for each playing circle',
+        'Score-aware ratings inspired by Elo and UTR that reward performance, not just wins',
+        'Player profiles and activity feed that keep group history alive',
       ],
     },
     labels: {
@@ -300,9 +299,7 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
         highlights: [
           'Modernizei componentes de UI e responsividade mobile no web banking do Banco Fibra, contribuindo para uma experiência mais confiável e usável.',
         ],
-        technologies: [
-          { name: 'Angular', icon: 'angular' },
-        ],
+        technologies: [{ name: 'Angular', icon: 'angular' }],
       },
       {
         company: 'Basis S.A.',
@@ -320,15 +317,16 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
     ],
     featuredProject: {
       name: 'BeachRank',
-      summary: 'BeachRank transforma grupos casuais de beach tennis em rankings, histórico de partidas, perfis de jogadores, stats, convites e um feed de atividades.',
+      summary:
+        'BeachRank transforma grupos casuais de beach tennis em rankings, histórico de partidas, perfis de jogadores, stats, convites e um feed de atividades.',
       liveUrl: 'https://beachrank-eight.vercel.app/',
       repositoryUrl: 'https://github.com/mauricio-azevedo/beachrank',
       image: beachRankImage,
       features: [
-        'Sistema de rating de duplas inspirado em Elo e sensível ao placar',
-        'Recálculo histórico para edições e partidas retroativas',
-        'Eventos de feed sincronizados transacionalmente',
-        'Fronteiras claras de produto/domínio',
+        'Registro rápido de partidas casuais em duplas',
+        'Rankings e ratings específicos por grupo',
+        'Ratings sensíveis ao placar, inspirados em Elo e UTR, que recompensam performance, não só vitórias',
+        'Perfis de jogadores e feed de atividades que mantêm o histórico do grupo vivo',
       ],
     },
     labels: {
