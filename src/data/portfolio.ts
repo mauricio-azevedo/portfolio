@@ -45,7 +45,7 @@ const techStack = [
 ];
 
 const profileImage = {
-  src: '/profile-photo.png',
+  src: '/profile-photo.jpg',
   alt: 'Maurício Azevedo',
 };
 

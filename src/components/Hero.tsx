@@ -31,11 +31,13 @@ export function Hero({ contactLinks, labels, language, profile }: HeroProps) {
             {profile.name}
           </h1>
 
-          <img
-            className="hidden h-full w-auto flex-none rounded-2xl object-cover max-[720px]:block"
-            src={profileImageUrl}
-            alt={profile.profileImage.alt}
-          />
+          <div>
+            <img
+              className="hidden w-full h-auto rounded-full object-cover max-[720px]:block"
+              src={profileImageUrl}
+              alt={profile.profileImage.alt}
+            />
+          </div>
         </div>
 
         <p className="mt-7 max-w-[620px] text-xl leading-8 tracking-[-0.02em] text-slate-700 max-[720px]:text-lg">
@@ -48,13 +50,17 @@ export function Hero({ contactLinks, labels, language, profile }: HeroProps) {
 
           <span className="h-6 w-px bg-slate-200" aria-hidden="true" />
 
-          <ResumeDownloadLink label={labels.resume} ariaLabel={labels.resumeAria} language={language} />
+          <ResumeDownloadLink
+            label={labels.resume}
+            ariaLabel={labels.resumeAria}
+            language={language}
+          />
         </div>
       </div>
 
       <div className="flex justify-end max-[980px]:order-first max-[980px]:justify-start max-[720px]:hidden">
         <img
-          className="h-auto w-[260px] rounded-3xl"
+          className="h-auto w-[280px] rounded-full"
           src={profileImageUrl}
           alt={profile.profileImage.alt}
         />
