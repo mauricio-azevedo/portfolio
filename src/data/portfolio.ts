@@ -175,6 +175,12 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
     featuredProject: {
       name: 'BeachRank',
       summary: 'Mobile-first web app for casual beach tennis groups.',
+      caseStudy: [
+        'BeachRank is a full-stack product I built to turn casual beach tennis groups into structured rankings, match history, player profiles, invites, stats, and an activity feed. The core engineering challenge was keeping the rating system performant for normal match creation while preserving correctness when historical data changes.',
+        'I designed a score-aware, Elo-inspired rating engine for doubles matches with group-scoped ratings, rating snapshots, an append-only fast path for normal writes, and full historical recalculation for edits, deletes, and retroactive matches.',
+        'I also modeled an activity feed that turns match and group activity into meaningful product moments, such as close matches, blowouts, and group milestones. Feed events are synchronized transactionally with match and rating updates so the social layer stays consistent with the underlying domain state.',
+        'The codebase is organized around product and domain boundaries, with business rules enforced on the backend, typed domain models, feature-oriented frontend modules, documented architectural decisions, and clear separation between UI, API, domain, and persistence concerns.',
+      ],
       liveUrl: 'https://beachrank-eight.vercel.app/',
       repositoryUrl: 'https://github.com/mauricio-azevedo/beachrank',
       image: beachRankImage,
@@ -323,6 +329,12 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
     featuredProject: {
       name: 'BeachRank',
       summary: 'Aplicação web mobile-first para grupos casuais de beach tennis.',
+      caseStudy: [
+        'BeachRank é um produto full stack que construí para transformar grupos casuais de beach tennis em rankings estruturados, histórico de partidas, perfis de jogadores, convites, estatísticas e um feed de atividades. O principal desafio de engenharia foi manter o sistema de rating performático para criação normal de partidas sem perder correção quando dados históricos mudam.',
+        'Projetei um motor de rating inspirado em Elo e sensível ao placar para partidas em duplas, com ratings por grupo, snapshots de rating, um fast path append-only para escritas normais e recálculo histórico completo para edições, deleções e partidas retroativas.',
+        'Também modelei um feed de atividades que transforma partidas e atividade de grupo em momentos relevantes de produto, como partidas apertadas, blowouts e marcos do grupo. Os eventos do feed são sincronizados transacionalmente com atualizações de partidas e ratings para manter a camada social consistente com o estado de domínio.',
+        'O código é organizado em torno de fronteiras de produto e domínio, com regras de negócio aplicadas no backend, modelos de domínio tipados, módulos frontend orientados por feature, decisões arquiteturais documentadas e separação clara entre UI, API, domínio e persistência.',
+      ],
       liveUrl: 'https://beachrank-eight.vercel.app/',
       repositoryUrl: 'https://github.com/mauricio-azevedo/beachrank',
       image: beachRankImage,
