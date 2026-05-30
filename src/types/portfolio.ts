@@ -2,7 +2,7 @@ export type Language = 'en' | 'pt';
 
 export type NavigationItem = {
   label: string;
-  href: `#${string}`;
+  href: string;
 };
 
 export type ContactIconName = 'email' | 'github' | 'linkedin' | 'whatsapp';
@@ -36,6 +36,7 @@ export type Experience = {
 export type FeaturedProject = {
   name: string;
   summary: string;
+  caseStudy?: string[];
   liveUrl: string;
   repositoryUrl: string;
   image: {
