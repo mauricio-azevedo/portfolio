@@ -71,6 +71,16 @@ export function FeaturedProject({ featuredProject, labels }: FeaturedProjectProp
               {featuredProject.summary}
             </p>
 
+            {featuredProject.caseStudy?.length ? (
+              <div className="mt-5 space-y-4 text-sm leading-7 text-slate-600">
+                {featuredProject.caseStudy.map((paragraph) => (
+                  <p key={paragraph} className="m-0">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            ) : null}
+
             <ul className="mt-7 grid grid-cols-2 gap-x-5 gap-y-3 p-0 max-[720px]:grid-cols-1" aria-label={`${featuredProject.name} features`}>
               {featuredProject.features.map((feature) => (
                 <li key={feature} className="flex items-center gap-2 text-sm text-slate-600">
