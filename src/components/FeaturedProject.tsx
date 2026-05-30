@@ -51,14 +51,21 @@ type FeaturedProjectProps = {
 
 export function FeaturedProject({ featuredProject, labels }: FeaturedProjectProps) {
   return (
-    <section id="projects" className="border-b border-slate-200 py-12" aria-labelledby="project-title">
+    <section
+      id="projects"
+      className="border-b border-slate-200 py-12"
+      aria-labelledby="project-title"
+    >
       <SectionLabel icon="featuredProject">{labels.featuredProjectSection}</SectionLabel>
 
       <SectionContent>
         <article className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(320px,0.7fr)] lg:items-start">
           <div>
             <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-              <h2 id="project-title" className="m-0 text-3xl font-semibold tracking-[-0.05em] text-slate-700">
+              <h2
+                id="project-title"
+                className="m-0 text-3xl font-semibold tracking-[-0.05em] text-slate-700"
+              >
                 {featuredProject.name}
               </h2>
               <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700">
@@ -81,10 +88,16 @@ export function FeaturedProject({ featuredProject, labels }: FeaturedProjectProp
               </div>
             ) : null}
 
-            <ul className="mt-7 grid grid-cols-2 gap-x-5 gap-y-3 p-0 max-[720px]:grid-cols-1" aria-label={`${featuredProject.name} features`}>
+            <ul
+              className="mt-7 grid grid-cols-2 gap-x-5 gap-y-3 p-0 max-[720px]:grid-cols-1"
+              aria-label={`${featuredProject.name} features`}
+            >
               {featuredProject.features.map((feature) => (
                 <li key={feature} className="flex items-center gap-2 text-sm text-slate-600">
-                  <span className="size-1.5 rounded-full bg-slate-400" aria-hidden="true" />
+                  <span
+                    className="size-1.5 shrink-0 rounded-full bg-slate-400"
+                    aria-hidden="true"
+                  />
                   {feature}
                 </li>
               ))}
@@ -95,8 +108,17 @@ export function FeaturedProject({ featuredProject, labels }: FeaturedProjectProp
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-2xl" aria-label={`${featuredProject.name} project preview`}>
-            <img className="block w-full rounded-2xl" src={getPublicAssetUrl(featuredProject.image.src)} alt={featuredProject.image.alt} loading="lazy" decoding="async" />
+          <div
+            className="overflow-hidden rounded-2xl"
+            aria-label={`${featuredProject.name} project preview`}
+          >
+            <img
+              className="block w-full rounded-2xl"
+              src={getPublicAssetUrl(featuredProject.image.src)}
+              alt={featuredProject.image.alt}
+              loading="lazy"
+              decoding="async"
+            />
           </div>
 
           <div className="hidden max-[720px]:block">
