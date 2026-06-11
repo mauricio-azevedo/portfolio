@@ -171,7 +171,7 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
     featuredProject: {
       name: 'Arena',
       summary:
-        'Arena is a social ranking platform for beach tennis groups. It turns casual matches that usually disappear after the game into persistent history, group-specific ratings, player profiles, invites, and activity feeds — creating a stats layer where there used to be no match records at all.',
+        'Arena is a social ranking platform for casual beach tennis groups. The product turns matches that normally leave no record into competitive history, group-specific ratings and rankings, player profiles, statistics, and an activity feed — passing a friend in the ranking, seeing an achievement in the feed, or improving your stats can be one more reason to want to win.',
       liveUrl: 'https://arenabeachtennis.com',
       repositoryUrl: 'https://github.com/mauricio-azevedo/arena',
       image: arenaImage,
