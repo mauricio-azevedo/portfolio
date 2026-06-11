@@ -51,7 +51,7 @@ const profileImage = {
 
 const arenaImage = {
   src: '/arena-showcase.png',
-  alt: 'arena mobile app screens',
+  alt: 'Arena mobile app screens',
 };
 
 const factIcons = {
@@ -80,11 +80,11 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
       email: 'mauricio.mendonca.azevedo@gmail.com',
       profileImage,
       heroSummary:
-        'I’m a full stack engineer who turns product ambiguity into reliable, user-facing software.',
+        'I build product software for environments where ambiguity, complex workflows, and reliability matter.',
       heroNote:
-        'I care about the path from rough requirements and real workflows to clear architecture, thoughtful UI/UX, and maintainable systems.',
+        'I work from problem framing to production delivery: modeling real workflows, designing APIs and interfaces, reducing technical risk, and turning critical operations into clear, secure, maintainable systems.',
       about:
-        'I stay close to the product, not only the code. I turn rough requirements into user-facing production software by working with product owners, stakeholders, and designers to check business rules against real workflows, turn complex workflows into simple UI/UX for end users, design data models that can evolve with the product, design APIs that reflect the product’s real workflows, and build features until they are ready to ship.',
+        'I’m a product-minded full stack engineer with experience across education, fintech, crypto, operational automation, and AI-assisted platforms. My strongest work happens in ambiguous environments: when business rules are still forming, workflows have edge cases, users need simple interfaces, and the architecture has to support real product evolution. I care about production-grade software: clear interfaces, domain-aligned APIs, evolvable data models, tests around critical behavior, and technical decisions that reduce risk instead of hiding complexity.',
     },
     aboutFacts: [
       { label: 'Experience', value: '7+ years', icon: factIcons.experience },
@@ -97,12 +97,11 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
         role: 'Senior Full Stack Software Engineer',
         period: 'Aug 2024 – Jan 2026',
         highlights: [
-          'Delivered production features for an AI-assisted education platform used daily by 10,000+ students and hundreds of teachers across dozens of schools.',
-          'Worked on core learning workflows where AI generated assessments, analyzed performance, and helped create personalized lesson plans based on individual results.',
-          'Contributed to AI-powered essay review workflows, including production fixes in an essay reading/correction microservice providing automated feedback to students.',
-          'Resolved critical production issues across authentication and account-access flows, including login, password reset, and SSO microservices.',
-          'Expanded API test coverage from 50% to 80% by adding unit tests around critical backend features and business rules.',
-          'Partnered with product owners, stakeholders, designers, and creative directors to turn complex academic workflows into intuitive, reliable product experiences.',
+          'Delivered production features for an AI-assisted education platform used daily by 10,000+ students, hundreds of teachers, and dozens of schools.',
+          'Worked on core AI learning workflows for assessment generation, performance analysis, personalized lesson planning, and essay feedback.',
+          'Improved reliability in critical account-access flows, including login, password reset, and SSO-related services.',
+          'Raised API test coverage from 50% to 80% around backend features and business rules where regressions would directly affect users.',
+          'Partnered with product, design, and academic stakeholders to turn complex educational workflows into usable production experiences.',
         ],
         technologies: [
           { name: 'React', icon: 'react' },
@@ -115,13 +114,12 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
         role: 'Lead Full Stack Software Engineer',
         period: 'Feb 2024 – Aug 2024',
         highlights: [
-          'Led development of a USDT trading automation platform integrated with Binance API, supporting daily buy/sell operations involving BRL 10M+ with limited supervision.',
-          'Owned product and technical execution as sole developer, working with the company owner to turn trading operations into automated workflows and system rules.',
-          'Built and shipped the platform end to end, including trading flows, Binance API integration, banking/payment APIs, business rules, and edge-case handling.',
-          'Co-designed and implemented reconciliation logic matching Binance trades with bank statement records by amount, date, and payer identity to trigger USDT release.',
-          'Automated crypto trading tax reporting, eliminating recurring manual errors and replacing full-day manual reporting work.',
-          'Reduced dependency on manual trading operations previously handled by a 3-person team and later mentored a junior developer as the engineering team expanded.',
-          'Identified and remediated 3 critical security vulnerabilities across the platform, improving reliability and reducing production risk.',
+          'Owned the product and technical execution of a USDT trading automation platform handling BRL 10M+ in daily operations.',
+          'Built the system end to end as the sole engineer, covering trading flows, Binance integration, banking/payment APIs, reconciliation logic, tax reporting, and operational edge cases.',
+          'Designed reconciliation workflows matching Binance trades against bank statement records by amount, date, and payer identity before releasing USDT.',
+          'Automated crypto tax reporting, replacing a full-day manual process and reducing recurring operational errors.',
+          'Reduced manual trading dependency from a 3-person operation and later mentored a junior engineer as the team expanded.',
+          'Identified and remediated 3 critical security vulnerabilities, reducing production and financial risk.',
         ],
         technologies: [
           { name: 'React', icon: 'react' },
@@ -173,15 +171,15 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
     featuredProject: {
       name: 'Arena',
       summary:
-        'Arena turns casual beach tennis groups into rankings, match history, player profiles, stats, invites, and an activity feed.',
+        'Arena is a social ranking platform for beach tennis groups. It turns casual matches into competitive history, group-specific ratings, player profiles, invites, and activity feeds — replacing fragmented WhatsApp coordination and spreadsheets with a productized experience.',
       liveUrl: 'https://arenabeachtennis.com',
       repositoryUrl: 'https://github.com/mauricio-azevedo/arena',
       image: arenaImage,
       features: [
-        'Fast match registration for casual doubles games',
-        'Group-specific rankings and ratings for each playing circle',
+        'Fast doubles match registration optimized for post-game use',
+        'Group-specific rankings and ratings that avoid artificial global leaderboards',
         'Score-aware ratings inspired by Elo and UTR that reward performance, not just wins',
-        'Player profiles and activity feed that keep group history alive',
+        'Player profiles, match history, and activity feeds that increase recurrence and community memory',
       ],
     },
     labels: {
@@ -203,8 +201,9 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
       liveLink: 'View live',
       repositoryLink: 'View repository',
       contactAria: 'Contact',
-      contactTitle: 'Let’s build something useful together.',
-      contactSubtitle: 'I’m open to new opportunities and interesting projects.',
+      contactTitle: 'Need to turn a complex product problem into reliable software?',
+      contactSubtitle:
+        'I’m open to roles where product judgment, engineering quality, and execution standards matter.',
       footerRights: 'All rights reserved.',
     },
   },
@@ -225,11 +224,11 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
       email: 'mauricio.mendonca.azevedo@gmail.com',
       profileImage,
       heroSummary:
-        'Sou engenheiro full stack e transformo ambiguidade de produto em software confiável para usuários reais.',
+        'Construo software de produto para ambientes onde ambiguidade, regras complexas e confiabilidade importam.',
       heroNote:
-        'Tenho cuidado com o caminho entre requisitos ainda abertos, fluxos reais de uso, arquitetura clara, UI/UX bem pensada e sistemas fáceis de manter.',
+        'Atuo do entendimento do problema à entrega em produção: modelo fluxos reais, desenho APIs e interfaces, reduzo risco técnico e transformo operações críticas em sistemas claros, seguros e mantíveis.',
       about:
-        'Trabalho perto do produto, não só do código. Transformo requisitos ainda abertos em software de produção voltado para usuários, trabalhando com product owners, stakeholders e designers para validar regras de negócio contra fluxos reais, transformar fluxos complexos em UI/UX simples para usuários finais, desenhar modelos de dados que evoluem com o produto, desenhar APIs que refletem os fluxos reais do produto e construir funcionalidades até estarem prontas para entrega.',
+        'Sou um engenheiro full stack orientado a produto, com experiência em sistemas de educação, fintech, cripto, automação operacional e plataformas com IA. Meu melhor trabalho acontece em contextos ambíguos: quando as regras ainda não estão claras, os fluxos têm exceções, a experiência precisa ser simples para o usuário e a arquitetura precisa sustentar evolução real do produto. Gosto de construir software que aguenta produção: interfaces claras, APIs alinhadas ao domínio, modelos de dados evolutivos, testes em pontos críticos e decisões técnicas que reduzem risco em vez de criar dívida invisível.',
     },
     aboutFacts: [
       { label: 'Experiência', value: '7+ anos', icon: factIcons.experience },
@@ -242,12 +241,11 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
         role: 'Engenheiro de Software Full Stack Sênior',
         period: 'ago 2024 – jan 2026',
         highlights: [
-          'Entreguei features em produção para uma plataforma educacional com IA usada diariamente por 10.000+ alunos e centenas de professores em dezenas de escolas.',
-          'Trabalhei em fluxos onde IA gerava avaliações, analisava desempenho e criava planos de aula personalizados com base nos resultados individuais.',
-          'Contribuí para fluxos de correção de redação com IA, incluindo fixes em produção em um microserviço de leitura/correção com feedback automatizado.',
-          'Resolvi problemas críticos de produção em fluxos de autenticação e acesso à conta, incluindo login, troca de senha e microserviços de SSO.',
-          'Expandi a cobertura de testes de API de 50% para 80% adicionando testes unitários em features críticas de backend e regras de negócio.',
-          'Trabalhei com product owners, stakeholders, designers e diretores criativos para transformar fluxos acadêmicos complexos em experiências intuitivas e confiáveis.',
+          'Entreguei features em produção para uma plataforma educacional com IA usada diariamente por 10.000+ alunos, centenas de professores e dezenas de escolas.',
+          'Trabalhei em fluxos centrais de IA para geração de avaliações, análise de desempenho, planos de aula personalizados e feedback de redações.',
+          'Melhorei a confiabilidade de fluxos críticos de acesso à conta, incluindo login, recuperação de senha e serviços relacionados a SSO.',
+          'Aumentei a cobertura de testes de API de 50% para 80% em features de backend e regras de negócio com alto risco de regressão.',
+          'Trabalhei com produto, design e stakeholders acadêmicos para transformar fluxos educacionais complexos em experiências simples de usar em produção.',
         ],
         technologies: [
           { name: 'React', icon: 'react' },
@@ -260,13 +258,12 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
         role: 'Engenheiro de Software Full Stack Líder',
         period: 'fev 2024 – ago 2024',
         highlights: [
-          'Liderei uma plataforma de automação de compra/venda de USDT integrada à Binance, suportando operações diárias de BRL 10M+ com supervisão limitada.',
-          'Assumi execução técnica e de produto como único dev, transformando operações de trading em workflows automatizados e regras de sistema.',
-          'Construí e entreguei a plataforma end-to-end, incluindo fluxos de trading, Binance API, APIs bancárias/de pagamento, regras de negócio e edge cases.',
-          'Co-desenhei e implementei lógica de conciliação que cruzava trades na Binance com registros do extrato bancário por valor, data e pagador para liberar USDT.',
-          'Automatizei o tax reporting de operações cripto, eliminando erros manuais recorrentes e substituindo trabalho manual de dia inteiro.',
-          'Reduzi a dependência de operações manuais antes conduzidas por 3 pessoas e depois mentorei um dev júnior conforme o time cresceu.',
-          'Identifiquei e corrigi 3 vulnerabilidades críticas de segurança na plataforma, melhorando confiabilidade e reduzindo risco em produção.',
+          'Assumi a execução técnica e de produto de uma plataforma de automação de trading de USDT com BRL 10M+ em operações diárias.',
+          'Construí o sistema end-to-end como único engenheiro, cobrindo fluxos de trading, integração com Binance, APIs bancárias/de pagamento, conciliação, tax reporting e edge cases operacionais.',
+          'Desenhei fluxos de conciliação que cruzavam trades na Binance com extratos bancários por valor, data e identidade do pagador antes da liberação de USDT.',
+          'Automatizei o reporting fiscal de operações cripto, substituindo um processo manual de dia inteiro e reduzindo erros operacionais recorrentes.',
+          'Reduzi a dependência de uma operação manual conduzida por 3 pessoas e depois mentorei um dev júnior conforme o time cresceu.',
+          'Identifiquei e corrigi 3 vulnerabilidades críticas, reduzindo risco financeiro e operacional em produção.',
         ],
         technologies: [
           { name: 'React', icon: 'react' },
@@ -318,15 +315,15 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
     featuredProject: {
       name: 'Arena',
       summary:
-        'Arena transforma grupos casuais de beach tennis em rankings, histórico de partidas, perfis de jogadores, stats, convites e um feed de atividades.',
+        'Arena é uma plataforma social de ranking para grupos de beach tennis. Ela transforma partidas casuais em histórico competitivo, ratings por grupo, perfis de jogadores, convites e feed de atividades — criando continuidade para comunidades que antes dependiam de WhatsApp e planilhas.',
       liveUrl: 'https://arenabeachtennis.com',
       repositoryUrl: 'https://github.com/mauricio-azevedo/arena',
       image: arenaImage,
       features: [
-        'Registro rápido de partidas casuais em duplas',
-        'Rankings e ratings específicos por grupo',
-        'Ratings sensíveis ao placar, inspirados em Elo e UTR, que recompensam performance, não só vitórias',
-        'Perfis de jogadores e feed de atividades que mantêm o histórico do grupo vivo',
+        'Registro rápido de partidas em duplas, otimizado para uso pós-jogo',
+        'Ranking e rating por grupo, evitando uma classificação global artificial',
+        'Algoritmo sensível ao placar, inspirado em Elo/UTR, para recompensar performance e não apenas vitórias',
+        'Perfis, histórico e feed que aumentam recorrência e senso de comunidade',
       ],
     },
     labels: {
@@ -348,8 +345,9 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
       liveLink: 'Ver online',
       repositoryLink: 'Ver repositório',
       contactAria: 'Contato',
-      contactTitle: 'Vamos construir algo útil juntos.',
-      contactSubtitle: 'Estou aberto a novas oportunidades e projetos interessantes.',
+      contactTitle: 'Quer transformar um problema complexo em produto confiável?',
+      contactSubtitle:
+        'Estou aberto a oportunidades onde produto, engenharia e qualidade de execução importam.',
       footerRights: 'Todos os direitos reservados.',
     },
   },
