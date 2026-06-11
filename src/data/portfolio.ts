@@ -176,10 +176,10 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
       repositoryUrl: 'https://github.com/mauricio-azevedo/arena',
       image: arenaImage,
       features: [
-        'Fast doubles match registration optimized for post-game use',
-        'Group-specific rankings and ratings that avoid artificial global leaderboards',
-        'Score-aware ratings inspired by Elo and UTR that reward performance, not just wins',
-        'Player profiles, match history, and activity feeds that increase recurrence and community memory',
+        'Ratings inspired by systems used in professional tennis and chess, where scoreline and opponent strength matter — a close loss to a stronger player can still count',
+        'Player profiles that turn casual players into competitors with a record, stats, and a reputation',
+        'Achievements, stats, and feed updates that make every win, streak and achievement visible to the group',
+        'Group rankings that give every playing circle its own league, rivalries, and bragging rights',
       ],
     },
     labels: {
@@ -320,10 +320,10 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
       repositoryUrl: 'https://github.com/mauricio-azevedo/arena',
       image: arenaImage,
       features: [
-        'Registro rápido de partidas em duplas, otimizado para uso pós-jogo',
-        'Ranking e rating por grupo, evitando uma classificação global artificial',
-        'Algoritmo sensível ao placar, inspirado em Elo/UTR, para recompensar performance, não só vitórias',
-        'Perfis, histórico e feed que aumentam recorrência e senso de comunidade',
+        'Ratings inspirados em sistemas usados no tênis profissional e no xadrez, onde placar e força dos adversários importam — uma derrota apertada contra um jogador mais forte ainda pode contar',
+        'Perfis de jogadores que transformam jogadores casuais em competidores com histórico, estatísticas e reputação',
+        'Conquistas, estatísticas e atualizações no feed que tornam cada vitória, sequência e conquista visível para o grupo',
+        'Rankings por grupo que dão a cada círculo de jogadores sua própria liga, rivalidades e direito de se gabar',
       ],
     },
     labels: {
