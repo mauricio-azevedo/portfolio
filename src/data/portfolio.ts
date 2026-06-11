@@ -49,9 +49,9 @@ const profileImage = {
   alt: 'Maurício Azevedo',
 };
 
-const beachRankImage = {
-  src: '/beachrank-showcase.png',
-  alt: 'BeachRank mobile app screens',
+const arenaImage = {
+  src: '/arena-showcase.png',
+  alt: 'arena mobile app screens',
 };
 
 const factIcons = {
@@ -171,12 +171,12 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
       },
     ],
     featuredProject: {
-      name: 'BeachRank',
+      name: 'Arena',
       summary:
-        'BeachRank turns casual beach tennis groups into rankings, match history, player profiles, stats, invites, and an activity feed.',
-      liveUrl: 'https://beachrank-eight.vercel.app/',
-      repositoryUrl: 'https://github.com/mauricio-azevedo/beachrank',
-      image: beachRankImage,
+        'Arena turns casual beach tennis groups into rankings, match history, player profiles, stats, invites, and an activity feed.',
+      liveUrl: 'https://arenabeachtennis.com',
+      repositoryUrl: 'https://github.com/mauricio-azevedo/arena',
+      image: arenaImage,
       features: [
         'Fast match registration for casual doubles games',
         'Group-specific rankings and ratings for each playing circle',
@@ -316,12 +316,12 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
       },
     ],
     featuredProject: {
-      name: 'BeachRank',
+      name: 'Arena',
       summary:
-        'BeachRank transforma grupos casuais de beach tennis em rankings, histórico de partidas, perfis de jogadores, stats, convites e um feed de atividades.',
-      liveUrl: 'https://beachrank-eight.vercel.app/',
-      repositoryUrl: 'https://github.com/mauricio-azevedo/beachrank',
-      image: beachRankImage,
+        'Arena transforma grupos casuais de beach tennis em rankings, histórico de partidas, perfis de jogadores, stats, convites e um feed de atividades.',
+      liveUrl: 'https://arenabeachtennis.com',
+      repositoryUrl: 'https://github.com/mauricio-azevedo/arena',
+      image: arenaImage,
       features: [
         'Registro rápido de partidas casuais em duplas',
         'Rankings e ratings específicos por grupo',
