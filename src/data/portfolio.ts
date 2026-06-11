@@ -315,14 +315,14 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
     featuredProject: {
       name: 'Arena',
       summary:
-        'Arena é uma plataforma social de ranking para grupos de beach tennis. Ela transforma partidas casuais que normalmente somem depois do jogo em histórico competitivo, ratings por grupo, perfis de jogadores, convites e feed de atividades — criando uma camada de estatísticas onde antes não existia nenhum registro das partidas.',
+        'Arena é uma plataforma social de ranking para grupos casuais de beach tennis. O produto transforma partidas que normalmente não deixam nenhum registro em histórico competitivo, ratings e rankings por grupo, perfis de jogadores, estatísticas e feed de atividade — passar um amigo no ranking, ver uma conquista no feed ou melhorar suas estatísticas pode ser mais um motivo para querer ganhar.',
       liveUrl: 'https://arenabeachtennis.com',
       repositoryUrl: 'https://github.com/mauricio-azevedo/arena',
       image: arenaImage,
       features: [
         'Registro rápido de partidas em duplas, otimizado para uso pós-jogo',
         'Ranking e rating por grupo, evitando uma classificação global artificial',
-        'Algoritmo sensível ao placar, inspirado em Elo/UTR, para recompensar performance e não apenas vitórias',
+        'Algoritmo sensível ao placar, inspirado em Elo/UTR, para recompensar performance, não só vitórias',
         'Perfis, histórico e feed que aumentam recorrência e senso de comunidade',
       ],
     },
