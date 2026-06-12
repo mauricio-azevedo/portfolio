@@ -114,7 +114,7 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
         role: 'Lead Full Stack Software Engineer',
         period: 'Feb 2024 – Aug 2024',
         highlights: [
-          'Owned the product and technical execution of a USDT trading automation platform handling BRL 10M+ in daily operations.',
+          'Owned the technical execution of a USDT trading automation platform handling BRL 10M+ in daily operations.',
           'Built the system end to end as the sole engineer, covering trading flows, Binance integration, banking/payment APIs, reconciliation logic, tax reporting, and operational edge cases.',
           'Designed reconciliation workflows matching Binance trades against bank statement records by amount, date, and payer identity before releasing USDT.',
           'Automated crypto tax reporting, replacing a full-day manual process and reducing recurring operational errors.',
@@ -258,7 +258,7 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
         role: 'Engenheiro de Software Full Stack Líder',
         period: 'fev 2024 – ago 2024',
         highlights: [
-          'Assumi a execução técnica e de produto de uma plataforma de automação de trading de USDT com BRL 10M+ em operações diárias.',
+          'Assumi a execução técnica de uma plataforma de automação de trading de USDT com BRL 10M+ em operações diárias.',
           'Construí o sistema end-to-end como único engenheiro, cobrindo fluxos de trading, integração com Binance, APIs bancárias/de pagamento, conciliação, tax reporting e edge cases operacionais.',
           'Desenhei fluxos de conciliação que cruzavam trades na Binance com extratos bancários por valor, data e identidade do pagador antes da liberação de USDT.',
           'Automatizei o reporting fiscal de operações cripto, substituindo um processo manual de dia inteiro e reduzindo erros operacionais recorrentes.',
