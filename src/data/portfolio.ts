@@ -97,7 +97,7 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
         role: 'Senior Full Stack Software Engineer',
         period: 'Aug 2024 – Jan 2026',
         highlights: [
-          'Delivered production features for an AI-assisted education platform used daily by 10,000+ students, hundreds of teachers, and dozens of schools.',
+          'Delivered features and fixed critical production bugs for an AI-assisted education platform used daily by 10,000+ students, hundreds of teachers, and dozens of schools.',
           'Worked on core AI learning workflows for assessment generation, performance analysis, personalized lesson planning, and essay feedback.',
           'Improved reliability in critical account-access flows, including login, password reset, and SSO-related services.',
           'Raised API test coverage from 50% to 80% around backend features and business rules where regressions would directly affect users.',
@@ -241,7 +241,7 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
         role: 'Engenheiro de Software Full Stack Sênior',
         period: 'ago 2024 – jan 2026',
         highlights: [
-          'Entreguei features em produção para uma plataforma educacional com IA usada diariamente por 10.000+ alunos, centenas de professores e dezenas de escolas.',
+          'Entreguei features e corrigi bugs críticos em produção para uma plataforma educacional com IA usada diariamente por 10.000+ alunos, centenas de professores e dezenas de escolas.',
           'Trabalhei em fluxos centrais de IA para geração de avaliações, análise de desempenho, planos de aula personalizados e feedback de redações.',
           'Melhorei a confiabilidade de fluxos críticos de acesso à conta, incluindo login, recuperação de senha e serviços relacionados a SSO.',
           'Aumentei a cobertura de testes de API de 50% para 80% em features de backend e regras de negócio com alto risco de regressão.',
