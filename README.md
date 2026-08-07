@@ -1,6 +1,6 @@
 # Maurício Azevedo — Portfolio
 
-Personal portfolio for Maurício Azevedo, Senior Full Stack Software Engineer.
+Personal portfolio for Maurício Azevedo, Full Stack Software Engineer.
 
 The site presents selected experience across AI-assisted education platforms, fintech/crypto automation, production systems, product-oriented engineering, and Arena, a social ranking product for beach tennis groups.
 

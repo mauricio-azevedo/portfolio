@@ -75,7 +75,7 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
     techStack,
     profile: {
       name: 'Maurício Azevedo',
-      role: 'Senior Full Stack Software Engineer',
+      role: 'Full Stack Software Engineer',
       location: 'Brasília, Brazil — Remote (UTC−3)',
       email: 'mauricio.mendonca.azevedo@gmail.com',
       profileImage,
@@ -94,7 +94,7 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
     experiences: [
       {
         company: 'Estudologia',
-        role: 'Senior Full Stack Software Engineer',
+        role: 'Mid-Level Full Stack Software Engineer',
         period: 'Aug 2024 – Jan 2026',
         highlights: [
           'Delivered features and fixed critical production bugs for an AI-assisted education platform used daily by 10,000+ students, hundreds of teachers, and dozens of schools.',
@@ -111,7 +111,7 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
       },
       {
         company: 'Inkluziva',
-        role: 'Lead Full Stack Software Engineer',
+        role: 'Mid-Level Full Stack Software Engineer',
         period: 'Feb 2024 – Aug 2024',
         highlights: [
           'Owned the technical execution of a USDT trading automation platform handling BRL 10M+ in daily operations.',
@@ -219,7 +219,7 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
     techStack,
     profile: {
       name: 'Maurício Azevedo',
-      role: 'Engenheiro de Software Full Stack Sênior',
+      role: 'Engenheiro de Software Full Stack',
       location: 'Brasília, Brasil — Remoto (UTC−3)',
       email: 'mauricio.mendonca.azevedo@gmail.com',
       profileImage,
@@ -238,7 +238,7 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
     experiences: [
       {
         company: 'Estudologia',
-        role: 'Engenheiro de Software Full Stack Sênior',
+        role: 'Engenheiro de Software Full Stack Pleno',
         period: 'ago 2024 – jan 2026',
         highlights: [
           'Entreguei features e corrigi bugs críticos em produção para uma plataforma educacional com IA usada diariamente por 10.000+ alunos, centenas de professores e dezenas de escolas.',
@@ -255,7 +255,7 @@ export const portfolioContent: Record<'en' | 'pt', PortfolioContent> = {
       },
       {
         company: 'Inkluziva',
-        role: 'Engenheiro de Software Full Stack Líder',
+        role: 'Engenheiro de Software Full Stack Pleno',
         period: 'fev 2024 – ago 2024',
         highlights: [
           'Assumi a execução técnica de uma plataforma de automação de trading de USDT com BRL 10M+ em operações diárias.',
