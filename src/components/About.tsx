@@ -28,7 +28,10 @@ export function About({ aboutFacts, labels, profile }: AboutProps) {
               className="flex flex-col items-center px-5 py-0 text-center max-[720px]:px-2 [&:not(:first-child)]:border-l [&:not(:first-child)]:border-slate-200"
             >
               <dt className="flex flex-col items-center gap-1 text-sm text-slate-500 max-[720px]:text-xs">
-                <span className="grid size-9 place-items-center rounded-xl text-slate-700 max-[720px]:size-8" aria-hidden="true">
+                <span
+                  className="grid size-9 place-items-center rounded-xl text-slate-700 max-[720px]:size-8"
+                  aria-hidden="true"
+                >
                   <svg
                     className="size-5.5 max-[720px]:size-5"
                     viewBox="0 0 24 24"

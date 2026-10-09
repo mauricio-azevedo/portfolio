@@ -1,36 +1,13 @@
 import signatureLogo from '../../assets/signature.png';
-import type { Language, NavigationItem, PortfolioLabels } from '../types/portfolio';
+import type { NavigationItem, PortfolioLabels } from '../types/portfolio';
 
 type SiteHeaderProps = {
   brandName: string;
-  language: Language;
   navigationItems: NavigationItem[];
   labels: PortfolioLabels;
-  onLanguageChange: (language: Language) => void;
 };
 
-function LanguageToggle({ language, onLanguageChange }: Pick<SiteHeaderProps, 'language' | 'onLanguageChange'>) {
-  return (
-    <div className="flex rounded-full border border-slate-200 bg-white p-1 text-xs font-semibold text-slate-500 shadow-sm">
-      <button
-        type="button"
-        className={`rounded-full px-3 py-1.5 transition-colors ${language === 'en' ? 'bg-slate-700 text-white' : 'hover:text-slate-700'}`}
-        onClick={() => onLanguageChange('en')}
-      >
-        EN
-      </button>
-      <button
-        type="button"
-        className={`rounded-full px-3 py-1.5 transition-colors ${language === 'pt' ? 'bg-slate-700 text-white' : 'hover:text-slate-700'}`}
-        onClick={() => onLanguageChange('pt')}
-      >
-        PT
-      </button>
-    </div>
-  );
-}
-
-export function SiteHeader({ brandName, language, navigationItems, labels, onLanguageChange }: SiteHeaderProps) {
+export function SiteHeader({ brandName, navigationItems, labels }: SiteHeaderProps) {
   return (
     <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/80 backdrop-blur">
       <div className="mx-auto flex w-[min(1120px,calc(100%_-_48px))] items-center justify-between gap-6 py-6 max-[720px]:w-[min(100%_-_32px,1120px)]">
@@ -54,8 +31,6 @@ export function SiteHeader({ brandName, language, navigationItems, labels, onLan
               </a>
             ))}
           </nav>
-
-          <LanguageToggle language={language} onLanguageChange={onLanguageChange} />
 
           <details className="group relative hidden max-[720px]:block">
             <summary

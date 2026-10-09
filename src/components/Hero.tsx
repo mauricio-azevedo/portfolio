@@ -1,4 +1,4 @@
-import type { ContactLink, Language, PortfolioLabels, Profile } from '../types/portfolio';
+import type { ContactLink, PortfolioLabels, Profile } from '../types/portfolio';
 import { getPublicAssetUrl } from '../lib/assets';
 import { ContactLinks } from './ContactLinks';
 import { ResumeDownloadLink } from './ResumeDownloadLink';
@@ -6,11 +6,10 @@ import { ResumeDownloadLink } from './ResumeDownloadLink';
 type HeroProps = {
   contactLinks: ContactLink[];
   labels: PortfolioLabels;
-  language: Language;
   profile: Profile;
 };
 
-export function Hero({ contactLinks, labels, language, profile }: HeroProps) {
+export function Hero({ contactLinks, labels, profile }: HeroProps) {
   const profileImageUrl = getPublicAssetUrl(profile.profileImage.src);
 
   return (
@@ -50,11 +49,7 @@ export function Hero({ contactLinks, labels, language, profile }: HeroProps) {
 
           <span className="h-6 w-px bg-slate-200" aria-hidden="true" />
 
-          <ResumeDownloadLink
-            label={labels.resume}
-            ariaLabel={labels.resumeAria}
-            language={language}
-          />
+          <ResumeDownloadLink label={labels.resume} ariaLabel={labels.resumeAria} />
         </div>
       </div>
 
