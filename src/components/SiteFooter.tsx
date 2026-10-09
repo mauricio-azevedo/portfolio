@@ -7,7 +7,7 @@ type SiteFooterProps = {
 
 export function SiteFooter({ labels, profile }: SiteFooterProps) {
   return (
-    <footer className="mt-20 border-t border-outline-variant/60 py-10">
+    <footer className="relative z-10 mt-20 border-t border-outline-variant/60 py-10">
       <div className="mx-auto flex max-w-2xl flex-col items-center justify-between gap-4 px-6 font-mono text-xs text-outline sm:flex-row">
         <span>
           © {new Date().getFullYear()} {profile.name}. {labels.footerRights}
