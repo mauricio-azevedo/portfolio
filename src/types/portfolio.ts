@@ -3,98 +3,81 @@ export type NavigationItem = {
   href: string;
 };
 
-export type ContactIconName = 'email' | 'github' | 'linkedin' | 'whatsapp';
+export type ContactLinkKind = 'email' | 'github' | 'linkedin' | 'whatsapp' | 'resume';
 
 export type ContactLink = {
+  kind: ContactLinkKind;
   label: string;
   href: string;
-  icon: ContactIconName;
   isExternal?: boolean;
-};
-
-export type Technology = {
-  name: string;
-  icon: string;
-};
-
-export type TechnologyGroup = {
-  category: string;
-  id: string;
-  items: Technology[];
-};
-
-export type Experience = {
-  company: string;
-  role: string;
-  period: string;
-  highlights: string[];
-  technologies: Technology[];
-};
-
-export type FeaturedProject = {
-  name: string;
-  summary: string;
-  caseStudy?: string[];
-  liveUrl: string;
-  repositoryUrl: string;
-  image: {
-    src: string;
-    alt: string;
-  };
-  features: string[];
 };
 
 export type Profile = {
   name: string;
-  role: string;
+  /** Short mono tag shown next to the name in the header. */
+  tag: string;
+  greeting: string;
+  /** Current status shown in the hero, next to the location. */
+  status: string;
   location: string;
-  email: string;
+  timezone: string;
   profileImage: {
     src: string;
     alt: string;
   };
-  heroSummary: string;
-  heroNote: string;
-  about: string;
+  summary: string;
+  note: string;
 };
 
-export type AboutFact = {
-  label: string;
-  value: string;
-  icon: string;
+export type WorkItem = {
+  name: string;
+  /** Mono metadata line, e.g. "Next.js / NestJS · 2026" or "Company · 2024". */
+  meta: string;
+  description: string;
+  href?: string;
+  repositoryUrl?: string;
+};
+
+export type ExperienceItem = {
+  role: string;
+  company: string;
+  /** Contracting employer when the work was delivered for another company. */
+  employer?: string;
+  period: string;
+  summary: string;
+};
+
+export type SkillGroup = {
+  category: string;
+  items: string[];
 };
 
 export type PortfolioLabels = {
   primaryNavigation: string;
-  mobileNavigation: string;
-  openNavigation: string;
-  resume: string;
-  resumeAria: string;
-  aboutSection: string;
-  aboutTitle: string;
-  techStackSection: string;
-  techStackTitle: string;
-  techStackAria: string;
+  home: string;
+  workSection: string;
   experienceSection: string;
-  experienceTitle: string;
-  experienceAria: string;
-  featuredProjectSection: string;
-  online: string;
-  liveLink: string;
-  repositoryLink: string;
-  contactAria: string;
-  contactTitle: string;
-  contactSubtitle: string;
+  skillsSection: string;
+  contactSection: string;
+  sourceLink: string;
   footerRights: string;
 };
 
 export type PortfolioContent = {
   navigationItems: NavigationItem[];
-  contactLinks: ContactLink[];
-  techStack: TechnologyGroup[];
-  experiences: Experience[];
-  featuredProject: FeaturedProject;
   profile: Profile;
-  aboutFacts: AboutFact[];
+  contactLinks: ContactLink[];
+  work: {
+    period: string;
+    items: WorkItem[];
+  };
+  experience: {
+    period: string;
+    items: ExperienceItem[];
+  };
+  skills: SkillGroup[];
+  contact: {
+    statement: string;
+  };
   labels: PortfolioLabels;
 };

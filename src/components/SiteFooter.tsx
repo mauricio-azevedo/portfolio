@@ -1,16 +1,23 @@
-import type { PortfolioLabels } from '../types/portfolio';
+import type { PortfolioLabels, Profile } from '../types/portfolio';
 
 type SiteFooterProps = {
   labels: PortfolioLabels;
-  name: string;
+  profile: Profile;
 };
 
-export function SiteFooter({ labels, name }: SiteFooterProps) {
+export function SiteFooter({ labels, profile }: SiteFooterProps) {
   return (
-    <footer className="mx-auto w-[min(1120px,calc(100%_-_48px))] border-t border-slate-200 pb-8 pt-6 text-center text-sm text-slate-500 max-[980px]:w-[min(100%_-_32px,1120px)]">
-      <span>
-        © {new Date().getFullYear()} {name}. {labels.footerRights}
-      </span>
+    <footer className="mt-20 border-t border-outline-variant/60 py-10">
+      <div className="mx-auto flex max-w-2xl flex-col items-center justify-between gap-4 px-6 font-mono text-xs text-outline sm:flex-row">
+        <span>
+          © {new Date().getFullYear()} {profile.name}. {labels.footerRights}
+        </span>
+        <div className="flex items-center gap-4">
+          <span>{profile.location}</span>
+          <span aria-hidden="true">•</span>
+          <span>{profile.timezone}</span>
+        </div>
+      </div>
     </footer>
   );
 }
