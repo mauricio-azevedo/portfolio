@@ -2,7 +2,7 @@
 
 Personal portfolio for Maurício Azevedo, Software Engineer.
 
-A single-column, text-first page: selected work, experience, skills and contact. All copy and links live in one typed data file, `src/data/portfolio.ts`; the components only lay it out.
+A single-column, text-first page: selected work, experience, skills and contact. Copy and links live in one typed data file, `src/data/portfolio.ts`, and the components lay it out.
 
 ## Tech Stack
 

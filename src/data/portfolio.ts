@@ -151,7 +151,6 @@ export const portfolioContent: PortfolioContent = {
   },
   labels: {
     primaryNavigation: 'Primary navigation',
-    home: 'Home',
     workSection: 'Selected Work',
     experienceSection: 'Experience',
     skillsSection: 'Skills',

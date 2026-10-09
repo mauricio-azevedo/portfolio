@@ -26,7 +26,7 @@ function WorkTitle({ item }: { item: WorkItem }) {
       >
         <span>{item.name}</span>
         <ArrowUpRightIcon
-          className="size-[15px] opacity-0 transition-opacity group-hover:opacity-100"
+          className="size-[15px] opacity-0 transition-opacity group-focus-within:opacity-100 group-hover:opacity-100"
           aria-hidden="true"
         />
       </a>

@@ -6,13 +6,10 @@
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   --color-background: #ffffff;
-  --color-surface: #ffffff;
-  --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #fbfbfe;
   --color-surface-container: #f4f3fa;
   --color-on-surface: #18191f;
   --color-on-surface-variant: #585b6b;
-  --color-outline: #8a8d9d;
+  --color-outline: #6b6e7e;
   --color-outline-variant: #e6e5ee;
   --color-primary: #004ac6;
 }
@@ -54,7 +51,7 @@ img {
 }
 
 ::selection {
-  background: var(--color-surface-container);
+  background: color-mix(in srgb, var(--color-primary) 16%, white);
   color: var(--color-on-surface);
 }
 

@@ -14,7 +14,10 @@ export function Hero({ contactLinks, profile }: HeroProps) {
     >
       <div className="max-w-xl space-y-6">
         <p className="inline-flex items-center gap-2 font-mono text-xs text-on-surface-variant">
-          <span className="size-1.5 animate-pulse rounded-full bg-emerald-600" aria-hidden="true" />
+          <span
+            className="size-1.5 rounded-full bg-emerald-600 motion-safe:animate-pulse"
+            aria-hidden="true"
+          />
           <span>
             {profile.status} • {profile.location}
           </span>
@@ -36,7 +39,7 @@ export function Hero({ contactLinks, profile }: HeroProps) {
 
         <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1 text-xs font-medium">
           {contactLinks.map((link, index) => (
-            <li key={link.href} className="contents">
+            <li key={link.href} className="flex items-center gap-5">
               {index > 0 ? (
                 <span className="text-outline-variant" aria-hidden="true">
                   /

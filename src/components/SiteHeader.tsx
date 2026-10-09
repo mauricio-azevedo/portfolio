@@ -10,7 +10,7 @@ export function SiteHeader({ profile, navigationItems, labels }: SiteHeaderProps
   return (
     <header className="sticky top-0 z-40 border-b border-outline-variant/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-2xl items-center justify-between gap-3 px-6">
-        <a className="flex min-w-0 items-center gap-2.5" href="#top" aria-label={labels.home}>
+        <a className="flex min-w-0 items-center gap-2.5" href="#top">
           <span className="truncate text-sm font-medium tracking-tight text-on-surface">
             {profile.name}
           </span>

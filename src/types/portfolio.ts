@@ -54,7 +54,6 @@ export type SkillGroup = {
 
 export type PortfolioLabels = {
   primaryNavigation: string;
-  home: string;
   workSection: string;
   experienceSection: string;
   skillsSection: string;
