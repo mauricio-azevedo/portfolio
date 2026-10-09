@@ -13,7 +13,7 @@ export default function App() {
 
   return (
     <>
-      <div className="fixed inset-0 z-0" aria-hidden="true">
+      <div className="fixed inset-0 z-0 print:hidden" aria-hidden="true">
         <HexagonBackground />
       </div>
 

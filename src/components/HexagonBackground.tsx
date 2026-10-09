@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ComponentProps, type CSSProperties } from 'react';
 
-type HexagonBackgroundProps = ComponentProps<'div'> & {
+type HexagonBackgroundProps = Omit<ComponentProps<'div'>, 'ref'> & {
   /** Hexagon width in CSS pixels. */
   hexagonSize?: number;
   /** Gap between hexagons in CSS pixels; also the width of the ring shown on hover. */
@@ -10,19 +10,19 @@ type HexagonBackgroundProps = ComponentProps<'div'> & {
 /** Height of a regular pointy-top hexagon relative to its width. */
 const HEIGHT_RATIO = 2 / Math.sqrt(3);
 
-/** Rows and columns needed to cover an area, with one spare on each side for the edge offsets. */
+/** Rows and columns needed to cover an area, plus one so the last row and column reach past the far edge. */
 function measureGrid(width: number, height: number, columnPitch: number, rowPitch: number) {
   return {
-    rows: Math.ceil(height / rowPitch) + 2,
-    columns: Math.ceil(width / columnPitch) + 2,
+    rows: Math.ceil(height / rowPitch) + 1,
+    columns: Math.ceil(width / columnPitch) + 1,
   };
 }
 
 const hexagonClassName = [
   'relative h-(--hexagon-height) w-(--hexagon-width) shrink-0',
   '[clip-path:polygon(50%_0%,100%_25%,100%_75%,50%_100%,0%_75%,0%_25%)]',
-  "before:absolute before:inset-0 before:bg-background before:transition-colors before:duration-1000 before:content-['']",
-  "after:absolute after:inset-(--hexagon-margin) after:bg-background after:transition-colors after:duration-1000 after:content-['']",
+  'before:absolute before:inset-0 before:bg-background before:transition-colors before:duration-1000',
+  'after:absolute after:inset-x-(--hexagon-margin) after:inset-y-(--hexagon-ring-inset-y) after:bg-background after:transition-colors after:duration-1000',
   'after:[clip-path:polygon(50%_0%,100%_25%,100%_75%,50%_100%,0%_75%,0%_25%)]',
   'hover:before:bg-outline-variant hover:before:duration-0',
   'hover:after:bg-surface-container hover:after:duration-0',
@@ -74,6 +74,9 @@ export function HexagonBackground({
     '--hexagon-width': `${hexagonWidth}px`,
     '--hexagon-height': `${hexagonHeight}px`,
     '--hexagon-margin': `${hexagonMargin}px`,
+    // The inner hexagon is regular too, so its vertical inset is the margin scaled by the
+    // height ratio; that keeps the ring the same width on the slanted sides.
+    '--hexagon-ring-inset-y': `${hexagonMargin * HEIGHT_RATIO}px`,
     ...style,
   } as CSSProperties;
 
@@ -91,7 +94,7 @@ export function HexagonBackground({
         {Array.from({ length: grid.rows }, (_, rowIndex) => (
           <div
             key={rowIndex}
-            className="flex gap-x-(--hexagon-margin)"
+            className="flex shrink-0 gap-x-(--hexagon-margin)"
             style={{
               // Consecutive rows overlap by the difference between a hexagon's height and the row pitch.
               // The first row starts half a hexagon up and every other row shifts by half a column,
