@@ -1,84 +1,43 @@
-import { getTechnologyLogoUrl } from '../lib/assets';
-import type { Experience as ExperienceItem, PortfolioLabels } from '../types/portfolio';
-import { SectionContent } from './SectionContent';
-import { SectionLabel } from './SectionLabel';
+import type { ExperienceItem, PortfolioLabels } from '../types/portfolio';
+import { SectionHeading } from './SectionHeading';
 
 type ExperienceProps = {
-  experiences: ExperienceItem[];
+  items: ExperienceItem[];
+  period: string;
   labels: PortfolioLabels;
 };
 
-export function Experience({ experiences, labels }: ExperienceProps) {
+export function Experience({ items, period, labels }: ExperienceProps) {
   return (
-    <section id="experience" className="min-w-0" aria-labelledby="experience-title">
-      <SectionLabel icon="experience">{labels.experienceSection}</SectionLabel>
-      <h2 id="experience-title" className="sr-only">
-        {labels.experienceTitle}
-      </h2>
+    <section
+      id="experience"
+      className="space-y-8 border-t border-outline-variant/60 pt-16"
+      aria-labelledby="experience-title"
+    >
+      <SectionHeading id="experience-title" title={labels.experienceSection} meta={period} />
 
-      <SectionContent>
-        <div className="relative mt-7 pl-8 before:absolute before:bottom-0 before:left-[5px] before:top-1 before:w-px before:bg-slate-300 before:content-['']">
-          {experiences.map((experience) => (
-            <article
-              key={`${experience.company}-${experience.period}`}
-              className="relative pb-10 last:pb-0"
-            >
-              <span
-                className="absolute left-[-31px] top-1 grid size-3 place-items-center rounded-full border border-slate-500 bg-[#f8f8f6]"
-                aria-hidden="true"
-              />
-
-              <div className="grid grid-cols-[160px_1fr] gap-7 max-[720px]:grid-cols-1 max-[720px]:gap-2">
-                <p className="m-0 text-xs font-medium uppercase tracking-[0.12em] text-slate-500 leading-[1.6]">
-                  {experience.period}
-                </p>
-
-                <div>
-                  <div>
-                    <h3 className="m-0 text-[1.02rem] font-semibold leading-tight tracking-[-0.02em] text-slate-700">
-                      {experience.role}
-                    </h3>
-                    <p className="m-0 mt-1 text-sm font-medium text-slate-500">
-                      {experience.company}
-                    </p>
-                  </div>
-
-                  <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-6 text-slate-600">
-                    {experience.highlights.map((highlight) => (
-                      <li key={highlight}>{highlight}</li>
-                    ))}
-                  </ul>
-
-                  <ul
-                    className="mt-5 flex flex-wrap gap-x-5 gap-y-3"
-                    aria-label={`${experience.company} technologies`}
-                  >
-                    {experience.technologies.map((technology) => (
-                      <li
-                        key={technology.name}
-                        className="inline-flex items-center gap-2 text-sm text-slate-600"
-                      >
-                        <img
-                          className="size-4 object-contain"
-                          src={getTechnologyLogoUrl(technology.icon)}
-                          alt=""
-                          width="16"
-                          height="16"
-                          loading="lazy"
-                          decoding="async"
-                          referrerPolicy="no-referrer"
-                          aria-hidden="true"
-                        />
-                        <span>{technology.name}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </SectionContent>
+      <div className="divide-y divide-outline-variant/40">
+        {items.map((item) => (
+          <article
+            key={`${item.company}-${item.period}`}
+            className="space-y-2 py-6 first:pt-0 last:pb-0"
+          >
+            <div className="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
+              <h3 className="text-sm font-semibold text-on-surface">
+                {item.role}{' '}
+                <span className="font-normal whitespace-nowrap text-on-surface-variant">
+                  at {item.company}
+                </span>
+              </h3>
+              <span className="shrink-0 font-mono text-xs text-outline">
+                {item.period}
+                {item.employer ? ` · ${item.employer}` : null}
+              </span>
+            </div>
+            <p className="text-xs leading-relaxed text-on-surface-variant">{item.summary}</p>
+          </article>
+        ))}
+      </div>
     </section>
   );
 }

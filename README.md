@@ -1,16 +1,17 @@
 # Maurício Azevedo — Portfolio
 
-Personal portfolio for Maurício Azevedo, Full Stack Software Engineer.
+Personal portfolio for Maurício Azevedo, Software Engineer.
 
-The site presents selected experience across AI-assisted education platforms, fintech/crypto automation, production systems, product-oriented engineering, and Arena, a social ranking product for beach tennis groups.
+A single-column, text-first page: selected work, experience, skills and contact. Copy and links live in one typed data file, `src/data/portfolio.ts`, and the components lay it out.
 
 ## Tech Stack
 
-- React
+- React 19
 - TypeScript
 - Vite
-- Modern CSS
+- Tailwind CSS 4 (design tokens in `src/index.css`)
 
-## Focus
+## Scripts
 
-This portfolio is designed to communicate product engineering depth: production ownership, ambiguous problem solving, complex workflows, maintainable architecture, and measurable business impact.
+- `npm run dev` — local dev server
+- `npm run check` — format check, lint and build; the pre-commit hook runs it and CI runs the same checks

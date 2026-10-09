@@ -1,11 +1,10 @@
-import { About } from './components/About';
 import { Contact } from './components/Contact';
 import { Experience } from './components/Experience';
-import { FeaturedProject } from './components/FeaturedProject';
 import { Hero } from './components/Hero';
 import { SiteFooter } from './components/SiteFooter';
 import { SiteHeader } from './components/SiteHeader';
-import { TechStack } from './components/TechStack';
+import { Skills } from './components/Skills';
+import { Work } from './components/Work';
 import { portfolioContent } from './data/portfolio';
 
 export default function App() {
@@ -14,35 +13,28 @@ export default function App() {
   return (
     <>
       <SiteHeader
-        brandName={content.profile.name}
+        profile={content.profile}
         navigationItems={content.navigationItems}
         labels={content.labels}
       />
 
-      <main
-        id="top"
-        className="mx-auto w-[min(1120px,calc(100%_-_48px))] max-[980px]:w-[min(100%_-_32px,1120px)]"
-      >
-        <Hero
-          contactLinks={content.contactLinks}
+      <main id="top" className="mx-auto max-w-2xl space-y-24 px-6 py-16 md:py-24">
+        <Hero contactLinks={content.contactLinks} profile={content.profile} />
+        <Work items={content.work.items} period={content.work.period} labels={content.labels} />
+        <Experience
+          items={content.experience.items}
+          period={content.experience.period}
           labels={content.labels}
-          profile={content.profile}
         />
-        <About aboutFacts={content.aboutFacts} labels={content.labels} profile={content.profile} />
-        <TechStack labels={content.labels} techStack={content.techStack} />
-
-        <section
-          className="border-b border-slate-200 py-12"
-          aria-label={content.labels.experienceAria}
-        >
-          <Experience experiences={content.experiences} labels={content.labels} />
-        </section>
-
-        <FeaturedProject featuredProject={content.featuredProject} labels={content.labels} />
-        <Contact contactLinks={content.contactLinks} labels={content.labels} />
+        <Skills skills={content.skills} labels={content.labels} />
+        <Contact
+          contactLinks={content.contactLinks}
+          statement={content.contact.statement}
+          labels={content.labels}
+        />
       </main>
 
-      <SiteFooter labels={content.labels} name={content.profile.name} />
+      <SiteFooter labels={content.labels} profile={content.profile} />
     </>
   );
 }

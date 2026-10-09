@@ -1,26 +1,24 @@
 @import 'tailwindcss';
 
+@theme {
+  --font-sans:
+    'Geist', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --color-background: #ffffff;
+  --color-on-surface: #18191f;
+  --color-on-surface-variant: #585b6b;
+  --color-outline: #6b6e7e;
+  --color-outline-variant: #e6e5ee;
+  --color-primary: #004ac6;
+}
+
 :root {
   color-scheme: light;
-  background: #ffffff;
-  color: #111827;
-  font-family:
-    Inter,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 html {
@@ -31,16 +29,14 @@ body {
   min-width: 320px;
   min-height: 100svh;
   margin: 0;
-  background: #ffffff;
+  background: var(--color-background);
+  color: var(--color-on-surface);
+  font-family: var(--font-sans);
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-button,
-a {
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -48,16 +44,18 @@ img {
   max-width: 100%;
 }
 
-::selection {
-  background: rgba(37, 99, 235, 0.16);
-  color: #0f172a;
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
-.sr-only {
-  position: absolute;
-  overflow: hidden;
-  width: 1px;
-  height: 1px;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
+::selection {
+  background: color-mix(in srgb, var(--color-primary) 16%, white);
+  color: var(--color-on-surface);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

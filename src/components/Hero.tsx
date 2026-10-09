@@ -1,65 +1,77 @@
-import type { ContactLink, PortfolioLabels, Profile } from '../types/portfolio';
-import { getPublicAssetUrl } from '../lib/assets';
-import { ContactLinks } from './ContactLinks';
-import { ResumeDownloadLink } from './ResumeDownloadLink';
+import { ArrowUpRightIcon } from '@phosphor-icons/react';
+import type { ContactLink, Profile } from '../types/portfolio';
 
 type HeroProps = {
   contactLinks: ContactLink[];
-  labels: PortfolioLabels;
   profile: Profile;
 };
 
-export function Hero({ contactLinks, labels, profile }: HeroProps) {
-  const profileImageUrl = getPublicAssetUrl(profile.profileImage.src);
-
+export function Hero({ contactLinks, profile }: HeroProps) {
   return (
     <section
-      className="grid grid-cols-[minmax(0,1fr)_300px] items-center gap-16 border-b border-slate-200 py-20 max-[980px]:grid-cols-1 max-[980px]:gap-10 max-[980px]:py-12 max-[720px]:gap-8"
+      className="flex flex-col-reverse items-start justify-between gap-8 pt-4 sm:flex-row sm:items-center md:gap-12"
       aria-labelledby="hero-title"
     >
-      <div>
-        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-slate-500 max-[720px]:mb-4">
-          {profile.role}
+      <div className="max-w-xl space-y-6">
+        <p className="inline-flex items-center gap-2 font-mono text-xs text-on-surface-variant">
+          <span
+            className="size-1.5 rounded-full bg-emerald-600 motion-safe:animate-pulse"
+            aria-hidden="true"
+          />
+          <span>
+            {profile.status} • {profile.location}
+          </span>
         </p>
 
-        <div className="flex items-end justify-between gap-5 max-[720px]:h-[164px] max-[720px]:items-center">
+        <div className="space-y-3">
           <h1
             id="hero-title"
-            className="m-0 max-w-[740px] text-[clamp(3.25rem,7vw,5.8rem)] font-semibold leading-[0.96] tracking-[-0.08em] text-slate-700 max-[720px]:text-[3.05rem]"
+            className="text-3xl font-semibold tracking-tight text-on-surface md:text-4xl"
           >
-            {profile.name}
+            {profile.greeting}
           </h1>
-
-          <div>
-            <img
-              className="hidden w-full h-auto rounded-full object-cover max-[720px]:block"
-              src={profileImageUrl}
-              alt={profile.profileImage.alt}
-            />
-          </div>
+          <p className="text-base leading-relaxed text-on-surface-variant md:text-lg">
+            {profile.summary}
+          </p>
         </div>
 
-        <p className="mt-7 max-w-[620px] text-xl leading-8 tracking-[-0.02em] text-slate-700 max-[720px]:text-lg">
-          {profile.heroSummary}
-        </p>
-        <p className="mt-3 max-w-[620px] text-base leading-7 text-slate-500">{profile.heroNote}</p>
+        <p className="text-sm leading-relaxed text-outline">{profile.note}</p>
 
-        <div className="mt-9 flex flex-wrap items-center gap-2 max-[720px]:w-full">
-          <ContactLinks links={contactLinks} />
-
-          <span className="h-6 w-px bg-slate-200" aria-hidden="true" />
-
-          <ResumeDownloadLink label={labels.resume} ariaLabel={labels.resumeAria} />
-        </div>
+        <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1 text-xs font-medium">
+          {contactLinks.map((link, index) => (
+            <li key={link.href} className="flex items-center gap-5">
+              {index > 0 ? (
+                <span className="text-outline-variant" aria-hidden="true">
+                  /
+                </span>
+              ) : null}
+              <a
+                className={
+                  link.kind === 'email'
+                    ? 'inline-flex items-center gap-1.5 text-on-surface transition-colors hover:text-primary'
+                    : 'text-on-surface-variant transition-colors hover:text-on-surface'
+                }
+                href={link.href}
+                target={link.isExternal ? '_blank' : undefined}
+                rel={link.isExternal ? 'noreferrer' : undefined}
+              >
+                <span>{link.label}</span>
+                {link.kind === 'email' ? (
+                  <ArrowUpRightIcon className="size-[15px]" aria-hidden="true" />
+                ) : null}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
 
-      <div className="flex justify-end max-[980px]:order-first max-[980px]:justify-start max-[720px]:hidden">
-        <img
-          className="h-auto w-[280px] rounded-full"
-          src={profileImageUrl}
-          alt={profile.profileImage.alt}
-        />
-      </div>
+      <img
+        className="size-20 shrink-0 rounded-full object-cover ring-1 ring-outline-variant/60 sm:size-28"
+        src={profile.profileImage.src}
+        alt={profile.profileImage.alt}
+        width="112"
+        height="112"
+      />
     </section>
   );
 }
