@@ -5,7 +5,16 @@ import { SectionLabel } from './SectionLabel';
 
 function WebIcon() {
   return (
-    <svg className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg
+      className="size-4"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
       <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" />
       <path d="M3.6 9h16.8M3.6 15h16.8" />
       <path d="M12 3c2.1 2.4 3.15 5.4 3.15 9S14.1 18.6 12 21" />
@@ -30,12 +39,22 @@ type ProjectLinksProps = {
 function ProjectLinks({ featuredProject, labels }: ProjectLinksProps) {
   return (
     <div className="flex flex-wrap gap-4">
-      <a className="inline-flex items-center gap-2 border-b border-slate-300 pb-1 text-sm font-semibold text-slate-600 transition-colors hover:border-slate-700 hover:text-slate-700" href={featuredProject.liveUrl} target="_blank" rel="noreferrer">
+      <a
+        className="inline-flex items-center gap-2 border-b border-slate-300 pb-1 text-sm font-semibold text-slate-600 transition-colors hover:border-slate-700 hover:text-slate-700"
+        href={featuredProject.liveUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
         <WebIcon />
         {labels.liveLink}
         <span aria-hidden="true">→</span>
       </a>
-      <a className="inline-flex items-center gap-2 border-b border-slate-300 pb-1 text-sm font-semibold text-slate-600 transition-colors hover:border-slate-700 hover:text-slate-700" href={featuredProject.repositoryUrl} target="_blank" rel="noreferrer">
+      <a
+        className="inline-flex items-center gap-2 border-b border-slate-300 pb-1 text-sm font-semibold text-slate-600 transition-colors hover:border-slate-700 hover:text-slate-700"
+        href={featuredProject.repositoryUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
         <GitHubIcon />
         {labels.repositoryLink}
         <span aria-hidden="true">→</span>

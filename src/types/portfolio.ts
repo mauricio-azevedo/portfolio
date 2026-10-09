@@ -1,5 +1,3 @@
-export type Language = 'en' | 'pt';
-
 export type NavigationItem = {
   label: string;
   href: string;

@@ -6,10 +6,8 @@ type SectionLabelProps = {
 };
 
 const sectionIcons: Record<SectionIconName, string> = {
-  about:
-    'M12 12a3.25 3.25 0 1 0 0-6.5 3.25 3.25 0 0 0 0 6.5Zm6.25 7.5a6.25 6.25 0 0 0-12.5 0',
-  stacks:
-    'M7 8.5 3.5 12 7 15.5M17 8.5l3.5 3.5-3.5 3.5M14 6.5l-4 11',
+  about: 'M12 12a3.25 3.25 0 1 0 0-6.5 3.25 3.25 0 0 0 0 6.5Zm6.25 7.5a6.25 6.25 0 0 0-12.5 0',
+  stacks: 'M7 8.5 3.5 12 7 15.5M17 8.5l3.5 3.5-3.5 3.5M14 6.5l-4 11',
   experience:
     'M8.5 7.25V5.5a1.5 1.5 0 0 1 1.5-1.5h4a1.5 1.5 0 0 1 1.5 1.5v1.75M4.75 8h14.5v10.25H4.75V8Zm0 4.5h14.5',
   featuredProject:

@@ -29,13 +29,7 @@ const iconColors: Record<ContactIconName, string> = {
 function ContactIcon({ icon, isCompact }: { icon: ContactIconName; isCompact: boolean }) {
   const Icon = contactIcons[icon];
 
-  return (
-    <Icon
-      className={isCompact ? 'size-5' : 'size-6'}
-      weight="regular"
-      aria-hidden="true"
-    />
-  );
+  return <Icon className={isCompact ? 'size-5' : 'size-6'} weight="regular" aria-hidden="true" />;
 }
 
 export function ContactLinks({ links, variant = 'default' }: ContactLinksProps) {

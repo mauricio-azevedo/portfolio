@@ -29,6 +29,7 @@ const specialTechnologyLogos: Record<string, string> = {
   `),
 };
 
-export const getTechnologyLogoUrl = (icon: string) => specialTechnologyLogos[icon] ?? `${SIMPLE_ICONS_BASE_URL}/${icon}`;
+export const getTechnologyLogoUrl = (icon: string) =>
+  specialTechnologyLogos[icon] ?? `${SIMPLE_ICONS_BASE_URL}/${icon}`;
 
 export const getPublicAssetUrl = (path: string) => `${publicBaseUrl}${path.replace(/^\//, '')}`;

@@ -8,7 +8,11 @@ type SectionContentProps = {
   withPadding?: boolean;
 };
 
-export function SectionContent({ children, className = '', withPadding = true }: SectionContentProps) {
+export function SectionContent({
+  children,
+  className = '',
+  withPadding = true,
+}: SectionContentProps) {
   const paddingClassName = withPadding ? sectionContentPadding : '';
 
   return <div className={`${paddingClassName} ${className}`.trim()}>{children}</div>;

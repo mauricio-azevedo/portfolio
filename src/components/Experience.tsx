@@ -19,7 +19,10 @@ export function Experience({ experiences, labels }: ExperienceProps) {
       <SectionContent>
         <div className="relative mt-7 pl-8 before:absolute before:bottom-0 before:left-[5px] before:top-1 before:w-px before:bg-slate-300 before:content-['']">
           {experiences.map((experience) => (
-            <article key={`${experience.company}-${experience.period}`} className="relative pb-10 last:pb-0">
+            <article
+              key={`${experience.company}-${experience.period}`}
+              className="relative pb-10 last:pb-0"
+            >
               <span
                 className="absolute left-[-31px] top-1 grid size-3 place-items-center rounded-full border border-slate-500 bg-[#f8f8f6]"
                 aria-hidden="true"
@@ -46,9 +49,15 @@ export function Experience({ experiences, labels }: ExperienceProps) {
                     ))}
                   </ul>
 
-                  <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-3" aria-label={`${experience.company} technologies`}>
+                  <ul
+                    className="mt-5 flex flex-wrap gap-x-5 gap-y-3"
+                    aria-label={`${experience.company} technologies`}
+                  >
                     {experience.technologies.map((technology) => (
-                      <li key={technology.name} className="inline-flex items-center gap-2 text-sm text-slate-600">
+                      <li
+                        key={technology.name}
+                        className="inline-flex items-center gap-2 text-sm text-slate-600"
+                      >
                         <img
                           className="size-4 object-contain"
                           src={getTechnologyLogoUrl(technology.icon)}
