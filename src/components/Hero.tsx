@@ -57,13 +57,8 @@ export function Hero({ contactLinks, profile }: HeroProps) {
           className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1 text-xs font-medium"
           variants={rise}
         >
-          {contactLinks.map((link, index) => (
-            <li key={link.href} className="flex items-center gap-5">
-              {index > 0 ? (
-                <span className="text-outline-variant" aria-hidden="true">
-                  /
-                </span>
-              ) : null}
+          {contactLinks.map((link) => (
+            <li key={link.href}>
               <a
                 className={
                   link.kind === 'email'

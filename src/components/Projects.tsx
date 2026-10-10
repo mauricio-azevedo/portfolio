@@ -20,7 +20,14 @@ type ProjectLinkProps = {
 
 function ProjectLink({ href, label, projectName, icon: LinkIcon }: ProjectLinkProps) {
   return (
-    <LiquidButton size="sm" className="focus-visible:ring-accent-brand" asChild>
+    // The button carries no background until it is hovered, when the fill sweeps the page's
+    // own background across it. Against the bare column that is invisible by design; what it
+    // covers is the pointer follower passing behind, so the fill reads as a wipe.
+    <LiquidButton
+      size="sm"
+      className="[--liquid-button-background-color:transparent] [--liquid-button-color:var(--color-background)] text-on-surface shadow-none hover:text-on-surface focus-visible:ring-accent-brand"
+      asChild
+    >
       <a href={href} target="_blank" rel="noreferrer" aria-label={`${label}: ${projectName}`}>
         <LinkIcon aria-hidden="true" />
         <span>{label}</span>
@@ -34,13 +41,13 @@ export function Projects({ items, labels }: ProjectsProps) {
   return (
     <m.section
       id="projects"
-      className="space-y-8 border-t border-outline-variant/60 pt-16"
+      className="space-y-8 pt-16"
       aria-labelledby="projects-title"
       {...reveal}
     >
       <SectionHeading id="projects-title" title={labels.projectsSection} />
 
-      <div className="divide-y divide-outline-variant/40">
+      <div>
         {items.map((item) => (
           <m.article key={item.name} className="py-7 first:pt-0 last:pb-0" variants={rise}>
             <div className="mb-2 flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">

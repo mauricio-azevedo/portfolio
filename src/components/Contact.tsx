@@ -12,12 +12,7 @@ type ContactProps = {
 
 export function Contact({ contactLinks, statement, labels }: ContactProps) {
   return (
-    <m.section
-      id="contact"
-      className="space-y-6 border-t border-outline-variant/60 pt-16"
-      aria-labelledby="contact-title"
-      {...reveal}
-    >
+    <m.section id="contact" className="space-y-6 pt-16" aria-labelledby="contact-title" {...reveal}>
       <div className="space-y-3">
         <SectionHeading id="contact-title" title={labels.contactSection} />
         <m.p className="text-base font-medium leading-relaxed text-on-surface" variants={rise}>
