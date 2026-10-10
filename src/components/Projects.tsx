@@ -20,7 +20,12 @@ type ProjectLinkProps = {
 
 function ProjectLink({ href, label, projectName, icon: LinkIcon }: ProjectLinkProps) {
   return (
-    <LiquidButton size="sm" className="focus-visible:ring-accent-brand" asChild>
+    // No resting background, so the column shows through until the liquid fill sweeps in.
+    <LiquidButton
+      size="sm"
+      className="[--liquid-button-background-color:transparent] focus-visible:ring-accent-brand"
+      asChild
+    >
       <a href={href} target="_blank" rel="noreferrer" aria-label={`${label}: ${projectName}`}>
         <LinkIcon aria-hidden="true" />
         <span>{label}</span>
