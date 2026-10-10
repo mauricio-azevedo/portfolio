@@ -3,6 +3,7 @@ import { LazyMotion, MotionConfig, domAnimation } from 'motion/react';
 import { Contact } from './components/Contact';
 import { Experience } from './components/Experience';
 import { Hero } from './components/Hero';
+import { PointerFollower } from './components/PointerFollower';
 import { Projects } from './components/Projects';
 import { SiteFooter } from './components/SiteFooter';
 import { SiteHeader } from './components/SiteHeader';
@@ -24,6 +25,9 @@ export default function App() {
         {/* Lenis smooths wheel scrolling on the document and animates in-page anchor links.
             It stops smoothing under prefers-reduced-motion, so anchors then jump instantly. */}
         <ReactLenis root options={{ anchors: true, autoRaf: true }} />
+
+        <PointerFollower />
+
         <SiteHeader
           profile={content.profile}
           navigationItems={content.navigationItems}

@@ -9,7 +9,7 @@ type SiteFooterProps = {
 
 export function SiteFooter({ labels, profile }: SiteFooterProps) {
   return (
-    <m.footer className="mt-20 border-t border-outline-variant/60 py-10" {...reveal}>
+    <m.footer className="mt-20 py-10" {...reveal}>
       <m.div
         className="mx-auto flex max-w-2xl flex-col items-center justify-between gap-4 px-6 font-mono text-xs text-outline sm:flex-row"
         variants={rise}

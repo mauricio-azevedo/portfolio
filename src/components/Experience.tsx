@@ -13,13 +13,13 @@ export function Experience({ items, period, labels }: ExperienceProps) {
   return (
     <m.section
       id="experience"
-      className="space-y-8 border-t border-outline-variant/60 pt-16"
+      className="space-y-8 pt-16"
       aria-labelledby="experience-title"
       {...reveal}
     >
       <SectionHeading id="experience-title" title={labels.experienceSection} meta={period} />
 
-      <div className="divide-y divide-outline-variant/40">
+      <div>
         {items.map((item) => (
           <m.article
             key={`${item.company}-${item.period}`}

@@ -10,15 +10,10 @@ type SkillsProps = {
 
 export function Skills({ skills, labels }: SkillsProps) {
   return (
-    <m.section
-      id="skills"
-      className="space-y-8 border-t border-outline-variant/60 pt-16"
-      aria-labelledby="skills-title"
-      {...reveal}
-    >
+    <m.section id="skills" className="space-y-8 pt-16" aria-labelledby="skills-title" {...reveal}>
       <SectionHeading id="skills-title" title={labels.skillsSection} />
 
-      <dl className="divide-y divide-outline-variant/40">
+      <dl>
         {skills.map((group) => (
           <m.div
             key={group.category}
