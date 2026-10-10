@@ -1,3 +1,4 @@
+import { ReactLenis } from 'lenis/react';
 import { LazyMotion, MotionConfig, domAnimation } from 'motion/react';
 import { Contact } from './components/Contact';
 import { Experience } from './components/Experience';
@@ -20,6 +21,9 @@ export default function App() {
     // full component and are kept verbatim, so the full feature set ships too.
     <MotionConfig reducedMotion="user">
       <LazyMotion features={domAnimation} strict>
+        {/* Lenis smooths wheel scrolling on the document and animates in-page anchor links.
+            It stops smoothing under prefers-reduced-motion, so anchors then jump instantly. */}
+        <ReactLenis root options={{ anchors: true, autoRaf: true }} />
         <SiteHeader
           profile={content.profile}
           navigationItems={content.navigationItems}
