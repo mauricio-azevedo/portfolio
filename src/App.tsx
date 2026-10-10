@@ -13,7 +13,7 @@ export default function App() {
 
   return (
     <>
-      <div className="fixed inset-0 z-0 print:hidden" aria-hidden="true">
+      <div className="fixed inset-0 z-0 no-hover:hidden print:hidden" aria-hidden="true">
         <HexagonBackground />
       </div>
 
@@ -23,7 +23,10 @@ export default function App() {
         labels={content.labels}
       />
 
-      <main id="top" className="relative z-10 mx-auto max-w-2xl space-y-24 px-6 py-16 md:py-24">
+      <main
+        id="top"
+        className="relative z-10 mx-auto max-w-2xl space-y-24 border-outline-variant/60 bg-background px-6 py-16 md:border-x md:py-24"
+      >
         <Hero contactLinks={content.contactLinks} profile={content.profile} />
         <Work items={content.work.items} period={content.work.period} labels={content.labels} />
         <Experience
