@@ -1,3 +1,5 @@
+import * as m from 'motion/react-m';
+import { spring } from '../lib/motion';
 import type { NavigationItem, PortfolioLabels, Profile } from '../types/portfolio';
 
 type SiteHeaderProps = {
@@ -8,7 +10,12 @@ type SiteHeaderProps = {
 
 export function SiteHeader({ profile, navigationItems, labels }: SiteHeaderProps) {
   return (
-    <header className="sticky top-0 z-40 border-b border-outline-variant/60 bg-background/80 backdrop-blur-md">
+    <m.header
+      className="sticky top-0 z-40 border-b border-outline-variant/60 bg-background/80 backdrop-blur-md"
+      initial={{ opacity: 0, y: -8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={spring}
+    >
       <div className="mx-auto flex h-16 max-w-2xl items-center justify-between gap-3 px-6">
         <a className="flex min-w-0 items-center gap-2.5" href="#top">
           <span className="truncate text-sm font-medium tracking-tight text-on-surface">
@@ -28,6 +35,6 @@ export function SiteHeader({ profile, navigationItems, labels }: SiteHeaderProps
           ))}
         </nav>
       </div>
-    </header>
+    </m.header>
   );
 }

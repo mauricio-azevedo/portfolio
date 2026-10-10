@@ -1,3 +1,5 @@
+import * as m from 'motion/react-m';
+import { revealViewport, rise, stage } from '../lib/motion';
 import type { PortfolioLabels, Profile } from '../types/portfolio';
 
 type SiteFooterProps = {
@@ -7,8 +9,17 @@ type SiteFooterProps = {
 
 export function SiteFooter({ labels, profile }: SiteFooterProps) {
   return (
-    <footer className="mt-20 border-t border-outline-variant/60 py-10">
-      <div className="mx-auto flex max-w-2xl flex-col items-center justify-between gap-4 px-6 font-mono text-xs text-outline sm:flex-row">
+    <m.footer
+      className="mt-20 border-t border-outline-variant/60 py-10"
+      variants={stage}
+      initial="hidden"
+      whileInView="visible"
+      viewport={revealViewport}
+    >
+      <m.div
+        className="mx-auto flex max-w-2xl flex-col items-center justify-between gap-4 px-6 font-mono text-xs text-outline sm:flex-row"
+        variants={rise}
+      >
         <span>
           © {new Date().getFullYear()} {profile.name}. {labels.footerRights}
         </span>
@@ -17,7 +28,7 @@ export function SiteFooter({ labels, profile }: SiteFooterProps) {
           <span aria-hidden="true">•</span>
           <span>{profile.timezone}</span>
         </div>
-      </div>
-    </footer>
+      </m.div>
+    </m.footer>
   );
 }

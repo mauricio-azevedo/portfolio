@@ -59,3 +59,13 @@ img {
     scroll-behavior: auto;
   }
 }
+
+@media print {
+  /* Motion drives the entrance animations through inline styles; a section that
+     has not scrolled into view would otherwise print hidden. */
+  [style] {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}

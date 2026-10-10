@@ -10,6 +10,7 @@ A single-column, text-first page: selected work, experience, skills and contact.
 - TypeScript
 - Vite
 - Tailwind CSS 4 (design tokens in `src/index.css`)
+- Motion (entrance animations)
 
 ## Scripts
 
