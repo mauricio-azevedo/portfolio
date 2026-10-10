@@ -25,7 +25,7 @@ export const portfolioContent: PortfolioContent = {
   contactLinks: [
     {
       kind: 'email',
-      label: 'mauricio.mendonca.azevedo@gmail.com',
+      label: 'Email',
       href: 'mailto:mauricio.mendonca.azevedo@gmail.com',
     },
     {

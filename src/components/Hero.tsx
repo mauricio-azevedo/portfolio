@@ -1,7 +1,7 @@
-import { ArrowUpRightIcon } from '@phosphor-icons/react';
 import * as m from 'motion/react-m';
 import { rise, spring, stage } from '../lib/motion';
 import type { ContactLink, Profile } from '../types/portfolio';
+import { ContactLinks } from './ContactLinks';
 
 type HeroProps = {
   contactLinks: ContactLink[];
@@ -53,30 +53,10 @@ export function Hero({ contactLinks, profile }: HeroProps) {
           {profile.note}
         </m.p>
 
-        <m.ul
+        <ContactLinks
+          links={contactLinks}
           className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1 text-xs font-medium"
-          variants={rise}
-        >
-          {contactLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                className={
-                  link.kind === 'email'
-                    ? 'inline-flex items-center gap-1.5 text-on-surface transition-colors hover:text-accent-brand'
-                    : 'text-on-surface-variant transition-colors hover:text-on-surface'
-                }
-                href={link.href}
-                target={link.isExternal ? '_blank' : undefined}
-                rel={link.isExternal ? 'noreferrer' : undefined}
-              >
-                <span>{link.label}</span>
-                {link.kind === 'email' ? (
-                  <ArrowUpRightIcon className="size-[15px]" aria-hidden="true" />
-                ) : null}
-              </a>
-            </li>
-          ))}
-        </m.ul>
+        />
       </div>
 
       {/* Plain targets instead of variant labels keep the portrait out of the stagger queue,
