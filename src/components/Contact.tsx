@@ -1,6 +1,6 @@
 import { EnvelopeSimpleIcon } from '@phosphor-icons/react';
 import * as m from 'motion/react-m';
-import { revealViewport, rise, stage } from '../lib/motion';
+import { reveal, rise } from '../lib/motion';
 import type { ContactLink, PortfolioLabels } from '../types/portfolio';
 import { SectionHeading } from './SectionHeading';
 
@@ -16,10 +16,7 @@ export function Contact({ contactLinks, statement, labels }: ContactProps) {
       id="contact"
       className="space-y-6 border-t border-outline-variant/60 pt-16"
       aria-labelledby="contact-title"
-      variants={stage}
-      initial="hidden"
-      whileInView="visible"
-      viewport={revealViewport}
+      {...reveal}
     >
       <div className="space-y-3">
         <SectionHeading id="contact-title" title={labels.contactSection} />

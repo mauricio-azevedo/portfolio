@@ -14,7 +14,7 @@ export default function App() {
   return (
     // Users who prefer reduced motion get fades without movement. Components render
     // `m.*` with the `domAnimation` feature set, which ships less code than the full
-    // `motion` component; `strict` throws if the full component slips in.
+    // `motion` component; `strict` throws in development if the full one slips in.
     <MotionConfig reducedMotion="user">
       <LazyMotion features={domAnimation} strict>
         <SiteHeader

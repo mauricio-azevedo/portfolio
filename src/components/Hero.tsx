@@ -8,12 +8,14 @@ type HeroProps = {
   profile: Profile;
 };
 
+const heroStage = stage(0.1);
+
 export function Hero({ contactLinks, profile }: HeroProps) {
   return (
     <m.section
       className="flex flex-col-reverse items-start justify-between gap-8 pt-4 sm:flex-row sm:items-center md:gap-12"
       aria-labelledby="hero-title"
-      variants={stage}
+      variants={heroStage}
       initial="hidden"
       animate="visible"
     >

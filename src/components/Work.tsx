@@ -1,6 +1,6 @@
 import { ArrowUpRightIcon } from '@phosphor-icons/react';
 import * as m from 'motion/react-m';
-import { revealViewport, rise, stage } from '../lib/motion';
+import { reveal, rise } from '../lib/motion';
 import type { PortfolioLabels, WorkItem } from '../types/portfolio';
 import { SectionHeading } from './SectionHeading';
 
@@ -42,10 +42,7 @@ export function Work({ items, period, labels }: WorkProps) {
       id="work"
       className="space-y-8 border-t border-outline-variant/60 pt-16"
       aria-labelledby="work-title"
-      variants={stage}
-      initial="hidden"
-      whileInView="visible"
-      viewport={revealViewport}
+      {...reveal}
     >
       <SectionHeading id="work-title" title={labels.workSection} meta={period} />
 

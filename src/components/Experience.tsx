@@ -1,5 +1,5 @@
 import * as m from 'motion/react-m';
-import { revealViewport, rise, stage } from '../lib/motion';
+import { reveal, rise } from '../lib/motion';
 import type { ExperienceItem, PortfolioLabels } from '../types/portfolio';
 import { SectionHeading } from './SectionHeading';
 
@@ -15,10 +15,7 @@ export function Experience({ items, period, labels }: ExperienceProps) {
       id="experience"
       className="space-y-8 border-t border-outline-variant/60 pt-16"
       aria-labelledby="experience-title"
-      variants={stage}
-      initial="hidden"
-      whileInView="visible"
-      viewport={revealViewport}
+      {...reveal}
     >
       <SectionHeading id="experience-title" title={labels.experienceSection} meta={period} />
 
