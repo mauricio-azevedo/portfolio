@@ -67,7 +67,7 @@ export function Hero({ contactLinks, profile }: HeroProps) {
               <a
                 className={
                   link.kind === 'email'
-                    ? 'inline-flex items-center gap-1.5 text-on-surface transition-colors hover:text-primary'
+                    ? 'inline-flex items-center gap-1.5 text-on-surface transition-colors hover:text-accent-brand'
                     : 'text-on-surface-variant transition-colors hover:text-on-surface'
                 }
                 href={link.href}

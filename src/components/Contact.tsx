@@ -34,7 +34,7 @@ export function Contact({ contactLinks, statement, labels }: ContactProps) {
             <a
               className={
                 link.kind === 'email'
-                  ? 'flex items-center gap-1.5 text-primary hover:underline'
+                  ? 'flex items-center gap-1.5 text-accent-brand hover:underline'
                   : 'text-on-surface-variant transition-colors hover:text-on-surface'
               }
               href={link.href}

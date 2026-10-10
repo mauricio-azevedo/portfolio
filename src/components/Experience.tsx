@@ -27,17 +27,13 @@ export function Experience({ items, period, labels }: ExperienceProps) {
             variants={rise}
           >
             <div className="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
-              <h3 className="text-sm font-semibold text-on-surface">
-                {item.role}{' '}
-                <span className="font-normal whitespace-nowrap text-on-surface-variant">
-                  at {item.company}
-                </span>
-              </h3>
-              <span className="shrink-0 font-mono text-xs text-outline">
-                {item.period}
-                {item.employer ? ` · ${item.employer}` : null}
-              </span>
+              <h3 className="text-sm font-semibold text-on-surface">{item.role}</h3>
+              <span className="shrink-0 font-mono text-xs text-outline">{item.period}</span>
             </div>
+            <p className="text-sm text-on-surface-variant">
+              @ {item.company}
+              {item.employer ? ` (${item.employer})` : null}
+            </p>
             <p className="text-xs leading-relaxed text-on-surface-variant">{item.summary}</p>
           </m.article>
         ))}
