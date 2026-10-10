@@ -25,9 +25,9 @@ function useFollowPointer(ref: RefObject<HTMLDivElement | null>) {
     const handlePointerMove = ({ clientX, clientY }: PointerEvent) => {
       const element = ref.current!;
 
-      // The four `offset*` properties each force the browser to compute layout. `frame.read`
-      // moves them into Motion's read phase, so they never interleave with its style writes
-      // and the frame settles with one layout pass instead of one per read.
+      // The `offset*` properties force the browser to compute layout. `frame.read` keeps the
+      // reads in Motion's read phase, where they cannot land between its style writes; that
+      // interleaving is what would cost the frame a second layout pass.
       frame.read(() => {
         x.set(clientX - element.offsetLeft - element.offsetWidth / 2);
         y.set(clientY - element.offsetTop - element.offsetHeight / 2);
@@ -62,9 +62,10 @@ export function PointerFollower() {
   return (
     // The wrapper is the ball's offset parent. Being fixed at the viewport's edges, it makes
     // `offsetLeft` and `offsetTop` zero, which is what lets the example's math treat the
-    // pointer's client coordinates as the ball's own. A negative z-index puts it under the
-    // text: `body` paints no background of its own, so the page's background propagates to
-    // the canvas, which is painted before negative layers rather than over them.
+    // pointer's client coordinates as the ball's own. The negative z-index puts the ball
+    // under the text: `html` carries no background, so `body`'s is promoted to the canvas and
+    // `body` paints none in its own box, leaving the canvas below the negative layer. Giving
+    // `html` or `#root` a background of its own would hide the ball completely.
     <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
       <m.div ref={ref} style={{ ...ball, x, y }} />
     </div>
