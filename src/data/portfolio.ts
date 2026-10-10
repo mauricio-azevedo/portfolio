@@ -3,8 +3,8 @@ import type { PortfolioContent } from '../types/portfolio';
 
 export const portfolioContent: PortfolioContent = {
   navigationItems: [
-    { label: 'Work', href: '#work' },
     { label: 'Experience', href: '#experience' },
+    { label: 'Projects', href: '#projects' },
     { label: 'Contact', href: '#contact' },
   ],
   profile: {
@@ -53,37 +53,16 @@ export const portfolioContent: PortfolioContent = {
       isExternal: true,
     },
   ],
-  work: {
-    period: '2024 — 2026',
-    items: [
-      {
-        name: 'Arena',
-        meta: 'Next.js / NestJS / PostgreSQL · 2026',
-        description:
-          'Mobile-first web app that gives casual beach tennis players a competitive, pro-level feel through Elo-based group rankings, statistics, achievements, milestones and featured players. Built end to end as a personal project.',
-        href: 'https://arenabeachtennis.com',
-        repositoryUrl: 'https://github.com/mauricio-azevedo/arena',
-      },
-      {
-        name: 'AVA Canal Educação',
-        meta: 'Estudologia · 2024 — 2026',
-        description:
-          'LLM-powered learning platform serving over 150,000 users across 600 schools. Owned a competitive multiplayer quiz game with AI-generated questions and provided production support for critical user-facing tickets.',
-      },
-      {
-        name: 'Automated USDT trading system',
-        meta: 'Inkluziva · 2024',
-        description:
-          'Automated trading system managing millions of dollars in capital. Served as its sole developer, defining requirements directly with the company owner, the system’s user, and tailoring it to the owner’s needs.',
-      },
-      {
-        name: 'Multi-asset crypto wallet',
-        meta: 'Inkluziva · 2024',
-        description:
-          'Multi-asset crypto wallet. Enhanced and maintained the product, including a new feature that mints customizable NFTs in seconds without prior blockchain knowledge.',
-      },
-    ],
-  },
+  projects: [
+    {
+      name: 'Arena',
+      meta: 'Next.js / NestJS / PostgreSQL · 2026',
+      description:
+        'Mobile-first web app that gives casual beach tennis players a competitive, pro-level feel through Elo-based group rankings, statistics, achievements, milestones and featured players. Built end to end as a personal project.',
+      href: 'https://arenabeachtennis.com',
+      repositoryUrl: 'https://github.com/mauricio-azevedo/arena',
+    },
+  ],
   experience: {
     period: '2018 — 2026',
     items: [
@@ -151,11 +130,12 @@ export const portfolioContent: PortfolioContent = {
   },
   labels: {
     primaryNavigation: 'Primary navigation',
-    workSection: 'Selected Work',
+    projectsSection: 'Projects',
     experienceSection: 'Experience',
     skillsSection: 'Skills',
     contactSection: 'Contact',
-    sourceLink: 'Source on GitHub',
+    websiteLink: 'Website',
+    codeLink: 'Code',
     footerRights: 'All rights reserved.',
   },
 };

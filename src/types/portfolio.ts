@@ -29,7 +29,7 @@ export type Profile = {
   note: string;
 };
 
-export type WorkItem = {
+export type ProjectItem = {
   name: string;
   /** Mono metadata line, e.g. "Next.js / NestJS · 2026" or "Company · 2024". */
   meta: string;
@@ -54,11 +54,12 @@ export type SkillGroup = {
 
 export type PortfolioLabels = {
   primaryNavigation: string;
-  workSection: string;
+  projectsSection: string;
   experienceSection: string;
   skillsSection: string;
   contactSection: string;
-  sourceLink: string;
+  websiteLink: string;
+  codeLink: string;
   footerRights: string;
 };
 
@@ -66,10 +67,7 @@ export type PortfolioContent = {
   navigationItems: NavigationItem[];
   profile: Profile;
   contactLinks: ContactLink[];
-  work: {
-    period: string;
-    items: WorkItem[];
-  };
+  projects: ProjectItem[];
   experience: {
     period: string;
     items: ExperienceItem[];
