@@ -20,14 +20,7 @@ type ProjectLinkProps = {
 
 function ProjectLink({ href, label, projectName, icon: LinkIcon }: ProjectLinkProps) {
   return (
-    // The button carries no background until it is hovered, when the fill sweeps the page's
-    // own background across it. Against the bare column that is invisible by design; what it
-    // covers is the pointer follower passing behind, so the fill reads as a wipe.
-    <LiquidButton
-      size="sm"
-      className="[--liquid-button-background-color:transparent] [--liquid-button-color:var(--color-background)] text-on-surface shadow-none hover:text-on-surface focus-visible:ring-accent-brand"
-      asChild
-    >
+    <LiquidButton size="sm" className="focus-visible:ring-accent-brand" asChild>
       <a href={href} target="_blank" rel="noreferrer" aria-label={`${label}: ${projectName}`}>
         <LinkIcon aria-hidden="true" />
         <span>{label}</span>

@@ -11,11 +11,7 @@ const spring = { damping: 9, stiffness: 50, restDelta: 0.001 };
 const ball = {
   width: 72,
   height: 72,
-  // A tint rather than the brand colour itself. The disc passes behind running text, so it
-  // has to stay light enough that the muted body colour still clears 4.5:1 against it. At
-  // this mix that holds for an accent at or lighter than #82a8e6; a darker accent needs a
-  // smaller share of it here.
-  backgroundColor: 'color-mix(in srgb, var(--color-accent-brand) 45%, white)',
+  backgroundColor: 'var(--color-accent-brand)',
   borderRadius: '50%',
 };
 
@@ -85,17 +81,19 @@ export function PointerFollower() {
     // `offsetLeft` and `offsetTop` zero, which is what lets the example's math treat the
     // pointer's client coordinates as the ball's own.
     //
-    // The negative z-index puts the ball under the text: `html` carries no background, so
-    // `body`'s is promoted to the canvas and `body` paints none in its own box, leaving the
-    // canvas below the negative layer. Giving `html` or `#root` a background of its own would
-    // hide the ball completely. Painting below the column is also what lets an opaque element
-    // in the column cover the ball, which is how the project buttons' fill reads as a wipe.
+    // `mix-blend-mode: multiply` is what keeps the disc at full accent strength without
+    // making the text under it unreadable. The disc paints above the column, but multiply can
+    // only darken, so a glyph crossing it keeps its own darkness and the disc reads as a tint
+    // laid over the page rather than a patch covering it. The mode belongs on the wrapper:
+    // the wrapper is a stacking context, so a blend set on the ball itself would compose
+    // against the wrapper's empty backdrop instead of against the page. This only clears the
+    // contrast floor while the accent stays light; a dark accent darkens the glyphs as much
+    // as the disc and the difference between them collapses.
     //
-    // `pointer-events: none` changes nothing while the z-index stays negative, since hit
-    // testing follows paint order and the ball is already behind `#root`. It is here for the
-    // day someone raises that z-index.
+    // `z-30` keeps the disc under the sticky header, and `pointer-events: none` is
+    // load-bearing here: painting above the column, the disc would otherwise take its clicks.
     <div
-      className={`pointer-events-none fixed inset-0 -z-10 overflow-hidden transition-opacity duration-500 ${awake ? 'opacity-100' : 'opacity-0'}`}
+      className={`pointer-events-none fixed inset-0 z-30 overflow-hidden mix-blend-multiply transition-opacity duration-500 ${awake ? 'opacity-100' : 'opacity-0'}`}
       aria-hidden="true"
     >
       <m.div ref={ref} style={{ ...ball, x, y }} />
