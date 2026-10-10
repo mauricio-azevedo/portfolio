@@ -39,7 +39,7 @@ export function Hero({ contactLinks, profile }: HeroProps) {
             className="text-3xl font-semibold tracking-tight text-on-surface md:text-4xl"
             variants={rise}
           >
-            {profile.greeting}
+            {profile.name}
           </m.h1>
           <m.p
             className="text-base leading-relaxed text-on-surface-variant md:text-lg"
