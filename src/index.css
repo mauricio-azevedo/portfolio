@@ -53,10 +53,6 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 /* Element defaults live in the base layer so utility classes on the same element win.
    shadcn's own base rules for body come later in this file and read the same tokens. */
 @layer base {
@@ -87,12 +83,6 @@ html {
   ::selection {
     background: color-mix(in srgb, var(--color-accent-brand) 16%, white);
     color: var(--color-on-surface);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
   }
 }
 
