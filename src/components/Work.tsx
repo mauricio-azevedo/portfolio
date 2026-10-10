@@ -1,4 +1,6 @@
 import { ArrowUpRightIcon } from '@phosphor-icons/react';
+import * as m from 'motion/react-m';
+import { reveal, rise } from '../lib/motion';
 import type { PortfolioLabels, WorkItem } from '../types/portfolio';
 import { SectionHeading } from './SectionHeading';
 
@@ -36,16 +38,17 @@ function WorkTitle({ item }: { item: WorkItem }) {
 
 export function Work({ items, period, labels }: WorkProps) {
   return (
-    <section
+    <m.section
       id="work"
       className="space-y-8 border-t border-outline-variant/60 pt-16"
       aria-labelledby="work-title"
+      {...reveal}
     >
       <SectionHeading id="work-title" title={labels.workSection} meta={period} />
 
       <div className="divide-y divide-outline-variant/40">
         {items.map((item) => (
-          <article key={item.name} className="group py-7 first:pt-0 last:pb-0">
+          <m.article key={item.name} className="group py-7 first:pt-0 last:pb-0" variants={rise}>
             <div className="mb-2 flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
               <WorkTitle item={item} />
               <span className="shrink-0 font-mono text-xs text-outline">{item.meta}</span>
@@ -64,9 +67,9 @@ export function Work({ items, period, labels }: WorkProps) {
                 <ArrowUpRightIcon className="size-3.5" aria-hidden="true" />
               </a>
             ) : null}
-          </article>
+          </m.article>
         ))}
       </div>
-    </section>
+    </m.section>
   );
 }
