@@ -3,24 +3,31 @@ import * as m from 'motion/react-m';
 import { useEffect, useRef, useState, type RefObject } from 'react';
 
 /**
- * Far below the critically damped `spring` in `lib/motion.ts`, so the ball overshoots the
- * cursor and swings back instead of arriving and stopping.
+ * Still under the critically damped `spring` in `lib/motion.ts`, so the ball overshoots the
+ * cursor, but by one soft swing rather than the long wobble the Motion example uses.
  */
-const spring = { damping: 3, stiffness: 50, restDelta: 0.001 };
+const spring = { damping: 9, stiffness: 50, restDelta: 0.001 };
 
 const ball = {
-  width: 100,
-  height: 100,
-  backgroundColor: 'var(--color-accent-brand)',
+  width: 72,
+  height: 72,
+  // A tint rather than the brand colour itself. The disc passes behind running text, so it
+  // has to stay light enough that the muted body colour still clears 4.5:1 against it. At
+  // this mix that holds for an accent at or lighter than #82a8e6; a darker accent needs a
+  // smaller share of it here.
+  backgroundColor: 'color-mix(in srgb, var(--color-accent-brand) 45%, white)',
   borderRadius: '50%',
 };
 
 function useFollowPointer(ref: RefObject<HTMLDivElement | null>) {
   const x = useSpring(0, spring);
   const y = useSpring(0, spring);
+  const [awake, setAwake] = useState(false);
 
   useEffect(() => {
     if (!ref.current) return;
+
+    let settling = false;
 
     const handlePointerMove = ({ clientX, clientY }: PointerEvent) => {
       const element = ref.current!;
@@ -29,8 +36,22 @@ function useFollowPointer(ref: RefObject<HTMLDivElement | null>) {
       // reads in Motion's read phase, where they cannot land between its style writes; that
       // interleaving is what would cost the frame a second layout pass.
       frame.read(() => {
-        x.set(clientX - element.offsetLeft - element.offsetWidth / 2);
-        y.set(clientY - element.offsetTop - element.offsetHeight / 2);
+        const nextX = clientX - element.offsetLeft - element.offsetWidth / 2;
+        const nextY = clientY - element.offsetTop - element.offsetHeight / 2;
+
+        // Both springs rest at zero, which would park the ball in the top-left corner on
+        // every load until the pointer first moved. `jump` places it at the cursor without
+        // animating, so the fade-in below starts where the pointer already is.
+        if (!settling) {
+          settling = true;
+          x.jump(nextX);
+          y.jump(nextY);
+          setAwake(true);
+          return;
+        }
+
+        x.set(nextX);
+        y.set(nextY);
       });
     };
 
@@ -39,7 +60,7 @@ function useFollowPointer(ref: RefObject<HTMLDivElement | null>) {
     return () => window.removeEventListener('pointermove', handlePointerMove);
   }, [ref, x, y]);
 
-  return { x, y };
+  return { x, y, awake };
 }
 
 const hasFinePointer = () => window.matchMedia('(pointer: fine)').matches;
@@ -54,7 +75,7 @@ export function PointerFollower() {
   const [finePointer] = useState(hasFinePointer);
 
   const ref = useRef<HTMLDivElement>(null);
-  const { x, y } = useFollowPointer(ref);
+  const { x, y, awake } = useFollowPointer(ref);
 
   // The ref stays null in this case, so the effect above returns before it binds a listener.
   if (prefersReducedMotion || !finePointer) return null;
@@ -62,11 +83,21 @@ export function PointerFollower() {
   return (
     // The wrapper is the ball's offset parent. Being fixed at the viewport's edges, it makes
     // `offsetLeft` and `offsetTop` zero, which is what lets the example's math treat the
-    // pointer's client coordinates as the ball's own. The negative z-index puts the ball
-    // under the text: `html` carries no background, so `body`'s is promoted to the canvas and
-    // `body` paints none in its own box, leaving the canvas below the negative layer. Giving
-    // `html` or `#root` a background of its own would hide the ball completely.
-    <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
+    // pointer's client coordinates as the ball's own.
+    //
+    // The negative z-index puts the ball under the text: `html` carries no background, so
+    // `body`'s is promoted to the canvas and `body` paints none in its own box, leaving the
+    // canvas below the negative layer. Giving `html` or `#root` a background of its own would
+    // hide the ball completely. Painting below the column is also what lets an opaque element
+    // in the column cover the ball, which is how the project buttons' fill reads as a wipe.
+    //
+    // `pointer-events: none` changes nothing while the z-index stays negative, since hit
+    // testing follows paint order and the ball is already behind `#root`. It is here for the
+    // day someone raises that z-index.
+    <div
+      className={`pointer-events-none fixed inset-0 -z-10 overflow-hidden transition-opacity duration-500 ${awake ? 'opacity-100' : 'opacity-0'}`}
+      aria-hidden="true"
+    >
       <m.div ref={ref} style={{ ...ball, x, y }} />
     </div>
   );
