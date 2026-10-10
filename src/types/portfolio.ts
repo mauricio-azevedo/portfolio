@@ -16,7 +16,6 @@ export type Profile = {
   name: string;
   /** Short mono tag shown next to the name in the header. */
   tag: string;
-  greeting: string;
   /** Current status shown in the hero, next to the location. */
   status: string;
   location: string;

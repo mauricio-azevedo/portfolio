@@ -10,7 +10,6 @@ export const portfolioContent: PortfolioContent = {
   profile: {
     name: 'Maurício Azevedo',
     tag: 'full-stack',
-    greeting: 'Hi, I’m Maurício.',
     status: 'Open to new roles',
     location: 'Brasília, Brazil',
     timezone: 'UTC−3',
